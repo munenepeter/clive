@@ -1,10 +1,13 @@
 <?php
-namespace App\Controllers;
+namespace Clive\Controllers;
 
 class PagesController{
 
-    public function index(){    
-        
+    public function index(){        
         return view('index');
+    }
+    public function login(){    
+        
+        return view('login');
     }
 }

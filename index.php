@@ -1,6 +1,6 @@
 <?php
-use App\Core\Router;
-use App\Core\Request;
+use Clive\Core\Mantle\Router;
+use Clive\Core\Mantle\Request;
 
 require 'Core/bootstrap.php';
 
