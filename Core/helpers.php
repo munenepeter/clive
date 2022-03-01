@@ -1,6 +1,7 @@
 <?php
 
 use Clive\Core\Mantle\Session;
+
 /**
  * View
  * 
@@ -53,8 +54,42 @@ function abort($message, $code) {
  * @return Bool Session
  */
 function auth() {
+
     if (Session::get('loggedIn') === NULL || Session::get('loggedIn') === false) {
         return false;
     }
     return Session::get('loggedIn');
 }
+/**
+ * Guest Helper
+ * 
+ * Opposite of Auth
+ * 
+ * @return Bool Session
+ */
+function guest() {
+    if (auth()) {
+        return false;
+    }
+}
+
+/*
+    function auth() {
+        $a = true;
+
+        $class = new class {
+            public $name = "Peter" ;
+
+            public function name() {
+              echo $this->name;
+            }
+        };
+
+        if ($a) {
+            return $class;
+        }
+        return $a;
+    }
+
+    auth()->name();
+*/

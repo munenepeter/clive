@@ -1,8 +1,8 @@
-<?php include_once 'base.view.php'; 
-session_destroy();
-?>
+<?php include_once 'base.view.php'; ?>
 
 <?php include_once 'sections/nav.view.php'; ?>
+
+<?php if(!auth()) :?>
 <section class="py-4 bg-gradient-to-r from-red-50 to-blue-50">
 	<div class="container flex flex-col items-center px-4 py-8 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
 		<h1 class="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-blue-500 text-4xl font-bold leading-none sm:text-5xl p-2">Clive Insurance Agency</h1>
@@ -15,7 +15,6 @@ session_destroy();
 		</div>
 	</div>
 </section>
-
 <section class="py-8 bg-gradient-to-r from-red-100 to-blue-100">
 	<div class="container mx-auto">
 		<div class="p-4 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
@@ -78,8 +77,6 @@ session_destroy();
 		</div>
 	</div>
 </section>
-
-
 <div class="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
 	<div class="flex flex-col justify-between">
 		<div class="space-y-2">
@@ -104,4 +101,6 @@ session_destroy();
 		<button type="submit" class="w-full p-3 text-sm font-bold tracking-wide uppercase rounded bg-blue-500 text-gray-900">Send Message</button>
 	</form>
 </div>
+<?php endif;?>
+
 <?php include_once 'sections/footer.view.php'; ?>
