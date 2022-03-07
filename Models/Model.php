@@ -10,6 +10,7 @@ class Model {
     public static function getInstance() {
         static::$model_name = new static;
     }
+
     private static function tableName() {
 
         //get table name form the model
@@ -32,6 +33,7 @@ class Model {
         //User::update(['name'=>'peter', 'id' => 23]);
     }
     public static function all() {
+	//Returns all the records in the db for a certain  model/table
 
         App::get('database')->selectAll(self::tableName());
         //User::all();
