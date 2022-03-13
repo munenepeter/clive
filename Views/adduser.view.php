@@ -44,11 +44,11 @@
         </div>
     </div>
 
-    <form novalidate="" action="" method="post" class="bg-white container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid">
+    <form method="post" class="bg-white container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid">
         <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
             <div class="space-y-2 col-span-full lg:col-span-1">
                 <p class="font-medium">User information</p>
-                <p class="text-xs">To crate a new user please fill in all the details correctly</p>
+                <p class="text-xs">To create a new user please fill in all the details correctly</p>
             </div>
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                 <div class="col-span-full sm:col-span-3">

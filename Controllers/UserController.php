@@ -13,16 +13,23 @@ class UserController{
 
         //first_name, last_name, username, email, password, role
 
-        $first_name = Request::form('first_name');
-        $last_name = Request::form('last_name');
-        $email = Request::form('email');
-        $pass = Request::form('password');
-        $username = Request::form('username');
-        $role = Request::form('role');
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+        $username = $_POST['username'];
+        $role = $_POST['role'];
 
         Logger::log("INFO: $first_name,$last_name,$email, $pass, $username, $role");
         
-        User::create([$first_name,$last_name,$email, $pass, $username, $role]);
+        User::create([
+        'first_name' =>$first_name,
+        'last_name' => $last_name,
+        'email' => $email, 
+        'password' => $pass, 
+        'username' => $username, 
+        'role' => $role
+       ]);
         
         return view('users', ['users' => User::all()]);
       
