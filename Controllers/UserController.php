@@ -13,12 +13,12 @@ class UserController{
 
         //first_name, last_name, username, email, password, role
 
-        $first_name = Request::validate(Request::form('first_name'));
-        $last_name = Request::validate(Request::form('last_name'));
-        $email = Request::validate(Request::form('email'));
-        $pass = Request::validate(Request::form('password'));
-        $username = Request::validate(Request::form('username'));
-        $role = Request::validate(Request::form('role'));
+        $first_name = Request::form('first_name');
+        $last_name = Request::form('last_name');
+        $email = Request::form('email');
+        $pass = Request::form('password');
+        $username = Request::form('username');
+        $role = Request::form('role');
 
         Logger::log("INFO: $first_name,$last_name,$email, $pass, $username, $role");
         
