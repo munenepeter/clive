@@ -28,8 +28,9 @@ class Request {
     public static function validate($input) {
 
         if ($input == "" || $input == NULL || !isset($input)) {
+            Logger::log("ERROR: Something is up");
             array_push(Request::$errors, "One of the inputs is empty, Please try again!");
-            view('login', ['e' => Request::$errors]);
+            redirectback(['e' => Request::$errors]);
             return;
         } else {
             return htmlspecialchars(trim($input));

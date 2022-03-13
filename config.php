@@ -3,7 +3,7 @@
 return [
     //Get the configuration details ie DB connections
     'mysqldatabase' => [
-        'name' => 'test',
+        'name' => 'clive',
         'username' => 'root',
         'password' => '',
         'connection' => 'mysql:host=localhost',

@@ -1,8 +1,6 @@
 <?php use Clive\Core\Mantle\Session; include_once 'base.view.php'; ?>
 
-<!-- <?php
-// var_dump($user);
-?> -->
+
 <div class="bg-gradient-to-r from-red-50 to-blue-50 min-h-screen -mt-8 p-4"> 
   <div class="container mx-auto max-w-3xl mt-8"> 
     <h1 class="text-2xl font-bold text-gray-700 px-6 md:px-0">Account Settings</h1>
@@ -16,6 +14,7 @@
         <div class="w-1/3 bg-gray-100 p-8 hidden md:inline-block">
           <h2 class="font-medium text-md text-gray-700 mb-4 tracking-wide"><?=ucfirst(Session::get('user'));?>'s Info</h2>
           <p class="text-xs text-gray-500">Update your basic profile information such as Email Address, Name, and Password.</p>
+        
         </div>
         <div class="md:w-2/3 w-full">
           <div class="py-8 px-16">

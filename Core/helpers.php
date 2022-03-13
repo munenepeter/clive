@@ -46,6 +46,11 @@ function abort($message, $code) {
     ]);
     exit;
 }
+
+function redirectback($data){
+    extract($data);
+    redirect($_SERVER['HTTP_REFERER']);
+}
 /**
  * Auth Helper
  * 
@@ -98,6 +103,8 @@ function plural($phrase, $value) {
     }
     return $phrase;
 }
+
+
 
 /*
     function auth() {

@@ -1,6 +1,9 @@
 <?php
-
 namespace Clive\Core\Database;
+
+use Clive\Core\Mantle\Logger;
+
+
 /**
  * @package QueryBuilder
  * 
@@ -36,7 +39,8 @@ class QueryBuilder {
       throw new \Exception("Something is up with your Select {$statement}!");
     }
 
-    $model = ucwords($table);
+    $model = substr_replace(ucwords($table), '', -1);
+
     return $statement->fetchAll(\PDO::FETCH_CLASS,  "Clive\\Models\\{$model}");
   }
   /**
@@ -82,8 +86,10 @@ class QueryBuilder {
 
     $condition =  implode(' = ', $condition);
     $statement = $this->pdo->prepare("select {$values}  from {$table} where {$condition}");
+    
+    $sql = "select {$values}  from {$table} where {$condition}";
+    Logger::log("INFO: Called $sql");
 
-  
     if (!$statement->execute()) {
       throw new \Exception("Something is up with your Select {$statement}!");
     }

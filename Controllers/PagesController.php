@@ -2,14 +2,14 @@
 
 namespace Clive\Controllers;
 
-use Clive\Core\Mantle\App;
+use Clive\Models\User;
 use Clive\Core\Mantle\Session;
 
 class PagesController {
 
     public function index() {
         if (auth()) {
-            return view('dashboard');
+            return view('dashboard', ['users' => User::all()]);
         }
         return view('index');
     }
@@ -29,13 +29,23 @@ class PagesController {
         if (!auth()) {
             return view('login');
         }
+        
+        $user =  User::where(
+          ['first_name', 'last_name', 'email', 'username', 'password', 'email'],
+          ['username', Session::get('user')]);
 
-        $user = App::get('database')->selectWhere(
-            'users',
-            ['first_name', 'last_name', 'email', 'username', 'password', 'email'],
-            ['username', Session::get('user')]
-        );
+      
 
         return view('profile', ['user' => $user]);
+    }
+     public function adduser() {
+        if (!auth()) {
+            return view('index');
+        }
+            $user =  User::where(
+            ['first_name', 'last_name', 'email', 'username', 'password', 'email'],
+            ['username', Session::get('user')]);
+
+        return view('adduser', ['user' => $user]);
     }
 }

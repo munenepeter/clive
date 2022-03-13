@@ -41,6 +41,7 @@ Table policies {
 Table insurers {
   id int [pk, increment]
   name varchar
+  business_no varchar
   email varchar
   policies text
   created_at timestamp
@@ -132,6 +133,7 @@ CREATE TABLE `insurers` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
   `email` varchar(255),
+  `business_no` varchar(255),
   `policies` text,
   `created_at` timestamp,
   `updated_at` timestamp

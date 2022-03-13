@@ -36,6 +36,16 @@ use Clive\Core\Mantle\Session; ?>
                                     <span class="ml-2"><?= ucfirst(Session::get('user')); ?></span>
                                 </a>
                             </li>
+                            <?php if(ucfirst(Session::get('user')) === "Admin"):?>
+                             <li>
+                                <a href="/adduser" class="flex items-center px-3 py-3 hover:bg-blue-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    <span class="ml-2"><?= ucfirst('add user'); ?></span>
+                                </a>
+                            </li>
+                             <?php endif; ?>
                             <li>
                                 <a href="/logout" class="flex items-center px-3 py-3 hover:bg-blue-200">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -25,7 +25,8 @@ VALUES(	'Admin', 'Admin', 'admin', 'admin@clive.com', '81dc9bdb52d04dc20036dbd83
 --@block
 drop table users;
 
-
+--@block
+SELECT * from users;
 --@block
 
-SELECT username, email FROM users where email = "guest@clive.com"; 
+select first_name, last_name, email, username, password, email  from users where username = "admin"
