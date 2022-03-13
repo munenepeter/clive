@@ -88,12 +88,36 @@ class QueryBuilder {
     $statement = $this->pdo->prepare("select {$values}  from {$table} where {$condition}");
     
     $sql = "select {$values}  from {$table} where {$condition}";
-    Logger::log("INFO: Called $sql");
+    Logger::log("INFO: Called(where) $sql");
 
     if (!$statement->execute()) {
       throw new \Exception("Something is up with your Select {$statement}!");
     }
     $model = ucwords(substr($table, 0, -1));
     return $statement->fetchAll(\PDO::FETCH_CLASS,  "Clive\\Models\\{$model}");
+  }
+
+  public function insert(string $table, array $parameters) {
+
+    $sql = sprintf(
+      'insert into %s (%s) values (%s)',
+
+      $table,
+
+      implode(', ', array_keys($parameters)),
+
+      ':' . implode(', :', array_keys($parameters))
+    );
+    Logger::log("INFO: Called (insert) $sql");
+    try {
+
+      $statement = $this->pdo->prepare($sql);
+      $statement->execute($parameters);
+
+    } catch (\Exception $e) {
+
+      throw new \Exception('Something is up with your Insert!' . $e->getMessage());
+      die();
+    }
   }
 }
