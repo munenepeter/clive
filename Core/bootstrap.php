@@ -12,6 +12,7 @@ require 'Core/Mantle/App.php';
 require 'Core/Mantle/Session.php';
 require 'Models/Model.php';
 require 'Models/User.php';
+require 'Core/Mantle/Mail.php';
 require 'Core/Mantle/Auth.php';
 require 'Core/Database/Connection.php';
 require 'Core/Database/QueryBuilder.php';
