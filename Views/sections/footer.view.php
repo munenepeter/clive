@@ -1,8 +1,9 @@
-<footer>
-	<div class="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row">
+<footer class="relative">
+	<div class="fixed bottom-0 container flex flex-col p-4 mx-auto md:p-8 lg:flex-row">
 		<ul class="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
 			<li>About</li>		
 			<li>Insurers</li>
+			<li>News</li>
 			<li>Contact</li>
 		</ul>
 		<div class="flex flex-col justify-center pt-6 lg:pt-0">
