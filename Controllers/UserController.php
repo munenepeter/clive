@@ -37,7 +37,20 @@ class UserController {
         Mail::$to = $email;
 
         $mesage = <<<TEXT
-        
+        <h1>Welcome to Clive @{$username}, </h1>
+        <p>In order for you to continue please <a href="{$_SERVER['SERVER_NAME']}/login" target="_blank" rel="noopener noreferrer">log in</a> with
+        </p>
+        <br>
+        <p>Username : {$username}</p>
+        <p>Password : {$pass}</p>
+        <br>
+        <br>
+        <p>And please don't forget to reset your password!</p>
+        <br>
+        <br>
+        <p>Kind Regards,</p>
+        <p>The Clive Team,</p>
+        <p>www.clive.com</p>
 TEXT;
 
         Mail::send($mesage);
