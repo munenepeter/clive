@@ -13,11 +13,14 @@ class PagesController {
         }
         return view('index');
     }
+    public function news() {      
+        return view('news');
+    }
     public function dashboard() {
         if (!auth()) {
             return view('index');
         }
-        return view('dashboard');
+        return view('dashboard', ['users' => User::all()]);
     }
     public function login() {
         if (auth()) {
