@@ -11,5 +11,5 @@ $router->get('logout', 'AuthController@logout');
 
 
 
-
+$router->post('login', 'AuthController@login');
 $router->post('adduser', 'UserController@create');
