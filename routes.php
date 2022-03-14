@@ -4,13 +4,14 @@ $router->get('', 'PagesController@index');
 $router->get('index', 'PagesController@index');
 $router->get('dashboard', 'PagesController@dashboard');
 $router->get('login', 'PagesController@login');
-$router->get('profile', 'PagesController@profile');
 $router->get('news', 'PagesController@news');
-$router->get('profile', 'PagesController@profile');
-$router->get('adduser', 'PagesController@adduser');
+//User
+$router->get('adduser', 'UserController@adduser');
+//Auth 
+$router->get('profile', 'AuthController@profile');
 $router->get('logout', 'AuthController@logout');
 
 
-
+//Post requests
 $router->post('login', 'AuthController@login');
 $router->post('adduser', 'UserController@create');
