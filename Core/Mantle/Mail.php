@@ -8,7 +8,8 @@ class Mail{
 
     public static function send($msg){ 
 
-        $headers = "From:" . self::$from;
+        $headers = 'From: Admin <'.self::$from.'>' . PHP_EOL .'Reply-To: Admin <'.self::$from.'>'. PHP_EOL;
+        $headers .= "MIME-Version: 1.0". PHP_EOL ."Content-Type: text/html; charset=ISO-8859-1".PHP_EOL;
         if(mail(self::$to,self::$subject,$msg, $headers)) {
             echo "The email message was sent.";
         } else {
