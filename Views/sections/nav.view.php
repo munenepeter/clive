@@ -13,7 +13,7 @@
                     <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-blue-800 hover:border-blue-800">About</a>
                 </li>
                 <li class="flex">
-                    <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-blue-800 hover:border-blue-800">News</a>
+                    <a rel="noopener noreferrer" href="/news" class="flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-blue-800 hover:border-blue-800">News</a>
                 </li>
                 <li class="flex">
                     <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-blue-800 hover:border-blue-800">Insurers</a>

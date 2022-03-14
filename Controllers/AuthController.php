@@ -2,6 +2,7 @@
 
 namespace Clive\Controllers;
 
+use Clive\Models\User;
 use Clive\Core\Mantle\Auth;
 use Clive\Core\Mantle\Request;
 use Clive\Core\Mantle\Session;
@@ -19,5 +20,18 @@ class AuthController {
     public function logout() {
         Auth::logout(Session::get('user'));
         redirect('index');
+    }
+    public function profile() {
+        if (!auth()) {
+            return view('login');
+        }
+        
+        $user =  User::where(
+          ['first_name', 'last_name', 'email', 'username', 'password', 'email'],
+          ['username', Session::get('user')]);
+
+      
+
+        return view('profile', ['user' => $user]);
     }
 }

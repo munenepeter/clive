@@ -5,6 +5,7 @@ namespace Clive\Controllers;
 use Clive\Models\User;
 use Clive\Core\Mantle\Logger;
 use Clive\Core\Mantle\Request;
+use Clive\Core\Mantle\Session;
 
 
 class UserController{
@@ -33,5 +34,11 @@ class UserController{
         
         return view('users', ['users' => User::all()]);
       
+    }
+    public function adduser() {
+        if (!auth()) {
+            return view('index');
+        }       
+        return view('adduser');
     }
 }
