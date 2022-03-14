@@ -2,9 +2,31 @@
 namespace Clive\Core\Mantle;
 
 class Mail{
+   public static $welcomeTemplate = <<<MAIL
+   <h1>Welcome to Clive @{username}, </h1>
+   <p>In order for you to continue please <a href="{host}/login" target="_blank" rel="noopener noreferrer">log in</a> with
+   </p>
+   <br>
+   <p>Username : {username}</p>
+   <p>Password : {pass}</p>
+   <br>
+   <br>
+   <p>And please don't forget to reset your password!</p>
+   <br>
+   <br>
+   <p>Kind Regards,</p>
+   <p>The Clive Team,</p>
+   <p>www.clive.com</p>
+MAIL;
+
     public static $from = "admin@clive.com";
     public static $to;
     public static $subject;
+
+
+    public static function message(){
+        //
+    }
 
     public static function send($msg){ 
 

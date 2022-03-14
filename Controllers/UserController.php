@@ -33,11 +33,16 @@ class UserController {
             'role' => $role
         ]);
 
-        Mail::$subject = "A test";
+        Mail::$subject = "Welcome to Clive @{$username}";
         Mail::$to = $email;
-        Mail::send("Welcome to Clive");
 
-        return view('users', ['users' => User::all()]);
+        $mesage = <<<TEXT
+        
+TEXT;
+
+        Mail::send($mesage);
+
+        return redirect('users');
     }
     public function adduser() {
         if (!auth()) {
