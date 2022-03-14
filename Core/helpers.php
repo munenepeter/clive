@@ -106,6 +106,10 @@ function plural($phrase, $value) {
 
 
 
+
+
+
+
 /*
     function auth() {
         $a = true;
