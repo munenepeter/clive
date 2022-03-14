@@ -5,6 +5,7 @@ $router->get('index', 'PagesController@index');
 $router->get('dashboard', 'PagesController@dashboard');
 $router->get('login', 'PagesController@login');
 $router->get('news', 'PagesController@news');
+$router->get('users', 'PagesController@users');
 //User
 $router->get('adduser', 'UserController@adduser');
 //Auth 

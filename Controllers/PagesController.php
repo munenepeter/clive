@@ -16,6 +16,9 @@ class PagesController {
     public function news() {      
         return view('news');
     }
+    public function users() {      
+        return view('users',['users' => User::all()]);
+    }
     public function dashboard() {
         if (!auth()) {
             return view('index');
