@@ -5,7 +5,7 @@ namespace Clive\Models;
 use Clive\Core\Mantle\App;
 
 class Model {
-    public static $model_name;
+
 
     public static function getInstance() {
         $model_name = new static;
