@@ -57,6 +57,7 @@ TEXT;
 
         return redirect('users');
     }
+    //redirect to the add user page
     public function adduser() {
         if (!auth()) {
             return view('index');
