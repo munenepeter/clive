@@ -8,6 +8,7 @@ require 'helpers.php';
 require 'Core/Mantle/Logger.php';
 require 'Core/Mantle/Request.php';
 require 'Core/Mantle/Router.php';
+require 'Core/Mantle/Paginator.php';
 require 'Core/Mantle/App.php';
 require 'Core/Mantle/Session.php';
 require 'Models/Model.php';
