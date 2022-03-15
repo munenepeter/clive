@@ -9,7 +9,7 @@ class Logger {
   
         $logFile =  "Logs/logs.log";
   
-        $file = fopen($logFile, 'a', 1);
+        $file = fopen($logFile, 'a+', 1);
         fwrite($file, $log);
         fclose($file);
   
