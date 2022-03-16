@@ -1,25 +1,35 @@
 <?php
+
 namespace Clive\Core\Mantle;
 
 use Clive\Core\Mantle\Request;
 
-class Paginator{
-    private static $per_page;
-    public static function paginate(array $data, int $per_page = 10){
+class Paginator {
+    public static $per_page;
+    public static $totalCount;
+
+    public static function getPage() {
+        return (!isset($_GET['page'])) ? 1 : $_GET['page'];
+    }
+
+    public static function paginate(array $data, int $per_page = 10) {
+
         self::$per_page = $per_page;
-        return array_slice($data, $per_page * intval($_GET['page']) - $per_page, $per_page);
+
+        return array_slice($data, $per_page * intval(self::getPage()) - $per_page, $per_page);
     }
 
-    public static function showLinks($data){
+    public static function showLinks($data) {
 
-        $max_pages = ceil(count($data) / self::$per_page);
+        self::$totalCount = count($data);
 
-        if($_GET['page'] > 1)
-        echo  '<a href="/'.Request::uri().'?page='.($_GET['page']-1).'"> Previous </a>';
-        if($_GET['page'] < $max_pages)
-        echo  '<a href="/'.Request::uri().'?page='.($_GET['page']+1).'"> Next </a>';  
+        $max_pages = ceil(self::$totalCount / self::$per_page);
+
+        if (self::getPage() > 1)
+            echo  '<a class="p-2 text-blue-500" href="/' . Request::uri() . '?page=' . (self::getPage() - 1) . '"> Previous </a>';
+        if (self::getPage() < $max_pages)
+            echo  '<a class="p-2 text-blue-500" href="/' . Request::uri() . '?page=' . (self::getPage() + 1) . '"> Next </a>';
     }
-
 }
 // Paginator::paginate($users, 10);
 // Paginator::showLinks($users);
@@ -52,4 +62,4 @@ $users = array("1", "2", "3", "4", "5", "6", "7", "8");
 var_dump(Paginator::paginate($users,2));
 Paginator::showLinks($users);
 
-*/     
+*/
