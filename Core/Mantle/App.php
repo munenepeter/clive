@@ -3,7 +3,7 @@
 namespace Clive\Core\Mantle;
 
 class App{
-  public static array $registry = [];
+  public static $registry = [];
 
   public static function bind($key, $value){
      self::$registry[$key] = $value;
