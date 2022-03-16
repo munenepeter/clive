@@ -7,7 +7,7 @@ class Paginator{
     private static $per_page;
     public static function paginate(array $data, int $per_page = 10){
         self::$per_page = $per_page;
-        return array_slice($data, $per_page * intval($_GET['page']) - 1, $per_page);
+        return array_slice($data, $per_page * intval($_GET['page']) - $per_page, $per_page);
     }
 
     public static function showLinks($data){
@@ -28,27 +28,28 @@ class Paginator{
 /* 
 class Paginator{
     private static $per_page;
-    public static $pg = 1;
+    public static $pg = 2;
     public static function paginate(array $data, int $per_page = 2){
         self::$per_page = $per_page;
-        return array_slice($data, $per_page * intval(self::$pg) - 1, $per_page);
-    }
+        return array_slice($data, $per_page * intval(self::$pg) - $per_page, $per_page, 1);
+       }
 
     public static function showLinks($data){
 
         $max_pages = ceil(count($data) / self::$per_page);
         
         if(self::$pg > 1)
-        echo  '<a href="/rr?page='.(self::$pg-1).'"> Previous </a>';
+        echo  '<a href="/rr?page='.(self::$pg-1).'"> Previous </a>'.PHP_EOL;
         if(self::$pg < $max_pages)
         echo  '<a href="/rr?page='.(self::$pg+1).'"> Next </a>';  
     }
 
 }
 
-$users = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43", "Joy"=>"93");
+$users = array("1", "2", "3", "4", "5", "6", "7", "8");
 //var_dump($users);
-var_dump(Paginator::paginate($users,3));
+
+var_dump(Paginator::paginate($users,2));
 Paginator::showLinks($users);
 
 */     
