@@ -1,6 +1,11 @@
-<?php include_once 'base.view.php'; ?>
+<?php
 
-<?php include_once 'sections/dash-nav.view.php'; ?>
+use Clive\Core\Mantle\Paginator;
+
+ include_once 'base.view.php'; 
+ include_once 'sections/dash-nav.view.php';?>
+
+
 
 <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
     <div class="flex justify-between items-center -mb-2">
@@ -50,9 +55,30 @@
                             </td>
                         </tr>
                     <?php endforeach; ?>
-
+                 
                 </tbody>
             </table>
+            <div class="border border-t bg-white px-4 py-3 flex items-center justify-between sm:px-6">
+              
+              <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                <div>
+                  <p class="text-sm leading-5 text-gray-700">
+                    Showing
+                    <span class="font-medium" ><?= Paginator::$per_page + (Paginator::getPage() - 1)*5;?></span>
+                    to
+                    <span class="font-medium"><?= Paginator::$per_page;?></span>
+                    of
+                    <span class="font-medium" ><?= count($allusers)?></span>
+                    results
+                  </p>
+                </div>
+                <div>
+                  <span class="relative z-0 inline-flex shadow-sm">
+                  <?php Paginator::showLinks($allusers);?>
+                  </span>
+                </div>
+              </div>
+            </div>          
         </div>
     </div>
 </div>
