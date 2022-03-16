@@ -4,6 +4,7 @@ namespace Clive\Controllers;
 
 use Clive\Models\User;
 use Clive\Core\Mantle\Session;
+use Clive\Core\Mantle\Paginator;
 
 class PagesController {
 
@@ -16,8 +17,12 @@ class PagesController {
     public function news() {      
         return view('news');
     }
-    public function users() {      
-        return view('users',['users' => User::all()]);
+    public function users() {  
+
+        return view('users',[
+            'allusers' => User::all(), 
+            'users' => Paginator::paginate(User::all(),5)
+        ]);
     }
     public function dashboard() {
         if (!auth()) {
