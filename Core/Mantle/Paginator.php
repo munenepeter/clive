@@ -5,18 +5,25 @@ namespace Clive\Core\Mantle;
 use Clive\Core\Mantle\Request;
 
 class Paginator {
+
     public static $per_page;
     public static $totalCount;
+    
+    public static $start;
+    public static $end;
 
     public static function getPage() {
-        return (!isset($_GET['page'])) ? 1 : $_GET['page'];
+        return (!isset($_GET['page'])) ? 1 : (int)$_GET['page'];
     }
 
     public static function paginate(array $data, int $per_page = 10) {
 
         self::$per_page = $per_page;
 
-        return array_slice($data, $per_page * intval(self::getPage()) - $per_page, $per_page);
+        $paginated_data = array_slice($data, $per_page * intval(self::getPage()) - $per_page, $per_page);
+        self::$start = (int)(implode('',array_keys($paginated_data,reset($paginated_data))))+(self::getPage() + 1);
+        self::$end =  (int)(implode('',array_keys($paginated_data,end($paginated_data))))+1; 
+        return $paginated_data;
     }
 
     public static function showLinks($data) {

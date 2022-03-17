@@ -64,9 +64,9 @@ use Clive\Core\Mantle\Paginator;
                 <div>
                   <p class="text-sm leading-5 text-gray-700">
                     Showing
-                    <span class="font-medium" ><?= Paginator::$per_page + (Paginator::getPage() - 1)*5;?></span>
+                    <span class="font-medium" ><?= Paginator::$start;?></span>
                     to
-                    <span class="font-medium"><?= Paginator::$per_page;?></span>
+                    <span class="font-medium"><?= Paginator::$end;?></span>
                     of
                     <span class="font-medium" ><?= count($allusers)?></span>
                     results
