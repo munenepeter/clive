@@ -65,6 +65,14 @@ function auth() {
     }
     return Session::get('loggedIn');
 }
+
+function isAdmin() {
+
+    if (Session::get('user') === 'admin') {
+        return true;
+    }
+    return false;
+}
 /**
  * Guest Helper
  * 
