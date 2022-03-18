@@ -16,7 +16,7 @@ class ClientController {
     }
     public function create() {
         //
-        echo  "I'm here";
+        return view('addclient');
     }
     public function update() {
         //
