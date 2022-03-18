@@ -65,7 +65,13 @@ function auth() {
     }
     return Session::get('loggedIn');
 }
-
+/**
+ * isAdmin Helper
+ * 
+ * Returns true or false if the looged user is admin or not
+ * 
+ * @return Bool if admin or not
+ */
 function isAdmin() {
 
     if (Session::get('user') === 'admin') {
