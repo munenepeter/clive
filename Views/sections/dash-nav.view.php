@@ -12,7 +12,7 @@ use Clive\Core\Mantle\Session; ?>
      
         <ul class="flex items-center space-x-4 text-sm font-semibold">
             <li><a href="#" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">My Account</a></li>
-            <li><a href="#" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Clients</a></li>
+            <li><a href="/clients" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Clients</a></li>
             <li><a href="#" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Policies</a></li>
             <li><a href="#" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Insurers</a></li>
 

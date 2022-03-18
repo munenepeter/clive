@@ -3,8 +3,234 @@
 use Clive\Core\Mantle\Paginator;
 
 include_once 'base.view.php';
-include_once 'sections/dash-nav.view.php'; ?>
+include_once 'sections/dash-nav.view.php'; 
+include_once 'sections/sidebar.view.php';?>
 
+
+<div class="flex-grow flex flex-col">
+    
+    <div class="flex-grow flex flex-col">
+      <div class="flex-grow">
+        <div class="bg-white">
+          <div class="px-12">
+            <div class="flex justify-between py-6">
+              <div>
+                <div
+                  class="flex items-center text-sm text-gray-700 uppercase font-bold tracking-widest"
+                >
+                  <p class="mr-4 bg-gray-200 rounded p-2">1337XP</p>
+                  <p>300C</p>
+                </div>
+                <div class="flex mt-3">
+                  <p class="text-sm font-medium bg-orange-100 p-4 leading-loose">
+                    <span class="w-full block mb-2 border-b border-orange-200 pb-2 mb-2 text-orange-400 font-bold uppercase tracking-widest">System Update</span> The ability to add numbers to the BobRTC phonebook requires an XP score above 785XP and your account must be active for an extended period of time. Contact a TLS, Scammer.info or BobRTC moderator for more details.</p>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <div class="px-12 py-8 mx-auto max-w-4xl">
+          <div>
+            <div class="flex items-baseline justify-between">
+              <div>
+                <h2 class="text-lg">
+                  Welcome To BobRTC!
+                </h2>
+                <div class="mt-2 text-sm text-gray-700">
+                  Take your first steps into a serverless future.
+                </div>
+              </div>
+              <!---->
+            </div>
+                            <div class="mt-4">
+              <div class="px-6 py-4 bg-white shadow-md rounded-lg flex justify-between">
+                <div class="flex justify-between text-sm font-medium uppercase tracking-wide">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="-mt-1 mr-4 h-6 w-6">
+                      <path
+                        d="M5 8h14a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1zm1 2v7h12v-7H6z"
+                        class="fill-current text-gray-400"
+                      ></path>
+                      <path
+                        d="M6 12a4 4 0 0 1-4-4 1 1 0 0 1 .1-.45l2-4A1 1 0 0 1 5 3h14a1 1 0 0 1 .9.55l2 4c.06.14.1.3.1.45a4 4 0 0 1-7 2.65 3.99 3.99 0 0 1-6 0A3.99 3.99 0 0 1 6 12z"
+                        class="fill-current text-gray-600"
+                      ></path>
+                    
+                    </svg>
+                  <p>IRS Scam</p>
+                              </div>
+                    <div
+                      class="ml-3 font-semibold text-sm text-gray-600 uppercase tracking-wider"
+                    >
+                      <a href="#" class=""
+                         >+1 (844) 483-4444</a>
+                    </div>
+                  </div>
+                
+                              </div>
+            </div>
+            <div class="mt-4">
+              <div class="px-6 py-4 bg-white shadow-md rounded-lg">
+                <div>
+                  <div class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      class="h-6 w-6"
+                    >
+                      <path
+                        d="M5 8h14a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1zm1 2v7h12v-7H6z"
+                        class="fill-current text-gray-400"
+                      ></path>
+                      <path
+                        d="M6 12a4 4 0 0 1-4-4 1 1 0 0 1 .1-.45l2-4A1 1 0 0 1 5 3h14a1 1 0 0 1 .9.55l2 4c.06.14.1.3.1.45a4 4 0 0 1-7 2.65 3.99 3.99 0 0 1-6 0A3.99 3.99 0 0 1 6 12z"
+                        class="fill-current text-gray-600"
+                      ></path>
+                    </svg>
+                    <div
+                      class="ml-3 font-semibold text-sm text-gray-600 uppercase tracking-wider"
+                    >
+                      <a href="/app/account/billing" class=""
+                        >Choose A Billing Plan</a
+                      >
+                    </div>
+                  </div>
+                  <div class="mt-3 mb-8 max-w-2xl text-sm text-gray-700">
+                    Before creating your first project, you will need to
+                    subscribe to a billing plan. It's one, simple monthly
+                    fee, regardless of how many projects, deployments,
+                    teams, or team members you have.
+                    <strong
+                      >To choose a plan, visit your
+                      <a href="#" class="underline hover:text-gray-900"
+                        >account settings</a
+                      >.</strong
+                    >
+                  </div>
+                </div>
+                <div>
+                  <div class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      class="h-6 w-6"
+                    >
+                      <path
+                        d="M8.23 10.77a7.01 7.01 0 1 1 5 5L11 18H9v2H7v2.03H2V17l6.23-6.23zM17 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+                        class="fill-current text-gray-400"
+                      ></path>
+                      <path
+                        d="M6.2 18.7a1 1 0 1 1-1.4-1.4l4-4a1 1 0 1 1 1.4 1.4l-4 4z"
+                        class="fill-current text-gray-600"
+                      ></path>
+                    </svg>
+                    <div
+                      class="ml-3 font-semibold text-sm text-gray-600 uppercase tracking-wider"
+                    >
+                      <a href="/app/team/settings/cloud-providers" class=""
+                        >Connect An AWS Account</a
+                      >
+                    </div>
+                  </div>
+                  <div class="mt-3 mb-8 max-w-2xl text-sm text-gray-700">
+                    To get started,
+                    <a
+                      href="/app/team/settings/cloud-providers"
+                      class="font-bold underline hover:text-gray-900"
+                      >you'll need to link an AWS account</a
+                    >. Once connected, we will be able to provision and
+                    manage your serverless infrastructure while you focus on
+                    building something amazing. To learn more about
+                    retrieving your AWS credentials, check out
+                    <a
+                      href="https://docs.test.build/1.0/introduction.html#linking-with-aws"
+                      target="_blank"
+                      class="font-bold underline"
+                      >our documentation</a
+                    >.
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="h-6 w-6"
+                  >
+                    <path
+                      d="M3 6l9 4v12l-9-4V6zm14-3v2c0 1.1-2.24 2-5 2s-5-.9-5-2V3c0 1.1 2.24 2 5 2s5-.9 5-2z"
+                      class="fill-current text-gray-400"
+                    ></path>
+                    <polygon
+                      points="21 6 12 10 12 22 21 18"
+                      class="fill-current text-gray-600"
+                    ></polygon>
+                  </svg>
+                  <div
+                    class="ml-3 font-semibold text-sm text-gray-600 uppercase tracking-wider"
+                  >
+                    Create Your First Project
+                  </div>
+                </div>
+                <div class="mt-3 max-w-2xl text-sm text-gray-700">
+                  It is organized around projects. Projects can contain as
+                  many environments as you wish and each environment
+                  receives its very own URL. To create a project,
+                  <a
+                    href="https://docs.test.build/1.0/introduction.html#installing-the-test-cli"
+                    target="_blank"
+                    class="font-bold underline"
+                    >install the App CLI</a
+                  >, login, and run the
+                  <code class="bg-gray-200 font-mono text-xs"
+                    >test init</code
+                  >
+                  command. To learn more, check out our documentation.
+                </div>
+                <div class="mt-8 flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="h-6 w-6"
+                  >
+                    <path
+                      d="M12 21a2 2 0 0 1-1.41-.59l-.83-.82A2 2 0 0 0 8.34 19H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4a5 5 0 0 1 4 2v16z"
+                      class="fill-current text-gray-400"
+                    ></path>
+                    <path
+                      d="M12 21V5a5 5 0 0 1 4-2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4.34a2 2 0 0 0-1.42.59l-.83.82A2 2 0 0 1 12 21z"
+                      class="fill-current text-gray-600"
+                    ></path>
+                  </svg>
+                  <div
+                    class="ml-3 font-semibold text-sm text-gray-600 uppercase tracking-wider"
+                  >
+                    <a href="https://docs.test.build" target="_blank"
+                      >Keep Digging Deeper</a
+                    >
+                  </div>
+                </div>
+                <div class="mt-3 max-w-2xl text-sm text-gray-700">
+                  It has
+                  <a
+                    href="https://docs.test.build"
+                    target="_blank"
+                    class="font-bold underline hover:text-gray-900"
+                    >thorough documentation</a
+                  >
+                  to show you the ropes. Start digging in to learn how to
+                  create projects, deployment environments, manage
+                  databases, scale caches, validate certificates, and more.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
 
 
 <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
