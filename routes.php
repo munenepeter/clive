@@ -8,6 +8,7 @@ $router->get('news', 'PagesController@news');
 $router->get('users', 'PagesController@users');
 
 $router->get('clients', 'ClientController@index');
+$router->get('clients/create', 'ClientController@create');
 //User
 $router->get('adduser', 'UserController@adduser');
 //Auth 
