@@ -211,7 +211,7 @@
                 <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
                     <div class="flex justify-between items-center -mb-2">
                         <h2 class=" font-semibold text-gray-600 font-bold tracking-wide">Clients</h2>
-                        <a href="#" class="text-sm text-blue-500 tracking-wide hover:underline">Add Client</a>
+                        <a href="/clients/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add Client</a>
                     </div>
                     <div class="overflow-x-auto">
                         <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
