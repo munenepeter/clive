@@ -19,6 +19,7 @@ require 'Core/Mantle/Auth.php';
 require 'Core/Database/Connection.php';
 require 'Core/Database/QueryBuilder.php';
 require 'Controllers/UserController.php';
+require 'Controllers/ClientController.php';
 require 'Controllers/PagesController.php';
 require 'Controllers/AuthController.php';
 
