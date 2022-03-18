@@ -1,5 +1,8 @@
 <?php
-namespace Clive\Core\Mantle;
+namespace Clive\Core\Mantle\Mail;
+
+use Clive\Core\Mantle\Logger;
+use Clive\Core\Mantle\Mail\Template;
 
 class Mail{
 
@@ -8,8 +11,8 @@ class Mail{
     public static $subject;
 
 
-    public static function message(){
-        //
+    public static function message($values){
+        Template::use('welcome-user', $values);
     }
 
     public static function send($msg){ 
