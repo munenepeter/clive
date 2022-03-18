@@ -16,6 +16,7 @@ class ClientController {
     }
     public function create() {
         //
+        echo  "I'm here";
     }
     public function update() {
         //
