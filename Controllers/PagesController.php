@@ -3,7 +3,6 @@
 namespace Clive\Controllers;
 
 use Clive\Models\User;
-use Clive\Core\Mantle\Session;
 use Clive\Core\Mantle\Paginator;
 
 class PagesController {
