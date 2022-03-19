@@ -36,15 +36,35 @@ include_once 'sections/dash-nav.view.php'; ?>
                                 <div class="md:text-base text-gray-800 flex items-center gap-2">
                                     <div x-data="{ open: false }">
                                         <a @click.prevent="open = true" href="viewuser?user_id<?= "$user->user_id&uname=$user->username" ?>">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-blue-600 text-blue-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                        </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-blue-600 text-blue-400 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
                                         </a>
                                         <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
                                             <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
-                                                <h2 class="text-2xl text-blue-500">View a User</h2>
-                                                <p class="mt-6">View the details of the user with an ID of <?= $user->user_id; ?> </p>
+
+
+                                                <!--Main Col-->
+                                                <div id="profile" class="w-full  rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+
+
+                                                    <div class="p-4 md:p-12 text-center lg:text-left">
+                                                        <!-- Image for mobile view-->
+                                                        <div class="block  rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('https://ui-avatars.com/api/?name=<?=" $user->first_name + $user->last_name"; ?>')"></div>
+                                                         <div class="text-center">
+                                                        <h1 class="text-3xl font-bold pt-8 lg:pt-0"><?=" $user->first_name $user->last_name"; ?> </h1>
+                                                        <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-teal-500 opacity-25"></div>
+                                                        <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Role: <?=ucfirst($user->role); ?></p>
+                                                        <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Username: <?=ucfirst($user->username); ?></p>
+                                                        <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">Email: <?= $user->email; ?></p>
+                                                        <p class="pt-8 text-sm">Inspire and Develop the Builders of Tomorrow</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                           
                                                 <div class="flex justify-center mt-8">
                                                     <button class="bg-blue-700 text-white px-4 py-2 rounded no-outline focus:shadow-outline select-none" @click="open = false">Close</button>
                                                 </div>
