@@ -17,6 +17,9 @@ class Auth {
         if (empty($user)) {
 
             array_push(Request::$errors, "There is no account with {$email} email");
+
+            Logger::log("ERROR: There is no account with {$email} email");
+
             view('login', ['e' => Request::$errors]);
             return;
 
@@ -32,6 +35,8 @@ class Auth {
 
             array_push(Request::$errors, "Wrong credentials, Please try again!");
 
+            Logger::log("ERROR: Wrong credentials for {$email}, $password");
+            
             view('login', ['e' => Request::$errors]);
             
             return;
