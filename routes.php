@@ -10,7 +10,7 @@ $router->get('users', 'PagesController@users');
 $router->get('clients', 'ClientController@index');
 $router->get('clients/create', 'ClientController@create');
 //User
-$router->get('adduser', 'UserController@adduser');
+$router->get('users/adduser', 'UserController@adduser');
 //Auth 
 $router->get('profile', 'AuthController@profile');
 $router->get('logout', 'AuthController@logout');
@@ -18,4 +18,4 @@ $router->get('logout', 'AuthController@logout');
 
 //Post requests
 $router->post('login', 'AuthController@login');
-$router->post('adduser', 'UserController@create');
+$router->post('users/adduser', 'UserController@create');

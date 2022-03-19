@@ -3,10 +3,9 @@
 namespace Clive\Controllers;
 
 use Clive\Models\User;
-use Clive\Core\Mantle\Mail;
+use Clive\Core\Mantle\Mail\Mail;
 use Clive\Core\Mantle\Logger;
-use Clive\Core\Mantle\Request;
-use Clive\Core\Mantle\Session;
+
 
 
 class UserController {
@@ -33,15 +32,15 @@ class UserController {
             'role' => $role
         ]);
 
-        Mail::$subject = "Welcome to Clive @{$username}";
+        Mail::$subject = "Welcome to Clive {$username}";
         Mail::$to = $email;
 
         $mesage = <<<TEXT
-        <h1>Welcome to Clive @{$username}, </h1>
+        <h1>   Hi {$username}, Welcome to Clive</h1>
         <p>In order for you to continue please <a href="{$_SERVER['SERVER_NAME']}/login" target="_blank" rel="noopener noreferrer">log in</a> with
         </p>
         <br>
-        <p>Username : {$username}</p>
+        <p>Username : {$email}</p>
         <p>Password : {$pass}</p>
         <br>
         <br>
@@ -51,11 +50,18 @@ class UserController {
         <p>Kind Regards,</p>
         <p>The Clive Team,</p>
         <p>www.clive.com</p>
+        <hr>
+        </hr>
+        <p
+            style="max-width:100%; text-align:center; font-family:Roboto; padding-bottom:10px; word-wrap: normal;; padding-top: 0px; font-size:10px">
+            You are receiving this email because someone recently created a new Clive account. If this
+            was not you, please ignore this email.
+        </p>
 TEXT;
 
         Mail::send($mesage);
 
-        return redirect('users');
+        return redirect('/users');
     }
     //redirect to the add user page
     public function adduser() {
