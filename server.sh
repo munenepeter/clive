@@ -1,5 +1,9 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-echo 90
+echo "Making a development server"
+
+chrome 127.0.0.1:8080
+
+php -S 127.0.0.1:8080
 
 #Will fix the issue later
