@@ -78,10 +78,10 @@ include_once 'sections/dash-nav.view.php'; ?>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                             </svg>
                                         </a>
-                                        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
+                                        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-lg" style="background-color: rgba(0,0,0,.5);" x-show="open">
                                             <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
                                                 <h2 class="text-2xl text-green-500">Editing <?= " $user->first_name"; ?></h2>
-                                                <form class="mt-2 w-72">
+                                                <form class="mt-2 max-w-md">
                                                     <div class="flex space-x-4">
                                                         <div class="mb-6">
                                                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 ">Firstname</label>
@@ -106,10 +106,20 @@ include_once 'sections/dash-nav.view.php'; ?>
                                                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Role</label>
 
                                                         <div class="relative">
-                                                            <select class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 required ">
-                                                                <option>Select dropdown</option>
-                                                                <option>With options</option>
+                                                            <select class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                <option class="text-gray-900 text-sm rounded-lg"><?= " $user->role"; ?></option>
+                                                                <option class="text-gray-900 text-sm rounded-lg">
+                                                           
+                                                                    Admin
+                                                                </option>
+                                                                <option class="text-gray-900 text-sm rounded-lg">User</option>
+                                                                <option class="text-gray-900 text-sm rounded-lg">Guest</option>
                                                             </select>
+                                                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                                                </svg>
+                                                            </div>
                                                         </div>
 
                                                     </div>
