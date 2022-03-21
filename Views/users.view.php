@@ -78,10 +78,10 @@ include_once 'sections/dash-nav.view.php'; ?>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                             </svg>
                                         </a>
-                                        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-lg" style="background-color: rgba(0,0,0,.5);" x-show="open">
-                                            <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
+                                        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);" x-show="open">
+                                            <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-gray-50  mx-2 md:mx-0" @click.away="open = false">
                                                 <h2 class="text-2xl text-green-500">Editing <?= " $user->first_name"; ?></h2>
-                                                <form class="mt-2 max-w-md">
+                                                <form class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                     <div class="flex space-x-4">
                                                         <div class="mb-6">
                                                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 ">Firstname</label>
@@ -109,7 +109,7 @@ include_once 'sections/dash-nav.view.php'; ?>
                                                             <select class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                                                                 <option class="text-gray-900 text-sm rounded-lg"><?= " $user->role"; ?></option>
                                                                 <option class="text-gray-900 text-sm rounded-lg">
-                                                           
+
                                                                     Admin
                                                                 </option>
                                                                 <option class="text-gray-900 text-sm rounded-lg">User</option>
@@ -121,13 +121,13 @@ include_once 'sections/dash-nav.view.php'; ?>
                                                                 </svg>
                                                             </div>
                                                         </div>
-
                                                     </div>
-                                                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                                                 </form>
-                                                <div class="flex justify-center mt-8">
-                                                    <button class="bg-green-700 text-white px-4 py-2 rounded no-outline focus:shadow-outline select-none" @click="open = false">Close</button>
-                                                </div>
+                                                
+                                                <div class="bg-gray-50  sm:px-6 sm:flex sm:flex-row-reverse">
+                                                        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
+                                                        <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
