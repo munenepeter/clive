@@ -31,18 +31,21 @@ class Router {
 
 
 
+        //check if the passed argument is callable
+        // if (!array_key_exists($uri, $this->routes[$requestType]))
+        //     throw new \Exception("Oops, Seems you're lost, There is no such page! <b>/{$uri}</b>", 404);
+        // exit;
+
         if (!is_callable($this->routes[$requestType][$uri])) {
 
             if (array_key_exists($uri, $this->routes[$requestType])) {
-
+                //check if the route exists
                 return $this->callAction(
                     ...explode('@', $this->routes[$requestType][$uri])
                 );
             }
 
-            throw new \Exception("There are no defined routes for this URI <b>/{$uri}</b>", 501);
-
-
+            throw new \Exception("Oops, Seems you're lost, There is no such page! <b>/{$uri}</b>", 404);
             exit;
         }
 
