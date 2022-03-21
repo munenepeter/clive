@@ -18,7 +18,7 @@ class PagesController {
     }
     public function users() {  
         if (!auth()) {
-            return view('login');
+            return redirect('login');
         }
         return view('users',[
             'allusers' => User::all(), 
@@ -27,7 +27,7 @@ class PagesController {
     }
     public function dashboard() {
         if (!auth()) {
-            return view('login');
+            return redirect('login');
         }
         return view('dashboard', [
             'allusers' => User::all(), 
