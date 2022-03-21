@@ -1,6 +1,6 @@
 <?php
 
-use Models\User;
+
 //get routes
 
 $router->get('', function(){
