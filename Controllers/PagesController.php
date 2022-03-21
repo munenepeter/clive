@@ -17,7 +17,9 @@ class PagesController {
         return view('news');
     }
     public function users() {  
-
+        if (!auth()) {
+            return view('login');
+        }
         return view('users',[
             'allusers' => User::all(), 
             'users' => Paginator::paginate(User::all(),5)
@@ -25,7 +27,7 @@ class PagesController {
     }
     public function dashboard() {
         if (!auth()) {
-            return view('index');
+            return view('login');
         }
         return view('dashboard', [
             'allusers' => User::all(), 
