@@ -43,7 +43,7 @@ include_once 'sections/dash-nav.view.php'; ?>
                                         </a>
                                         <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
                                             <div class="text-left bg-gray-50 h-auto p-2 md:max-w-xl md:p-4 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
-                                         
+
                                                 <div class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                     <div class="bg-cover h-32" style="background-image: url('https://images.unsplash.com/photo-1522093537031-3ee69e6b1746?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a634781c01d2dd529412c2d1e2224ec0&auto=format&fit=crop&w=2098&q=80');"></div>
                                                     <div class="border-b px-4 pb-6 my-2">
@@ -158,12 +158,32 @@ include_once 'sections/dash-nav.view.php'; ?>
                                                 </svg>
                                             </a>
                                             <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
-                                                <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
-                                                    <h2 class="text-2xl text-red-500">Deleting a User</h2>
-                                                    <p class="mt-6">Now will be attemptin gto delete user wit an ID of <?= $user->user_id; ?> </p>
-                                                    <div class="flex justify-center mt-8">
-                                                        <button class="bg-red-700 text-white px-4 py-2 rounded no-outline focus:shadow-outline select-none" @click="open = false">Close</button>
+                                                <div class="text-left bg-gray-50 h-auto p-2 md:max-w-xl md:p-2 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
+                                                    <div class="border bg-white p-4 my-2 max-w-md rounded-lg">
+                                                        <div class="sm:flex sm:items-start">
+                                                            <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                                                                <!-- Heroicon name: outline/exclamation -->
+                                                                <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                                </svg>
+                                                            </div>
+                                                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                                                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Delete <?= ucfirst($user->username); ?></h3>
+                                                                <div class="mt-2">
+                                                                    <p class="text-sm text-gray-500">Are you sure you want to delete this user (<span class="font-medium "><?= ucfirst($user->username); ?></span>)? All of <span class="font-medium "><?= ucfirst("$user->username's"); ?></span> data will be permanently removed. This action cannot be undone!</p>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                                                            <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">Delete</button>
+                                                            <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                        </div>
                                                     </div>
+
+
+
+
                                                 </div>
                                             </div>
                                         </div>
