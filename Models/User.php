@@ -4,6 +4,4 @@
 
  class User extends Model{
 
-
-
  }
