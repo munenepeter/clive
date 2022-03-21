@@ -51,20 +51,19 @@ include_once 'sections/dash-nav.view.php'; ?>
 
                                                     <div class="p-4 md:p-12 text-center lg:text-left">
                                                         <!-- Image for mobile view-->
-                                                        <div class="block  rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('https://ui-avatars.com/api/?name=<?=" $user->first_name + $user->last_name"; ?>')"></div>
-                                                         <div class="text-center">
-                                                        <h1 class="text-3xl font-bold pt-8 lg:pt-0"><?=" $user->first_name $user->last_name"; ?> </h1>
-                                                        <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-teal-500 opacity-25"></div>
-                                                        <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Role: <?=ucfirst($user->role); ?></p>
-                                                        <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Username: <?=ucfirst($user->username); ?></p>
-                                                        <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">Email: <?= $user->email; ?></p>
-                                                        <p class="pt-8 text-sm">Inspire and Develop the Builders of Tomorrow</p>
+                                                        <div class="block  rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('https://ui-avatars.com/api/?name=<?= " $user->first_name + $user->last_name"; ?>')"></div>
+                                                        <div class="text-center">
+                                                            <h1 class="text-3xl font-bold pt-8 lg:pt-0"><?= " $user->first_name $user->last_name"; ?> </h1>
+                                                            <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-teal-500 opacity-25"></div>
+                                                            <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Role: <?= ucfirst($user->role); ?></p>
+                                                            <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Username: <?= ucfirst($user->username); ?></p>
+                                                            <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">Email: <?= $user->email; ?></p>
                                                         </div>
                                                     </div>
 
                                                 </div>
 
-                                           
+
                                                 <div class="flex justify-center mt-8">
                                                     <button class="bg-blue-700 text-white px-4 py-2 rounded no-outline focus:shadow-outline select-none" @click="open = false">Close</button>
                                                 </div>
@@ -81,8 +80,41 @@ include_once 'sections/dash-nav.view.php'; ?>
                                         </a>
                                         <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
                                             <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
-                                                <h2 class="text-2xl text-green-500">Editing a User</h2>
-                                                <p class="mt-6">Now will be attemptin gto delete user wit an ID of <?= $user->user_id; ?> </p>
+                                                <h2 class="text-2xl text-green-500">Editing <?= " $user->first_name"; ?></h2>
+                                                <form class="mt-2 w-72">
+                                                    <div class="flex space-x-4">
+                                                        <div class="mb-6">
+                                                            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 ">Firstname</label>
+                                                            <input type="first_name" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $user->first_name"; ?>" required>
+                                                        </div>
+                                                        <div class="mb-6">
+                                                            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 ">Last Name</label>
+                                                            <input type="last_name" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $user->last_name"; ?>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex space-x-4">
+                                                        <div class="mb-6">
+                                                            <label for="username" class="block mb-2 text-sm font-medium text-gray-900 ">Username</label>
+                                                            <input type="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $user->username"; ?>" required>
+                                                        </div>
+                                                        <div class="mb-6">
+                                                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
+                                                            <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $user->email"; ?>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-6">
+                                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Role</label>
+
+                                                        <div class="relative">
+                                                            <select class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 required ">
+                                                                <option>Select dropdown</option>
+                                                                <option>With options</option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                                                </form>
                                                 <div class="flex justify-center mt-8">
                                                     <button class="bg-green-700 text-white px-4 py-2 rounded no-outline focus:shadow-outline select-none" @click="open = false">Close</button>
                                                 </div>

@@ -27,7 +27,10 @@ class PagesController {
         if (!auth()) {
             return view('index');
         }
-        return view('dashboard', ['users' => User::all()]);
+        return view('dashboard', [
+            'allusers' => User::all(), 
+            'users' => Paginator::paginate(User::all(),5)
+        ]);
     }
     public function login() {
         if (auth()) {
