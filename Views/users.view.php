@@ -42,30 +42,29 @@ include_once 'sections/dash-nav.view.php'; ?>
                                             </svg>
                                         </a>
                                         <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center" style="background-color: rgba(0,0,0,.5);" x-show="open">
-                                            <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
+                                            <div class="text-left bg-white h-auto p-2 md:max-w-xl md:p-4 lg:p-4 shadow-xl rounded mx-2 md:mx-0" @click.away="open = false">
 
-
-                                                <!--Main Col-->
-                                                <div id="profile" class="w-full  rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
-
-
-                                                    <div class="p-4 md:p-12 text-center lg:text-left">
-                                                        <!-- Image for mobile view-->
-                                                        <div class="block  rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('https://ui-avatars.com/api/?name=<?= " $user->first_name + $user->last_name"; ?>')"></div>
-                                                        <div class="text-center">
-                                                            <h1 class="text-3xl font-bold pt-8 lg:pt-0"><?= " $user->first_name $user->last_name"; ?> </h1>
-                                                            <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-teal-500 opacity-25"></div>
-                                                            <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Role: <?= ucfirst($user->role); ?></p>
-                                                            <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Username: <?= ucfirst($user->username); ?></p>
-                                                            <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">Email: <?= $user->email; ?></p>
+                                                <div class="border bg-white p-4 my-2 max-w-md rounded-lg">
+                                                    <div class="bg-cover h-32" style="background-image: url('https://images.unsplash.com/photo-1522093537031-3ee69e6b1746?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a634781c01d2dd529412c2d1e2224ec0&auto=format&fit=crop&w=2098&q=80');"></div>
+                                                    <div class="border-b px-4 pb-6 my-2">
+                                                        <div class="text-center sm:text-left sm:flex mb-4">
+                                                            <img class="h-32 w-32 rounded-full border-4 border-white -mt-16 mr-4" src="https://randomuser.me/api/portraits/women/21.jpg" alt="">
+                                                            <div class="py-2">
+                                                                <h3 class="font-bold text-2xl mb-1"><?= " $user->first_name $user->last_name"; ?></h3>
+                                                                <div class="inline-flex text-grey-dark sm:flex items-center space-x-2">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                    </svg>
+                                                                    <span><?= ucfirst($user->role); ?></span>
+                                                                </div>
+                                                            </div>
                                                         </div>
+
                                                     </div>
+                                                    <div class="sm:px-6 sm:flex sm:flex-row-reverse">
 
-                                                </div>
-
-
-                                                <div class="flex justify-center mt-8">
-                                                    <button class="bg-blue-700 text-white px-4 py-2 rounded no-outline focus:shadow-outline select-none" @click="open = false">Close</button>
+                                                    <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,11 +122,11 @@ include_once 'sections/dash-nav.view.php'; ?>
                                                         </div>
                                                     </div>
                                                 </form>
-                                                
+
                                                 <div class="bg-gray-50  sm:px-6 sm:flex sm:flex-row-reverse">
-                                                        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
-                                                        <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
-                                                    </div>
+                                                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
+                                                    <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
