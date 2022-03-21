@@ -1,7 +1,8 @@
 <?php
+
 namespace Clive\Core\Mantle;
 
-class Router{
+class Router {
     public $routes = [
 
         'GET' => [],
@@ -28,14 +29,24 @@ class Router{
 
     public function direct($uri, $requestType) {
 
-        if (array_key_exists($uri, $this->routes[$requestType])) {
 
-            return $this->callAction(
-                ...explode('@', $this->routes[$requestType][$uri])
-            );
+
+        if (!is_callable($this->routes[$requestType][$uri])) {
+
+            if (array_key_exists($uri, $this->routes[$requestType])) {
+
+                return $this->callAction(
+                    ...explode('@', $this->routes[$requestType][$uri])
+                );
+            }
+
+            throw new \Exception("There are no defined routes for this URI <b>/{$uri}</b>", 501);
+
+
+            exit;
         }
 
-        throw new \Exception("There are no defined routes for this URI <b>/{$uri}</b>", 501);
+        $this->routes[$requestType][$uri]();
     }
     protected function callAction($controller, $action) {
 

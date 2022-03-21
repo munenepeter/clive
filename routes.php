@@ -1,7 +1,12 @@
 <?php
 //get routes
-$router->get('', 'PagesController@index');
-$router->get('index', 'PagesController@index');
+
+$router->get('', function(){
+    echo "I am here";
+});
+
+// $router->get('', 'PagesController@index');
+// $router->get('index', 'PagesController@index');
 $router->get('dashboard', 'PagesController@dashboard');
 $router->get('login', 'PagesController@login');
 $router->get('news', 'PagesController@news');
