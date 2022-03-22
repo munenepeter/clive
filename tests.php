@@ -27,17 +27,18 @@ class Router {
         $this->routes['POST'][$uri] = $controller;
     }
     public static function group($directive, $callback){
-        
-        if(is_callable($callback)){
-           echo "Something's wrong"; 
-        }
-        $callback();
-        var_dump($callback);
+        // echo "it is NOT callable".PHP_EOL; 
+        // if(!is_callable($callback)){
+           
+        // }
+        // echo "it is callable".PHP_EOL; 
+        // $callback();
+        //var_dump($callback);
         
     }
     public function direct($uri, $requestType) {
 
-        echo "I'm here!!";
+        echo "We called the router".PHP_EOL;
         var_dump($this->routes[$requestType][$uri]);
         exit;
         //check if the passed argument is callable
@@ -79,10 +80,11 @@ class Router {
 
 
 
-$router = new Router;
+Router::load('routes.php')->direct("", "GET");
 
-Router::group('auth', function () use ($router){
-    $router->get('', 'PagesController@index');
+Router::group('auth', function () use ($router) {
+
+    $router->get('', 'TestsController@index');
 });
 
 
