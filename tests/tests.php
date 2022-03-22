@@ -80,12 +80,12 @@ class Router {
 
 
 
-Router::load('routes.test.php')->direct("", "GET");
+// Router::load('routes.test.php')->direct("", "GET");
 
-Router::group('auth', function () use ($router) {
+// Router::group('auth', function () use ($router) {
 
-    $router->get('', 'TestsController@index');
-});
+//     $router->get('', 'TestsController@index');
+// });
 
 
 //$router->get('', 'PagesController@index');
