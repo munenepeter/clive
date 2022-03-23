@@ -16,15 +16,7 @@ class PagesController {
     public function news() {      
         return view('news');
     }
-    public function users() {  
-        if (!auth()) {
-            return redirect('login');
-        }
-        return view('users',[
-            'allusers' => User::all(), 
-            'users' => Paginator::paginate(User::all(),5)
-        ]);
-    }
+   
     public function dashboard() {
         if (!auth()) {
             return redirect('login');

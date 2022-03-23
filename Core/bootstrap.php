@@ -23,6 +23,7 @@ require 'Controllers/ClientController.php';
 require 'Controllers/PolicyController.php';
 require 'Controllers/PagesController.php';
 require 'Controllers/AuthController.php';
+require 'Controllers/InsurerController.php';
 require 'Controllers/DatabaseController.php';
 
 

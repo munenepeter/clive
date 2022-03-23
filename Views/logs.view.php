@@ -9,7 +9,12 @@ include_once 'sections/sidebar.view.php'; ?>
     <?php
 
     echo "<pre>";
-    echo file_get_contents("Core/Mantle/Logs/logs.log");
+    $log = "Core/Mantle/Logs/logs.log";
+    if(!file_exists($log)){
+        echo "File Does not exist, call the developer!";
+        exit;
+    }
+    echo file_get_contents($log);
     echo "</pre>";
 
 

@@ -14,7 +14,7 @@ use Clive\Core\Mantle\Session; ?>
             <li><a href="/users" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Users</a></li>
             <li><a href="/clients" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Clients</a></li>
             <li><a href="/policies" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Policies</a></li>
-            <li><a href="#" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Insurers</a></li>
+            <li><a href="/insurers" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Insurers</a></li>
 
         </ul>
         <ul class="flex items-center gap-6">

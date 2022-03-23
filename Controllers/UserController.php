@@ -3,13 +3,22 @@
 namespace Clive\Controllers;
 
 use Clive\Models\User;
-use Clive\Core\Mantle\Mail\Mail;
 use Clive\Core\Mantle\Logger;
+use Clive\Core\Mantle\Mail\Mail;
+use Clive\Core\Mantle\Paginator;
 
 
 
 class UserController {
-
+    public function users() {  
+        if (!auth()) {
+            return redirect('login');
+        }
+        return view('users',[
+            'allusers' => User::all(), 
+            'users' => Paginator::paginate(User::all(),5)
+        ]);
+    }
     public function create() {
 
         //first_name, last_name, username, email, password, role
