@@ -3,9 +3,9 @@
 
 //get routes
 
-$router->get('', function(){
-   echo "Call backs didn't work!!";
-});
+// $router->get('', function(){
+//    echo "Call backs didn't work!!";
+// });
 
 $router->get('', 'PagesController@index');
 $router->get('index', 'PagesController@index');
@@ -13,6 +13,7 @@ $router->get('dashboard', 'PagesController@dashboard');
 $router->get('login', 'PagesController@login');
 $router->get('news', 'PagesController@news');
 $router->get('users', 'PagesController@users');
+$router->get('database', 'DatabaseController@index');
 
 $router->get('clients', 'ClientController@index');
 $router->get('clients/create', 'ClientController@create');

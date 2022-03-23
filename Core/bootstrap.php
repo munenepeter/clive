@@ -22,6 +22,7 @@ require 'Controllers/UserController.php';
 require 'Controllers/ClientController.php';
 require 'Controllers/PagesController.php';
 require 'Controllers/AuthController.php';
+require 'Controllers/DatabaseController.php';
 
 
 

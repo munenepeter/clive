@@ -14,6 +14,10 @@ use Clive\Core\Mantle\Session;
  */
 function view($filename, $data = []) {
     extract($data);
+    if(!file_exists("views/{$filename}.view.php")){
+      echo "<center>Failed to load {$filename}'s view; Does the file exist? </center>";
+      exit;
+    }
     return require "views/{$filename}.view.php";
 }
 /**
