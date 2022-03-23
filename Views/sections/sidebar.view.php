@@ -48,20 +48,24 @@
                             </a>
                         </li>
                         <li class="mt-3">
-                            <a href="#" class="">
-                                Client History
+                            <a href="clients/invoices" class="">
+                                Invoices
+                            </a>
+                        </li>
+                       
+                        <?php if(isAdmin()):?>
+
+                        <li class="mt-3">
+                            <a href="database" class="">
+                                Interact with the Database
                             </a>
                         </li>
                         <li class="mt-3">
-                            <a href="#" class="">
-                                Settings
+                            <a href="system_logs" class="">
+                                System Logs
                             </a>
                         </li>
-                        <li class="mt-3">
-                            <a href="#" class="">
-                                Help
-                            </a>
-                        </li>
+                        <?php endif;?>
                     </ul>
                 </div>
             </div>
