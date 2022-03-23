@@ -22,12 +22,11 @@
 			<p class="px-6 my-4">As a leading insurance Agent, Clive Insurance Agency believes that being accessible to the client is of critical importance. We strive to ensure your peace-of-mind through insurance that takes into cognisance your protection with seamless interaction at a time when it is most needed.</p>
 		</div>
 		<div class="grid grid-cols-5 p-4 md:p-8">
-			<div class="flex justify-center px-4 col-span-full md:col-span-1 md:flex-col md:justify-start md:items-start">
-				<button class="p-2 border-b-2 md:border-l-2 md:border-b-0 md:py-3  border-blue-400 text-blue-400 font-bold">Commercial</button>
-				<button class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-blue-300 text-blue-600 hover:border-blue-400 hover:text-blue-400 hover:font-bold">Motor</button>
-				<button class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-blue-300 text-blue-600 hover:border-blue-400 hover:text-blue-400 hover:font-bold">Home</button>
-				<button class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-blue-300 text-blue-600 hover:border-blue-400 hover:text-blue-400 hover:font-bold">School</button>
-				<button class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-blue-300 text-blue-600 hover:border-blue-400 hover:text-blue-400 hover:font-bold">Business</button>
+			<div class="mb-4 flex justify-center px-4 col-span-full md:col-span-1 md:flex-col md:justify-start md:items-start">
+				<button class="p-2 border-b-2 md:border-l-2 md:border-b-0 md:py-3  border-blue-400 text-blue-400 font-bold">Kenya Orient</button>
+				<button class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-blue-300 text-blue-600 hover:border-blue-400 hover:text-blue-400 hover:font-bold">Monarch</button>
+				<button class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-blue-300 text-blue-600 hover:border-blue-400 hover:text-blue-400 hover:font-bold">Canon</button>
+				<button class="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-blue-300 text-blue-600 hover:border-blue-400 hover:text-blue-400 hover:font-bold">Britam</button>
 			</div>
 			<div class="grid gap-12 py-4 text-center sm:grid-cols-2 col-span-full md:col-span-4 md:text-left">
 				<div class="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start">

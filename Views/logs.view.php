@@ -8,7 +8,7 @@ include_once 'sections/sidebar.view.php'; ?>
 <div class="m-2 p-2 bg-white overflow-auto border">
     <?php
 
-    echo "<pre class='language-sql'>";
+    echo "<pre>";
     echo file_get_contents("Core/Mantle/Logs/logs.log");
     echo "</pre>";
 
@@ -18,7 +18,7 @@ include_once 'sections/sidebar.view.php'; ?>
 </div>
 </div>
 </div>
- 
+
 </body>
 
 </html>

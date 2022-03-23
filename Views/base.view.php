@@ -14,7 +14,7 @@
     <title>Clive  <?= (Request::uri() == "") ? "" : "| ". ucwords(Request::uri()); ?></title>
 </head>
 
-<body>
+<body class=" bg-gray-50">
 
 
 

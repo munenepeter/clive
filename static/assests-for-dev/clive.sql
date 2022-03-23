@@ -110,6 +110,7 @@ CREATE TABLE `clients` (
   `full_names` varchar(255),
   `email` varchar(255),
   `national_id` varchar(255),
+  `kra_pin` varchar(255),
   `phone_number` varchar(255),
   `policy` int,
   `created_at` timestamp,
