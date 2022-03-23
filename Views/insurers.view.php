@@ -24,7 +24,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
-                                            <p class="text-xs text-gray-600 tracking-wide">Clients</p>
+                                            <p class="text-xs text-gray-600 tracking-wide">Insurers</p>
                                             <h3 class="mt-1 text-lg text-blue-500 font-bold">818</h3>
                                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                                         </div>
@@ -38,7 +38,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
-                                            <p class="text-xs text-gray-600 tracking-wide">On-going Policies</p>
+                                            <p class="text-xs text-gray-600 tracking-wide">Policies</p>
                                             <h3 class="mt-1 text-lg text-green-500 font-bold">18</h3>
                                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                                         </div>
@@ -52,7 +52,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
-                                            <p class="text-xs text-gray-600 tracking-wide">Expired Policies</p>
+                                            <p class="text-xs text-gray-600 tracking-wide">Clients</p>
                                             <h3 class="mt-1 text-lg text-yellow-500 font-bold">23</h3>
                                             <!-- <span class="mt-4 text-xs text-gray-600">Last Updated 4 Mins ago</span> -->
                                         </div>
@@ -71,7 +71,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                     <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
                                         <div class="flex justify-between items-center -mb-2">
                                             <h2 class=" font-semibold text-gray-600 font-bold tracking-wide">Clients</h2>
-                                            <a href="/clients/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add a Client</a>
+                                            <a href="/insurers/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add an Insurer</a>
                                         </div>
                                         <div class="overflow-x-auto">
                                             <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">

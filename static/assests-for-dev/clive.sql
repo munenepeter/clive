@@ -95,7 +95,7 @@ Ref: blogs.owner > users.id
 
 
 CREATE TABLE `users` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `full_names` varchar(255),
   `username` varchar(255),
   `email` varchar(255),
@@ -106,7 +106,7 @@ CREATE TABLE `users` (
 );
 
 CREATE TABLE `clients` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `full_names` varchar(255),
   `email` varchar(255),
   `national_id` varchar(255),
@@ -118,7 +118,7 @@ CREATE TABLE `clients` (
 );
 
 CREATE TABLE `policies` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `policy_no` varchar(255),
   `policy_type` varchar(255),
   `policy_price` varchar(255),
@@ -130,17 +130,16 @@ CREATE TABLE `policies` (
 );
 
 CREATE TABLE `insurers` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `name` varchar(255),
   `email` varchar(255),
   `business_no` varchar(255),
-  `policies` text,
   `created_at` timestamp,
   `updated_at` timestamp
 );
 
 CREATE TABLE `cars` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `model` varchar(255),
   `regno` varchar(255),
   `make` varchar(255),
@@ -152,7 +151,7 @@ CREATE TABLE `cars` (
 );
 
 CREATE TABLE `invoices` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `amount` varchar(255),
   `owner` int,
   `created_at` timestamp,
@@ -160,7 +159,7 @@ CREATE TABLE `invoices` (
 );
 
 CREATE TABLE `blogs` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `title` mediumtext,
   `slug` varchar(255),
   `body` text,

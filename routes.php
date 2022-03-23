@@ -16,7 +16,8 @@ $router->get('news', 'PagesController@news');
 $router->get('database', 'DatabaseController@index');
 //Insurers
 $router->get('insurers', 'InsurerController@index');
-$router->get('insurers/create', 'InsurerController@create');
+$router->get('insurers/create', 'InsurerController@addinsurer');
+$router->post('insurers/create', 'InsurerController@create');
 
 //Clients
 $router->get('clients', 'ClientController@index');

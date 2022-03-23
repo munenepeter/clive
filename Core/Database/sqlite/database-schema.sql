@@ -30,3 +30,14 @@ SELECT * from users;
 --@block
 
 select first_name, last_name, email, username, password, email  from users where username = "admin"
+
+--@block
+
+CREATE TABLE `insurers` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `name` varchar(255),
+  `email` varchar(255),
+  `business_no` varchar(255),
+  `created_at` timestamp,
+  `updated_at` timestamp
+);
