@@ -26,7 +26,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                         <div class="flex flex-col">
                                             <p class="text-xs text-gray-600 tracking-wide">Clients</p>
                                             <h3 class="mt-1 text-lg text-blue-500 font-bold">818</h3>
-                                            <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span>
+                                            <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                                         </div>
                                         <div class="bg-blue-500 p-2 md:p-1 xl:p-2 rounded-md">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-auto h-8 md:h-6 xl:h-8 object-cover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,7 +40,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                         <div class="flex flex-col">
                                             <p class="text-xs text-gray-600 tracking-wide">On-going Policies</p>
                                             <h3 class="mt-1 text-lg text-green-500 font-bold">18</h3>
-                                            <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span>
+                                            <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                                         </div>
                                         <div class="bg-green-500 p-2 md:p-1 xl:p-2 rounded-md">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-auto h-8 md:h-6 xl:h-8 object-cover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,7 +54,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                         <div class="flex flex-col">
                                             <p class="text-xs text-gray-600 tracking-wide">Expired Policies</p>
                                             <h3 class="mt-1 text-lg text-yellow-500 font-bold">23</h3>
-                                            <span class="mt-4 text-xs text-gray-600">Last Updated 4 Mins ago</span>
+                                            <!-- <span class="mt-4 text-xs text-gray-600">Last Updated 4 Mins ago</span> -->
                                         </div>
                                         <div class="bg-yellow-500 p-2 md:p-1 xl:p-2 rounded-md">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500 w-auto h-8 md:h-6 xl:h-8 object-cover" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -13,36 +13,7 @@
         }
         ?>
     </div>
-    <div class="m-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 px-4 xl:p-0 gap-6 xl:gap-6">
-        <div class="bg-white p-6 rounded-xl shadow border border-gray-50">
-            <div class="flex justify-between items-start">
-                <div class="flex flex-col">
-                    <p class="text-md text-gray-600 tracking-wide">Active Users</p>
-                    <h3 class="mt-1 text-lg text-blue-500 font-bold">3</h3>
-                    <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span>
-                </div>
-                <div class="bg-blue-500 p-2 md:p-2 xl:p-4 rounded-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-auto h-8 md:h-6 xl:h-8 object-cover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white p-6 shadow rounded-xl border border-gray-50">
-            <div class="flex justify-between items-start">
-                <div class="flex flex-col">
-                    <p class="text-md text-gray-600 tracking-wide">Inactive Users</p>
-                    <h3 class="mt-1 text-lg text-red-500 font-bold">1</h3>
-                    <span class="mt-4 text-xs text-gray-500">Last Updated 2 Hours ago</span>
-                </div>
-                <div class="bg-red-500 p-2 md:p-2 xl:p-4 rounded-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-auto h-12 md:h-6 xl:h-8 object-cover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
 
     <form method="post" class="bg-white container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid">
         <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-md ">
