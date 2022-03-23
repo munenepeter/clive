@@ -21,6 +21,7 @@ $router->get('clients/create', 'ClientController@create');
 $router->get('users/adduser', 'UserController@adduser');
 //Auth 
 $router->get('profile', 'AuthController@profile');
+$router->get('system_logs', 'PagesController@log');
 $router->get('logout', 'AuthController@logout');
 
 

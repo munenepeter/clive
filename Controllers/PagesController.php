@@ -40,6 +40,12 @@ class PagesController {
         }
         return view('login');
     }
+    public function log() {
+        if (!auth()) {
+            return view('login');
+        }
+        return view('logs');
+    }
     
     
 }

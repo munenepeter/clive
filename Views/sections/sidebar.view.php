@@ -42,11 +42,11 @@
                         More
                     </h4>
                     <ul class="mt-3 text-white">
-                        <li class="mt-3">
+                        <!-- <li class="mt-3">
                             <a href="#" class="">
                                 Client Activity
                             </a>
-                        </li>
+                        </li> -->
                         <li class="mt-3">
                             <a href="clients/invoices" class="">
                                 Invoices
@@ -61,7 +61,7 @@
                             </a>
                         </li>
                         <li class="mt-3">
-                            <a href="system_logs" class="">
+                            <a href="/system_log" class="">
                                 System Logs
                             </a>
                         </li>
