@@ -24,7 +24,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
-                                            <p class="text-xs text-gray-600 tracking-wide">Clients</p>
+                                            <p class="text-xs text-gray-600 tracking-wide">Polices</p>
                                             <h3 class="mt-1 text-lg text-blue-500 font-bold">818</h3>
                                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                                         </div>
@@ -70,8 +70,8 @@ include_once 'sections/sidebar.view.php'; ?>
                                 <div class="px-4 py-2 bg-white shadow-full rounded-lg text-gray-700">
                                     <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
                                         <div class="flex justify-between items-center -mb-2">
-                                            <h2 class=" font-semibold text-gray-600 font-bold tracking-wide">Clients</h2>
-                                            <a href="/clients/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add a Client</a>
+                                            <h2 class=" font-semibold text-gray-600 font-bold tracking-wide">Policies</h2>
+                                            <a href="/policies/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add a Policy</a>
                                         </div>
                                         <div class="overflow-x-auto">
                                             <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">

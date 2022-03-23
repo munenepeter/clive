@@ -119,7 +119,6 @@ CREATE TABLE `clients` (
 
 CREATE TABLE `policies` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `policy_name` varchar(255),
   `policy_no` varchar(255),
   `policy_type` varchar(255),
   `policy_price` varchar(255),
@@ -176,7 +175,7 @@ ALTER TABLE `policies` ADD FOREIGN KEY (`insurer`) REFERENCES `insurers` (`id`);
 
 ALTER TABLE `cars` ADD FOREIGN KEY (`policy_no`) REFERENCES `policies` (`id`);
 
-ALTER TABLE `policies` ADD FOREIGN KEY (`owner`) REFERENCES `clients` (`id`);
+ALTER TABLE `policies` ADD FOREIGN KEY (`owner`) REFERENCES `clients` (`national_id`);
 
 ALTER TABLE `invoices` ADD FOREIGN KEY (`owner`) REFERENCES `clients` (`id`);
 
