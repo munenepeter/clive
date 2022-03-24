@@ -13,8 +13,8 @@ class ClientController {
 
     public function index() {
         return view('clients', [
-            'allusers' => Client::all(),
-            'users' => Paginator::paginate(Client::all(), 5)
+            'allclients' => Client::all(),
+            'clients' => Paginator::paginate(Client::all(), 5)
         ]);
     }
     public function create() {

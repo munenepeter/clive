@@ -12,10 +12,13 @@ use Clive\Core\Mantle\Session; ?>
      
         <ul class="flex items-center space-x-4 text-sm font-semibold">
         <li><a href="/dashboard" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Dashboard</a></li>
-            <li><a href="/users" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Users</a></li>
+            
             <li><a href="/clients" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Clients</a></li>
             <li><a href="/policies" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Policies</a></li>
+            <?php if(isAdmin()):?>
             <li><a href="/insurers" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Insurers</a></li>
+            <li><a href="/users" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Manage Users</a></li>
+            <?php endif;?>
 
         </ul>
         <ul class="flex items-center gap-6">
@@ -37,7 +40,7 @@ use Clive\Core\Mantle\Session; ?>
                                     <span class="ml-2"><?= "Profile" ?></span>
                                 </a>
                             </li>
-                            <?php if(ucfirst(Session::get('user')) === "Admin"):?>
+                            <?php if(isAdmin()):?>
                              <li>
                                 <a href="/users/adduser" class="flex items-center px-3 py-3 hover:bg-blue-200">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

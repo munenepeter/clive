@@ -2,14 +2,15 @@
 
 namespace Clive\Controllers;
 
-use Clive\Models\User;
+use Clive\Models\Client;
+use Clive\Models\Insurer;
 use Clive\Core\Mantle\Paginator;
 
 class PagesController {
 
     public function index() {
         if (auth()) {
-            return view('dashboard', ['users' => User::all()]);
+            return view('dashboard', ['users' => Client::all()]);
         }
         return view('index');
     }
@@ -22,8 +23,10 @@ class PagesController {
             return redirect('login');
         }
         return view('dashboard', [
-            'allusers' => User::all(), 
-            'users' => Paginator::paginate(User::all(),5)
+            'allusers' => Insurer::all(), 
+            'users' => Paginator::paginate(Insurer::all(),5),
+            'allclients' => Client::all(), 
+            'clients' => Paginator::paginate(Client::all(),5)
         ]);
     }
     public function login() {
