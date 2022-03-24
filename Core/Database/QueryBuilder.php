@@ -93,7 +93,7 @@ class QueryBuilder {
     if (!$statement->execute()) {
       throw new \Exception("Something is up with your Select {$statement}!");
     }
-    $model = ucwords(substr($table, 0, -1));
+    $model = singularize(ucwords($table));
     return $statement->fetchAll(\PDO::FETCH_CLASS,  "Clive\\Models\\{$model}");
   }
 

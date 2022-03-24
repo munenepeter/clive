@@ -51,9 +51,15 @@ CREATE TABLE `policies` (
   `policy_no` varchar(255),
   `policy_type` varchar(255),
   `policy_price` varchar(255),
-  `status` varchar(255),
+  `policy_status` varchar(255),
   `insurer` varchar(255),
   `client_nat_id` int,
   `created_at` datetime,
   `updated_at` datetime
 );
+
+drop table policies;
+
+
+insert into policies 
+(policy_no , policy_type, policy_price, policy_status, insurer, client_nat_id, created_at, updated_at) values (:policy_no , :policy_type, :policy_price, :policy_status, :insurer, :client_nat_id, :created_at, :updated_at)

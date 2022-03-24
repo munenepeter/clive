@@ -25,7 +25,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
                                             <p class="text-xs text-gray-600 tracking-wide">Insurers</p>
-                                            <h3 class="mt-1 text-lg text-blue-500 font-bold"><?= count($allinsurers)?></h3>
+                                            <h3 class="mt-1 text-lg text-blue-500 font-bold"><?= (!empty($allinsurers)) ? count($allinsurers) : 0 ?></h3>
                                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                                         </div>
                                         <div class="bg-blue-500 p-2 md:p-1 xl:p-2 rounded-md">

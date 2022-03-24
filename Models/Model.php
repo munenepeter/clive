@@ -41,7 +41,7 @@ class Model {
        return App::get('database')->selectAll(static::tableName());
         //User::all();
     }
-    public static function where(array $data, array $condition) {
+    public static function where($data, $condition) {
      //Returns all the records in the db for a certain  model/table
     
       return  App::get('database')->selectWhere(static::tableName(), $data, $condition);

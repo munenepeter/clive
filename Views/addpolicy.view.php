@@ -20,9 +20,22 @@ include_once 'sections/dash-nav.view.php'; ?>
                 <label for="policy_no" class="text-sm">Policy Number</label>
                 <input id="policy_no" name="policy_no" type="text" placeholder="Policy Number" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
             </div>
+            
             <div class="mt-2">
                 <label for="policy_type" class="text-sm">Policy Type</label>
-                <input id="policy_type" name="policy_type" type="text" placeholder="Policy Type" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                <div class="relative">
+                    <select name="policy_type" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+
+                        <option class="text-gray-900 text-sm rounded-lg">--Policy Type--</option>
+                        <option class="text-gray-900 text-sm rounded-lg" value="Comprehensive">Comprehensive</option>
+                        <option class="text-gray-900 text-sm rounded-lg" value="Third Party">Third Party</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                    </div>
+                </div>
             </div>
             <div class="mt-2">
                 <label for="policy_price" class="text-sm">Policy Price</label>
@@ -36,12 +49,12 @@ include_once 'sections/dash-nav.view.php'; ?>
                 <label for="insurers" class="block mb-2 text-sm font-medium text-gray-900 ">Insurer</label>
 
                 <div class="relative">
-                    <select class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                    <select name="insurer" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
 
                         <option class="text-gray-900 text-sm rounded-lg">--Select Insurer --</option>
-                        <option class="text-gray-900 text-sm rounded-lg">Kenya Orient</option>
-                        <option class="text-gray-900 text-sm rounded-lg">Monarch</option>
-                        <option class="text-gray-900 text-sm rounded-lg">Cannon</option>
+                        <option class="text-gray-900 text-sm rounded-lg" value="Kenya Orient">Kenya Orient</option>
+                        <option class="text-gray-900 text-sm rounded-lg" value="Monarch">Monarch</option>
+                        <option class="text-gray-900 text-sm rounded-lg" value="Cannon">Cannon</option>
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
