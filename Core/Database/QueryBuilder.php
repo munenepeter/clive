@@ -1,4 +1,5 @@
 <?php
+
 namespace Clive\Core\Database;
 
 use Clive\Core\Mantle\Logger;
@@ -82,11 +83,11 @@ class QueryBuilder {
 
     $values =  implode(', ', $values);
     //pure madness
-    $condition[1] = sprintf("%s$condition[1]%s", '"','"');
+    $condition[1] = sprintf("%s$condition[1]%s", '"', '"');
 
     $condition =  implode(' = ', $condition);
     $statement = $this->pdo->prepare("select {$values}  from {$table} where {$condition}");
-    
+
     $sql = "select {$values}  from {$table} where {$condition}";
     Logger::log("INFO: Called(where) $sql");
 
@@ -106,10 +107,25 @@ class QueryBuilder {
 
       $statement = $this->pdo->prepare($sql);
       $statement->execute();
-
     } catch (\Exception $e) {
 
-      throw new \Exception('Something is up with your Insert!' . $e->getMessage());
+      throw new \Exception('Something is up with your Update!' . $e->getMessage());
+      die();
+    }
+  }
+  //DELETE FROM table_name WHERE condition;
+  public function delete(string $table, $where, $isValue) {
+
+    $sql = "DELETE FROM {$table} WHERE $where = $isValue";
+    Logger::log("INFO: Called (delete) $sql");
+
+    try {
+
+      $statement = $this->pdo->prepare($sql);
+      $statement->execute();
+    } catch (\Exception $e) {
+
+      throw new \Exception('Something is up with your Delete!' . $e->getMessage());
       die();
     }
   }
@@ -130,7 +146,6 @@ class QueryBuilder {
 
       $statement = $this->pdo->prepare($sql);
       $statement->execute($parameters);
-
     } catch (\Exception $e) {
 
       throw new \Exception('Something is up with your Insert!' . $e->getMessage());
@@ -138,4 +153,3 @@ class QueryBuilder {
     }
   }
 }
-
