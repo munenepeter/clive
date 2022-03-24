@@ -160,7 +160,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                             <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);" x-show="open">
                                                                                 <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-gray-50  mx-2 md:mx-0" @click.away="open = false">
                                                                                     <h2 class="text-2xl text-green-500">Editing <?= " $client->full_names"; ?></h2>
-                                                                                    <form class="border bg-white p-4 my-2 max-w-md rounded-lg">
+                                                                                    <form method="post" action="clients/update" class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                                                         <div class="flex space-x-4">
                                                                                             <div class="mb-6">
                                                                                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Full Names</label>
@@ -193,13 +193,13 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                                             </div>
                                                                                         </div>
                                                            
-                                                                
-                                                                                    </form>
-
-                                                                                    <div class="bg-gray-50  sm:px-6 sm:flex sm:flex-row-reverse">
+                                                                                        <div class="bg-gray-50  sm:px-6 sm:flex sm:flex-row-reverse">
                                                                                         <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
                                                                                         <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                                                                                     </div>
+                                                                                    </form>
+
+                                                                                    
                                                                                 </div>
                                                                             </div>
                                                                         </div>
