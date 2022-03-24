@@ -88,10 +88,6 @@ include_once 'sections/sidebar.view.php'; ?>
                                                 </thead>
                                                 <tbody class="align-baseline">
                                                     <?php if (!empty($insurers)) : ?>
-
-
-
-
                                                         <?php foreach ($insurers as $insurer) : ?>
                                                             <tr class="group cursor-pointer hover:bg-gray-50">
                                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $insurer->name; ?></td>

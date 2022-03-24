@@ -39,7 +39,7 @@ class QueryBuilder {
       throw new \Exception("Something is up with your Select {$statement}!");
     }
 
-    $model = substr_replace(ucwords($table), '', -1);
+    $model = singularize(ucwords($table));
 
     return $statement->fetchAll(\PDO::FETCH_CLASS,  "Clive\\Models\\{$model}");
   }

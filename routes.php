@@ -24,7 +24,8 @@ $router->get('clients', 'ClientController@index');
 $router->get('clients/create', 'ClientController@create');
 //policies
 $router->get('policies', 'PolicyController@index');
-$router->get('policies/create', 'PolicyController@create');
+$router->get('policies/create', 'PolicyController@addpolicy');
+$router->post('policies/create', 'PolicyController@create');
 //User
 $router->get('users', 'UserController@index');
 $router->get('users/adduser', 'UserController@adduser');
