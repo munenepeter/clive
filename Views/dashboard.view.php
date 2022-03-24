@@ -31,7 +31,7 @@ use Clive\Core\Mantle\Paginator;
                         <div class="flex flex-col">
                             <p class="text-xs text-gray-600 tracking-wide">Clients</p>
                             <h3 class="mt-1 text-lg text-blue-500 font-bold">818</h3>
-                            <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span>
+                            <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                         </div>
                         <div class="bg-blue-500 p-2 md:p-1 xl:p-2 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-auto h-8 md:h-6 xl:h-8 object-cover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,7 +45,7 @@ use Clive\Core\Mantle\Paginator;
                         <div class="flex flex-col">
                             <p class="text-xs text-gray-600 tracking-wide">On-going Policies</p>
                             <h3 class="mt-1 text-lg text-green-500 font-bold">18</h3>
-                            <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span>
+                            <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                         </div>
                         <div class="bg-green-500 p-2 md:p-1 xl:p-2 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-auto h-8 md:h-6 xl:h-8 object-cover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,7 +59,7 @@ use Clive\Core\Mantle\Paginator;
                         <div class="flex flex-col">
                             <p class="text-xs text-gray-600 tracking-wide">Expired Policies</p>
                             <h3 class="mt-1 text-lg text-yellow-500 font-bold">23</h3>
-                            <span class="mt-4 text-xs text-gray-600">Last Updated 4 Mins ago</span>
+                            <!-- <span class="mt-4 text-xs text-gray-600">Last Updated 4 Mins ago</span> -->
                         </div>
                         <div class="bg-yellow-500 p-2 md:p-1 xl:p-2 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500 w-auto h-8 md:h-6 xl:h-8 object-cover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -73,7 +73,7 @@ use Clive\Core\Mantle\Paginator;
                         <div class="flex flex-col">
                             <p class="text-xs text-gray-600 tracking-wide">Invoices</p>
                             <h3 class="mt-1 text-lg text-indigo-500 font-bold">8</h3>
-                            <span class="mt-4 text-xs text-gray-500">Last Updated 1 Month ago</span>
+                            <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 1 Month ago</span> -->
                         </div>
                         <div class="bg-indigo-500 p-2 md:p-1 xl:p-2 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-auto h-8 md:h-6 xl:h-8 object-cover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,7 +89,7 @@ use Clive\Core\Mantle\Paginator;
                 <div class="col-span-2 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
                     <div class="flex justify-between items-center">
                         <h2 class="text-sm text-gray-600 font-bold tracking-wide">Insurers</h2>
-                        <a href="#" class="px-4 py-2 text-xs bg-blue-100 text-blue-500 rounded uppercase tracking-wider font-semibold hover:bg-blue-300">Add Insurer</a>
+                        <a href="insurers/addinsurer" class="px-4 py-2 text-xs bg-blue-100 text-blue-500 rounded uppercase tracking-wider font-semibold hover:bg-blue-300">Add Insurer</a>
                     </div>
                     <div class="overflow-x-auto">
                         <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
