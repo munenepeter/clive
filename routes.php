@@ -18,7 +18,8 @@ $router->get('database', 'DatabaseController@index');
 $router->get('insurers', 'InsurerController@index');
 $router->get('insurers/create', 'InsurerController@addinsurer');
 $router->post('insurers/create', 'InsurerController@create');
-$router->post('insurers', 'InsurerController@update');
+$router->post('insurers/update', 'InsurerController@update');
+$router->post('insurers/delete', 'InsurerController@delete');
 
 //Clients
 $router->get('clients', 'ClientController@index');
