@@ -77,3 +77,5 @@ CREATE TABLE `clients` (
 );
 
 drop table clients;
+
+delete from insurers where `email` = "sudob@mailinator.com";

@@ -9,7 +9,7 @@ include_once 'sections/sidebar.view.php'; ?>
         font-family: lucida console, courier new, courier, monospace;
         margin: 0;
         padding: 10px 0;
-        height: 75vh;
+        height: 35vh;
         border-radius: 0;
         resize: none;
         font-size: 16px;
@@ -34,24 +34,21 @@ include_once 'sections/sidebar.view.php'; ?>
         color: #707070;
         background-color: #d8d8d8;
         position: absolute;
-        width: 1.5rem;
-        /* Determine appearance of line counter */
+        width: 2rem;
         background-color: #3E3D32;
         border-color: #3E3D32;
         color: #928869;
     }
 
     #codeEditor {
-        padding-left: calc(3.5rem + 5px);
-        width: 100%;
-        /* Determine appearance of code editor */
+        padding-left: calc(2rem + 5px);
         background-color: #272822;
         border-color: #272822;
         color: #ffffff;
     }
 </style>
 
-<div class="m-2 p-2 bg-white overflow-auto border">
+<div class="w-full m-2 p-2 bg-white overflow-auto border">
     <textarea id='lineCounter' wrap='off' readonly>1.</textarea>
     <textarea class="w-full" id='codeEditor' wrap='off'></textarea>
 </div>
