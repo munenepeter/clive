@@ -9,7 +9,8 @@ use Clive\Core\Mantle\Paginator;
 
 
 
-<div class="bg-gray-50">
+
+<div class="bg-gray-50 py-4">
     <!--  <div class="fixed bottom-4 right-4 xl:right-20">
         <a href="https://www.buymeacoffee.com/ejulfaey" target="_blank" class="transform duration-500 ease-in-out animate-bounce bg-yellow-400 px-4 py-3 font-mono font-semibold rounded-lg shadow hover:shadow-xl flex justify-between items-center gap-4">
             <img class="w-8 h-8 rounded" src="https://img.buymeacoffee.com/api/?name=Ejul&size=300&bg-image=bmc&background=5F7FFF" alt="buymeacoffee">
@@ -19,7 +20,7 @@ use Clive\Core\Mantle\Paginator;
 
     <!-- End Nav -->
     <!-- Start Main -->
-    <main class="container mx-w-6xl mx-auto py-4 ">
+    <main class="container mx-w-6xl mx-auto py-4 border rounded-lg px-2 bg-gray-100 ">
         <div class="flex flex-col space-y-8">
             <!-- Start Second Row -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 xl:p-0 gap-4 xl:gap-6">
@@ -486,10 +487,7 @@ use Clive\Core\Mantle\Paginator;
                 </div>
             </div>
         </div>
-        <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
-
-
-        </div>
+       
         <!-- End Third Row -->
 </div>
 </main>
