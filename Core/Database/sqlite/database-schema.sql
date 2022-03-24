@@ -71,7 +71,9 @@ CREATE TABLE `clients` (
   `national_id` varchar(255),
   `kra_pin` varchar(255),
   `phone_number` varchar(255),
-  `address` varchar(255),
+  `home_address` varchar(255),
   `created_at` datetime,
   `updated_at` datetime
 );
+
+drop table clients;

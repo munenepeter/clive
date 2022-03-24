@@ -18,8 +18,8 @@ class ClientController {
         ]);
     }
     public function create() {
-        var_dump($_POST);
-        die;
+        // var_dump($_POST);
+        // die;
         //["names"] ["national_id"]["username"]["email"]["phone_number"]["address"]
         if (!isset($_POST)) {
             array_push(Request::$errors, "Nothing was posted");
@@ -36,19 +36,19 @@ class ClientController {
         $updated_at = date('Y-m-d H:i:s', time());
 
         Client::create([
-            'names' => $names,
+            'full_names' => $names,
+            'email' => $email,
             'national_id' => $national_id,
             'kra_pin' => $kra_pin,
-            'email' => $email,
             'phone_number' => $phone_number,
-            'address' => $address,
+            'home_address' => $address,
             'created_at' => $created_at,
             'updated_at' => $updated_at
         ]);
 
 
-        Logger::log("INFO: Created a Policy {$names}");
-        return redirect('/policies');
+        Logger::log("INFO: Created a Client {$names}");
+        return redirect('/clients');
     }
     public function addclient() {
         //
