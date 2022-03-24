@@ -21,7 +21,7 @@ class Paginator {
         self::$per_page = $per_page;
 
         $paginated_data = array_slice($data, $per_page * intval(self::getPage()) - $per_page, $per_page);
-        self::$start = (int)(implode('',array_keys($paginated_data,reset($paginated_data))))+(self::getPage() + 1);
+        self::$start = (int)(implode('',array_keys($paginated_data,reset($paginated_data))))+(self::getPage());
         self::$end =  (int)(implode('',array_keys($paginated_data,end($paginated_data))))+1; 
         return $paginated_data;
     }

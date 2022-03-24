@@ -20,12 +20,12 @@ use Clive\Core\Mantle\Paginator;
 
     <!-- End Nav -->
     <!-- Start Main -->
-    <main class="container mx-w-6xl mx-auto py-4 border rounded-lg px-2 bg-gray-100 ">
-        <div class="flex flex-col space-y-8">
+    <main class="container mx-w-6xl mx-auto pt-4 border rounded-lg px-2 bg-gray-100 ">
+        <div class="flex flex-col space-y-4">
             <!-- Start Second Row -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 xl:p-0 gap-4 xl:gap-6">
                 <div class="col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
-                    <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
+                    <h2 class="text-xs ml-2 md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
                         Everything at a Glance</h2>
                     <!-- <a href="#" class="text-xs text-gray-800 font-semibold uppercase">More</a> -->
                 </div>
@@ -88,14 +88,14 @@ use Clive\Core\Mantle\Paginator;
             </div>
             <!-- End Second Row -->
             <!-- Start Third Row -->
-            <div class="grid grid-cols-1 md:grid-cols-5 items-start px-4 xl:p-0 gap-y-4 md:gap-6">
-                <div class="col-span-2 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 items-start px-4 xl:p-0 gap-y-2 md:gap-6">
+                <div class="col-span-2 bg-white pt-2 px-4 rounded-xl border border-gray-50 flex flex-col space-y-4">
                     <div class="flex justify-between items-center">
                     <a href="/insurers" class=" font-semibold text-gray-600 font-bold tracking-wide">All Insurers</a>
                         <a href="/insurers/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add Insurer</a>
                     </div>
                     <div class="overflow-x-auto">
-                        <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+                        <div class="inline-block min-w-full shadow-md rounded-lg overflow-auto">
                             <table class="w-full table-collapse">
                                 <thead class="bg-gradient-to-r from-red-50 to-blue-50">
                                     <tr>
@@ -278,7 +278,7 @@ use Clive\Core\Mantle\Paginator;
                         </div>
                     </div>
                 </div>
-                <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
+                <div class="col-span-3 bg-white pt-2 px-4  rounded-xl border border-gray-50 flex flex-col space-y-6">
                     <div class="flex justify-between items-center -mb-2">
                         <a href="/clients" class=" font-semibold text-gray-600 font-bold tracking-wide">All Clients</a>
                         <a href="/clients/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add Client</a>
