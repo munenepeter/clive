@@ -21,8 +21,8 @@ include_once 'sections/dash-nav.view.php'; ?>
                 <input id="national_id" name="national_id" type="text" placeholder="National ID" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
             </div>
             <div class="mt-2">
-                <label for="username" class="text-sm">KRA PIN</label>
-                <input id="username" name="username" type="text" placeholder="Username" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                <label for="kra_pin" class="text-sm">KRA PIN</label>
+                <input id="kra_pin" name="kra_pin" type="text" placeholder="KRA PIN" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
             </div>
             <div class="mt-2">
                 <label for="email" class="text-sm">Email</label>
@@ -40,6 +40,7 @@ include_once 'sections/dash-nav.view.php'; ?>
             <div class="col-span-full sm:col-span-3 mt-2">
                 <input type="submit" class="bg-blue-500 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer" value="Create Client">
             </div>
+            <a href="javascript:history.back()">Go back</a>
         </div>
 
 

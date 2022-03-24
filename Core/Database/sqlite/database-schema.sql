@@ -61,5 +61,17 @@ CREATE TABLE `policies` (
 drop table policies;
 
 
-insert into policies 
-(policy_no , policy_type, policy_price, policy_status, insurer, client_nat_id, created_at, updated_at) values (:policy_no , :policy_type, :policy_price, :policy_status, :insurer, :client_nat_id, :created_at, :updated_at)
+--@block
+
+
+CREATE TABLE `clients` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `full_names` varchar(255),
+  `email` varchar(255),
+  `national_id` varchar(255),
+  `kra_pin` varchar(255),
+  `phone_number` varchar(255),
+  `address` varchar(255),
+  `created_at` datetime,
+  `updated_at` datetime
+);

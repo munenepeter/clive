@@ -21,7 +21,8 @@ $router->post('insurers/create', 'InsurerController@create');
 
 //Clients
 $router->get('clients', 'ClientController@index');
-$router->get('clients/create', 'ClientController@create');
+$router->get('clients/create', 'ClientController@addclient');
+$router->post('clients/create', 'ClientController@create');
 //policies
 $router->get('policies', 'PolicyController@index');
 $router->get('policies/create', 'PolicyController@addpolicy');
