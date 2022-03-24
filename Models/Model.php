@@ -30,11 +30,16 @@ class Model {
         App::get('database')->insert(static::tableName(), $data);
         //User::create(['name'=>'peter']);
     }
-    public static function update(array $data) {
+    public static function update($dataToUpdate, $where, $isValue) {
 
-        App::get('database')->update(static::tableName(), $data);
-        //User::update(['name'=>'peter', 'id' => 23]);
+        App::get('database')->update(static::tableName(), $dataToUpdate, $where, $isValue);
+        //User::create(['name'=>'peter']);
     }
+    // public static function update(array $data) {
+
+    //     App::get('database')->update(static::tableName(), $data);
+    //     //User::update(['name'=>'peter', 'id' => 23]);
+    // }
     public static function all() {
 	 //Returns all the records in the db for a certain  model/table
 

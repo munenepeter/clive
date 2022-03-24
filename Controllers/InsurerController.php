@@ -28,9 +28,9 @@ class InsurerController {
             exit;
         }
         //  { ["name"]["email"] ["business_no"] }
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $business_no = $_POST['business_no'];
+        $name = trim($_POST['name']);
+        $email = trim($_POST['email']);
+        $business_no = trim($_POST['business_no']);
         $created_at = date('Y-m-d H:i:s', time());
         $updated_at = date('Y-m-d H:i:s', time());
 
@@ -43,11 +43,26 @@ class InsurerController {
         ]);
         Logger::log("INFO: Created an Insurer {$name}");
         return redirect('/insurers');
-
     }
 
     public function update() {
-        //
+        if (!isset($_POST)) {
+            array_push(Request::$errors, "Nothing was posted");
+            Logger::log("ERROR: The form was not filled");
+            exit;
+        }
+        $name = trim($_POST['name']);
+        $email = trim($_POST['email']);
+        $business_no = trim($_POST['business_no']);
+        $updated_at = date('Y-m-d H:i:s', time());
+        $id = (int)trim($_POST['id']);
+
+        Insurer::update(
+            "'name' = '$name','email' = '$email','business_no' = '$business_no','updated_at' = '$updated_at'",
+            'id',
+            $id
+        );
+        return redirect('/insurers');
     }
     public function delete() {
         //

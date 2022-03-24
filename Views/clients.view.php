@@ -81,7 +81,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Full Names</th>
                                                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Email</th>
                                                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">National ID</th>
-                                                        <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">KRA PIN</th>                                                      
+                                                        <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">KRA PIN</th>
                                                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Phone Number</th>
                                                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Address</th>
                                                         <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light"></th>
@@ -192,14 +192,14 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                                                 <input type="text" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $client->home_address"; ?>" required>
                                                                                             </div>
                                                                                         </div>
-                                                           
+
                                                                                         <div class="bg-gray-50  sm:px-6 sm:flex sm:flex-row-reverse">
-                                                                                        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
-                                                                                        <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
-                                                                                    </div>
+                                                                                            <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
+                                                                                            <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                                                        </div>
                                                                                     </form>
 
-                                                                                    
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>

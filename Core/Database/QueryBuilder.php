@@ -97,6 +97,23 @@ class QueryBuilder {
     return $statement->fetchAll(\PDO::FETCH_CLASS,  "Clive\\Models\\{$model}");
   }
 
+  public function update(string $table, $dataToUpdate, $where, $isValue) {
+
+    $sql = "UPDATE {$table} SET $dataToUpdate WHERE $where = $isValue";
+    Logger::log("INFO: Called (update) $sql");
+
+    try {
+
+      $statement = $this->pdo->prepare($sql);
+      $statement->execute();
+
+    } catch (\Exception $e) {
+
+      throw new \Exception('Something is up with your Insert!' . $e->getMessage());
+      die();
+    }
+  }
+
   public function insert(string $table, array $parameters) {
 
     $sql = sprintf(
@@ -121,3 +138,4 @@ class QueryBuilder {
     }
   }
 }
+
