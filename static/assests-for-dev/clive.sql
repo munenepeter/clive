@@ -10,8 +10,8 @@ Table users  {
   email varchar
   password varchar
   role varchar
-  created_at timestamp
-  updated_at timestamp
+  created_at datetime
+  updated_at datetime
 }
 
 Table clients {
@@ -21,8 +21,8 @@ Table clients {
   national_id varchar
   phone_number varchar
   policy int
-  created_at timestamp
-  updated_at timestamp
+  created_at datetime
+  updated_at datetime
  }
 
 Table policies {
@@ -34,8 +34,8 @@ Table policies {
   status varchar
   insurer int
   owner int
-  created_at timestamp
-  updated_at timestamp
+  created_at datetime
+  updated_at datetime
  }
 
 Table insurers {
@@ -44,8 +44,8 @@ Table insurers {
   business_no varchar
   email varchar
   policies text
-  created_at timestamp
-  updated_at timestamp
+  created_at datetime
+  updated_at datetime
  }
  
  Table cars {
@@ -56,16 +56,16 @@ Table insurers {
   chasis_no varchar
   owner int
   policy_no int
-  created_at timestamp
-  updated_at timestamp
+  created_at datetime
+  updated_at datetime
  }
  
  Table invoices {
    id int [pk, increment]
    amount varchar
    owner int
-   created_at timestamp
-   updated_at timestamp
+   created_at datetime
+   updated_at datetime
  }
  
  Table blogs {
@@ -74,8 +74,8 @@ Table insurers {
    slug varchar
    body text
    owner int
-   created_at timestamp
-   updated_at timestamp
+   created_at datetime
+   updated_at datetime
  }
  
 // Creating references
@@ -101,8 +101,8 @@ CREATE TABLE `users` (
   `email` varchar(255),
   `password` varchar(255),
   `role` varchar(255),
-  `created_at` timestamp,
-  `updated_at` timestamp
+  `created_at` datetime,
+  `updated_at` datetime
 );
 
 CREATE TABLE `clients` (
@@ -113,8 +113,8 @@ CREATE TABLE `clients` (
   `kra_pin` varchar(255),
   `phone_number` varchar(255),
   `policy` int,
-  `created_at` timestamp,
-  `updated_at` timestamp
+  `created_at` datetime,
+  `updated_at` datetime
 );
 
 CREATE TABLE `policies` (
@@ -123,10 +123,10 @@ CREATE TABLE `policies` (
   `policy_type` varchar(255),
   `policy_price` varchar(255),
   `status` varchar(255),
-  `insurer` int,
-  `owner` int,
-  `created_at` timestamp,
-  `updated_at` timestamp
+  `insurer` varchar(255),
+  `client_nat_id` int,
+  `created_at` datetime,
+  `updated_at` datetime
 );
 
 CREATE TABLE `insurers` (
@@ -134,8 +134,8 @@ CREATE TABLE `insurers` (
   `name` varchar(255),
   `email` varchar(255),
   `business_no` varchar(255),
-  `created_at` timestamp,
-  `updated_at` timestamp
+  `created_at` datetime,
+  `updated_at` datetime
 );
 
 CREATE TABLE `cars` (
@@ -146,16 +146,16 @@ CREATE TABLE `cars` (
   `chasis_no` varchar(255),
   `owner` int,
   `policy_no` int,
-  `created_at` timestamp,
-  `updated_at` timestamp
+  `created_at` datetime,
+  `updated_at` datetime
 );
 
 CREATE TABLE `invoices` (
   `id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `amount` varchar(255),
   `owner` int,
-  `created_at` timestamp,
-  `updated_at` timestamp
+  `created_at` datetime,
+  `updated_at` datetime
 );
 
 CREATE TABLE `blogs` (
@@ -164,8 +164,8 @@ CREATE TABLE `blogs` (
   `slug` varchar(255),
   `body` text,
   `owner` int,
-  `created_at` timestamp,
-  `updated_at` timestamp
+  `created_at` datetime,
+  `updated_at` datetime
 );
 
 ALTER TABLE `cars` ADD FOREIGN KEY (`owner`) REFERENCES `clients` (`id`);

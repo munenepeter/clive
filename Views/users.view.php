@@ -22,7 +22,7 @@ include_once 'sections/dash-nav.view.php'; ?>
                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Email</th>
                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Username</th>
                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light text-center">Role</th>
-                        <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light">Actions</th>
+                        <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light"></th>
                     </tr>
                 </thead>
                 <tbody class="align-baseline">

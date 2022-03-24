@@ -38,6 +38,22 @@ CREATE TABLE `insurers` (
   `name` varchar(255),
   `email` varchar(255),
   `business_no` varchar(255),
-  `created_at` timestamp,
-  `updated_at` timestamp
+  `created_at` datetime,
+  `updated_at` datetime
+);
+--@block
+
+drop table insurers;
+
+--@block
+CREATE TABLE `policies` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `policy_no` varchar(255),
+  `policy_type` varchar(255),
+  `policy_price` varchar(255),
+  `status` varchar(255),
+  `insurer` varchar(255),
+  `client_nat_id` int,
+  `created_at` datetime,
+  `updated_at` datetime
 );

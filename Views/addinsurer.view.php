@@ -14,15 +14,15 @@ include_once 'sections/dash-nav.view.php'; ?>
         <div class="grid grid-cols-3 gap-2 ">
             <div class="mt-2">
                 <label for="name" class="text-sm">Name</label>
-                <input id="name" name="name" type="text" placeholder="Names" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                <input id="name" name="name" type="text" placeholder="Names" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required>
             </div>
             <div class="mt-2">
                 <label for="email" class="text-sm">Email</label>
-                <input id="email" name="email" type="email" placeholder="Email" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                <input id="email" name="email" type="email" placeholder="Email" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required>
             </div>
             <div class="mt-2">
                 <label for="business_no" class="text-sm">Business Number</label>
-                <input id="business_no" name="business_no" type="text" placeholder="Business Number" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                <input id="business_no" name="business_no" type="text" placeholder="Business Number" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required>
             </div>          
             <div class="col-span-full sm:col-span-3 mt-2">
                 <input type="submit" class="bg-blue-500 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer" value="Create Insurer">

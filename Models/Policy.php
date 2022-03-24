@@ -2,6 +2,6 @@
 
  namespace Clive\Models;
 
- class Client extends Model{
+ class Policy extends Model{
 
  }
