@@ -34,7 +34,7 @@ include_once 'sections/sidebar.view.php'; ?>
         color: #707070;
         background-color: #d8d8d8;
         position: absolute;
-        width: 3.5rem;
+        width: 1.5rem;
         /* Determine appearance of line counter */
         background-color: #3E3D32;
         border-color: #3E3D32;
@@ -52,10 +52,8 @@ include_once 'sections/sidebar.view.php'; ?>
 </style>
 
 <div class="m-2 p-2 bg-white overflow-auto border">
-    <p>
-        <textarea id='lineCounter' wrap='off' readonly>1.</textarea>
-        <textarea id='codeEditor' wrap='off'></textarea>
-    </p>
+    <textarea id='lineCounter' wrap='off' readonly>1.</textarea>
+    <textarea class="w-full" id='codeEditor' wrap='off'></textarea>
 </div>
 </div>
 </div>
