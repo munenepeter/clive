@@ -10,7 +10,7 @@ use Clive\Core\Mantle\Paginator;
 
 
 class UserController {
-    public function users() {  
+    public function index() {  
         if (!auth()) {
             return redirect('login');
         }
