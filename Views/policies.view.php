@@ -171,28 +171,33 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="flex space-x-4">
-                                                                                            <div class="mb-6">
-                                                                                                <div class="mb-6">
-                                                                                                    <label for="policy_status" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Status</label>
-                                                                                                    <input type="text" name="policy_status" id="policy_status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $policy->policy_status"; ?>" required>
-                                                                                                </div>
-                                                                                                <label for="policy_type" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Type</label>
-                                                                                                <div class="relative">
-                                                                                                    <select name="policy_type" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
 
-                                                                                                        <option class="text-gray-900 text-sm rounded-lg"><?= " $policy->policy_type"; ?></option>
-                                                                                                        <option class="text-gray-900 text-sm rounded-lg" value="Comprehensive">Comprehensive</option>
-                                                                                                        <option class="text-gray-900 text-sm rounded-lg" value="Third Party">Third Party</option>
-                                                                                                    </select>
-                                                                                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                                                                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                                                                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                                                                                        </svg>
-                                                                                                    </div>
-                                                                                                </div>
+                                                                                            <div class="mb-6">
+                                                                                                <label for="policy_status" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Status</label>
+                                                                                                <input type="text" name="policy_status" id="policy_status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $policy->policy_status"; ?>" required>
                                                                                             </div>
 
+                                                                                            <div class="mb-6">
+                                                                                                <label for="client_nat_id" class="block mb-2 text-sm font-medium text-gray-900 ">Client's National ID</label>
+                                                                                                <input type="text" name="client_nat_id" id="client_nat_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $policy->client_nat_id"; ?>" required>
+                                                                                            </div>
 
+                                                                                        </div>
+                                                                                        <div class="mb-6">
+                                                                                            <label for="policy_type" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Type</label>
+                                                                                            <div class="relative">
+                                                                                                <select name="policy_type" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+
+                                                                                                    <option class="text-gray-900 text-sm rounded-lg"><?= " $policy->policy_type"; ?></option>
+                                                                                                    <option class="text-gray-900 text-sm rounded-lg" value="Comprehensive">Comprehensive</option>
+                                                                                                    <option class="text-gray-900 text-sm rounded-lg" value="Third Party">Third Party</option>
+                                                                                                </select>
+                                                                                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                                                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                                                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                                                                                    </svg>
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
                                                                                         <div class="mb-6">
                                                                                             <label for="policy_type" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Insurer</label>

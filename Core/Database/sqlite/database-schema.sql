@@ -79,3 +79,5 @@ CREATE TABLE `clients` (
 drop table clients;
 
 delete from insurers where `email` = "sudob@mailinator.com";
+
+UPDATE clients SET 'names' = 'Peter Munene','email' = 'peternjega7@gmail.com','national_id' = '38260010','kra_pin' = 'A014002976N', 'phone_number' = '+254798055244','home_address' = 'Nairobi','updated_at' = '2022-03-25 05:43:09' WHERE id = 1

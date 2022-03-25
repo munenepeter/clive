@@ -66,14 +66,12 @@ class ClientController {
         $kra_pin = trim($_POST["kra_pin"]);
         $email = trim($_POST["email"]);
         $phone_number = trim($_POST["phone_number"]);
-        $address = trim($_POST["address"]);
+        $address = trim($_POST["home_address"]);
         $updated_at = date('Y-m-d H:i:s', time());
         $id = (int)trim($_POST['id']);
 
         Client::update(
-            "'names' = '$names','email' = '$email','national_id' = '$national_id', 
-             'kra_pin' = '$kra_pin', 'phone_number' = '$phone_number',
-             'home_address' = '$address','updated_at' = '$updated_at'",
+            "'full_names' = '$names','email' = '$email','national_id' = '$national_id','kra_pin' = '$kra_pin', 'phone_number' = '$phone_number','home_address' = '$address','updated_at' = '$updated_at'",
             'id',
             $id
         );
