@@ -166,7 +166,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                                     <form action="insurers/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                                                         <div class="flex space-x-4">
                                                                                             <div class="mb-6">
-                                                                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Username</label>
+                                                                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Insurer Name</label>
                                                                                                 <input type="text" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $insurer->name"; ?>" required>
                                                                                             </div>
                                                                                             <div class="mb-6">

@@ -51,7 +51,22 @@ class PolicyController {
         return redirect('/policies');
     }
     public function addpolicy() {
-        return view('addpolicy');
+        $insurers = [   
+            "APA INSURANCE COMPANY",    
+            "BRITAM GENERAL INSURANCE",     
+            "GATEWAY INSURANCE COMPANY",     
+            "GA INSURANCE COMPANY",     
+            "FIRST ASSURANCE COMPANY",     
+            "DIRECTLINE ASSURANCE COMPANY",    
+            "MONARCH INSURANCE COMPANY",   
+            "KENYA ORIENT INSURANCE",
+            "CANNON ASSURANCE COMPANY",        
+            "CIC GENERAL INSURANCE COMPANY"      
+        ];
+        return view('addpolicy', [
+            'insurers' => $insurers
+        ]);
+      
     }
 
     public function update() {

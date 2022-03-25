@@ -102,7 +102,7 @@ use Clive\Core\Mantle\Paginator;
                                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Name</th>
 
                                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Email</th>
-                                        <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light"></th>
+                                        <!-- <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light">Date added</th> -->
                                     </tr>
                                 </thead>
                                 <tbody class="align-baseline">
@@ -111,7 +111,7 @@ use Clive\Core\Mantle\Paginator;
                                             <tr class="group cursor-pointer hover:bg-gray-50">
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $insurer->name; ?></td>
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $insurer->email; ?></td>
-                                      
+                                                <!-- <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= date("jS F Y ", $insurer->updated_at ); ?></td> -->
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php else : ?>

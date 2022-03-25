@@ -20,7 +20,7 @@ include_once 'sections/dash-nav.view.php'; ?>
                 <label for="policy_no" class="text-sm">Policy Number</label>
                 <input id="policy_no" name="policy_no" type="text" placeholder="Policy Number" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
             </div>
-            
+
             <div class="mt-2">
                 <label for="policy_type" class="text-sm">Policy Type</label>
                 <div class="relative">
@@ -43,7 +43,19 @@ include_once 'sections/dash-nav.view.php'; ?>
             </div>
             <div class="mt-2">
                 <label for="policy_status" class="text-sm">Policy Status</label>
-                <input id="policy_status" name="policy_status" type="text" placeholder="Policy Status" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                <div class="relative">
+                    <select name="policy_status" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+
+                        <option class="text-gray-900 text-sm rounded-lg">--Policy Status--</option>
+                        <option class="text-gray-900 text-sm rounded-lg" value="On-going">On-going</option>
+                        <option class="text-gray-900 text-sm rounded-lg" value="Expired">Expired</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                    </div>
+                </div>
             </div>
             <div class="mt-2">
                 <label for="insurers" class="block mb-2 text-sm font-medium text-gray-900 ">Insurer</label>
@@ -52,9 +64,11 @@ include_once 'sections/dash-nav.view.php'; ?>
                     <select name="insurer" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
 
                         <option class="text-gray-900 text-sm rounded-lg">--Select Insurer --</option>
-                        <option class="text-gray-900 text-sm rounded-lg" value="Kenya Orient">Kenya Orient</option>
-                        <option class="text-gray-900 text-sm rounded-lg" value="Monarch">Monarch</option>
-                        <option class="text-gray-900 text-sm rounded-lg" value="Cannon">Cannon</option>
+                        <?php if (!empty($insurers)) : ?>
+                            <?php foreach ($insurers as $insurer) : ?>
+                                <option class="text-gray-900 text-sm rounded-lg" value="<?= ucwords(strtolower($insurer)) ?>"><?= ucwords(strtolower($insurer)) ?></option>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
