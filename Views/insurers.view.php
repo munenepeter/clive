@@ -1,5 +1,7 @@
 <?php
 
+use Clive\Models\Policy;
+use Clive\Models\Client;
 use Clive\Core\Mantle\Paginator;
 
 include_once 'base.view.php';
@@ -45,7 +47,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
                                             <p class="text-xs text-gray-600 tracking-wide">Policies</p>
-                                            <h3 class="mt-1 text-lg text-green-500 font-bold">18</h3>
+                                            <h3 class="mt-1 text-lg text-green-500 font-bold"><?=count(Policy::all());?></h3>
                                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                                         </div>
                                         <div class="bg-green-500 p-2 md:p-1 xl:p-2 rounded-md">
@@ -59,7 +61,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
                                             <p class="text-xs text-gray-600 tracking-wide">Clients</p>
-                                            <h3 class="mt-1 text-lg text-yellow-500 font-bold">23</h3>
+                                            <h3 class="mt-1 text-lg text-yellow-500 font-bold"><?=count(Client::all());?></h3>
                                             <!-- <span class="mt-4 text-xs text-gray-600">Last Updated 4 Mins ago</span> -->
                                         </div>
                                         <div class="bg-yellow-500 p-2 md:p-1 xl:p-2 rounded-md">

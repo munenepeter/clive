@@ -3,6 +3,7 @@
 namespace Clive\Controllers;
 
 
+use Clive\Models\Policy;
 use Clive\Models\Client;
 use Clive\Core\Mantle\Logger;
 use Clive\Core\Mantle\Request;
@@ -13,6 +14,7 @@ class ClientController {
 
     public function index() {
         return view('clients', [
+            'expired' => count(Policy::where(['policy_status'], ['policy_status', 'Expired'])),
             'allclients' => Client::all(),
             'clients' => Paginator::paginate(Client::all(), 5)
         ]);

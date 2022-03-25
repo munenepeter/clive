@@ -1,5 +1,7 @@
 <?php
 
+use Clive\Models\Insurer;
+use Clive\Models\Client;
 use Clive\Core\Mantle\Paginator;
 
 include_once 'base.view.php';
@@ -24,8 +26,8 @@ include_once 'sections/sidebar.view.php'; ?>
                                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
-                                            <p class="text-xs text-gray-600 tracking-wide">Polices</p>
-                                            <h3 class="mt-1 text-lg text-blue-500 font-bold"><?= (!empty($allclients)) ? count($allclients) : 0 ?></h3>
+                                            <p class="text-xs text-gray-600 tracking-wide">All Clients</p>
+                                            <h3 class="mt-1 text-lg text-blue-500 font-bold"><?= count(Client::all()); ?></h3>
                                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                                         </div>
                                         <div class="bg-blue-500 p-2 md:p-1 xl:p-2 rounded-md">
@@ -38,8 +40,8 @@ include_once 'sections/sidebar.view.php'; ?>
                                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
-                                            <p class="text-xs text-gray-600 tracking-wide">On-going clients</p>
-                                            <h3 class="mt-1 text-lg text-green-500 font-bold"><?= (!empty($on_going)) ? $on_going : 0 ?></h3>
+                                            <p class="text-xs text-gray-600 tracking-wide">Insurers</p>
+                                            <h3 class="mt-1 text-lg text-green-500 font-bold"><?=count(Insurer::all());?></h3>
                                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                                         </div>
                                         <div class="bg-green-500 p-2 md:p-1 xl:p-2 rounded-md">
@@ -52,8 +54,8 @@ include_once 'sections/sidebar.view.php'; ?>
                                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
-                                            <p class="text-xs text-gray-600 tracking-wide">Expired clients</p>
-                                            <h3 class="mt-1 text-lg text-yellow-500 font-bold">23</h3>
+                                            <p class="text-xs text-gray-600 tracking-wide">Expired Policies</p>
+                                            <h3 class="mt-1 text-lg text-yellow-500 font-bold"><?= (!empty($expired)) ? $expired : 0 ?></h3>
                                             <!-- <span class="mt-4 text-xs text-gray-600">Last Updated 4 Mins ago</span> -->
                                         </div>
                                         <div class="bg-yellow-500 p-2 md:p-1 xl:p-2 rounded-md">
