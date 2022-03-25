@@ -93,7 +93,7 @@
  
  */
 CREATE TABLE `users` (
-  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+   `user_id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `full_names` varchar(255),
   `username` varchar(255),
   `email` varchar(255),
@@ -170,4 +170,4 @@ ADD FOREIGN KEY (`owner`) REFERENCES `clients` (`national_id`);
 ALTER TABLE `invoices`
 ADD FOREIGN KEY (`owner`) REFERENCES `clients` (`id`);
 ALTER TABLE `blogs`
-ADD FOREIGN KEY (`owner`) REFERENCES `users` (`id`);
+ADD FOREIGN KEY (`owner`) REFERENCES `users` (`user_id`);

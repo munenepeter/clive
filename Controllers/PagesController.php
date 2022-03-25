@@ -12,6 +12,8 @@ class PagesController {
     public function index() {
         if (auth()) {
             return view('dashboard', [
+                'on_going' => count(Policy::where(['policy_status'], ['policy_status', 'On-going'])),
+                'expired' => count(Policy::where(['policy_status'], ['policy_status', 'Expired'])),
                 'allinsurers' => Insurer::all(), 
                 'insurers' => Paginator::paginate(Insurer::all(),5),
                 'allclients' => Client::all(), 

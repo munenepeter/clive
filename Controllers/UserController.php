@@ -16,6 +16,8 @@ class UserController {
             return redirect('login');
         }
         return view('users',[
+            'admins' => count(User::where(['role'], ['role', 'admin'])),
+            'regular_users' => count(User::where(['role'], ['role', 'user'])),
             'allusers' => User::all(), 
             'users' => Paginator::paginate(User::all(),5)
         ]);

@@ -1,13 +1,5 @@
 -- SQLite
-CREATE TABLE users (
-	user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-	first_name varchar(100) NOT NULL,
-	last_name varchar(100) NOT NULL,
-    username varchar(100) NOT NULL UNIQUE,
-	email varchar(100) NOT NULL UNIQUE,
-	password TEXT NOT NULL,
-	role varchar(100) NOT NULL
-);
+
 
 CREATE TABLE `users` (
   `user_id` INTEGER PRIMARY KEY AUTOINCREMENT,
