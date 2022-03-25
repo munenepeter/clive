@@ -24,7 +24,7 @@
                                 Clients
                             </a>
                         </li>
-                        <li> <a href="/user" class="p-2 ">
+                        <li> <a href="/users" class="p-2 ">
                                 Users
                             </a>
                         </li>

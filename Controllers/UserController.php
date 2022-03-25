@@ -22,10 +22,9 @@ class UserController {
     }
     public function create() {
 
-        //first_name, last_name, username, email, password, role
+        //full_names, last_name, username, email, password, role
 
-        $first_name = trim($_POST['first_name']);
-        $last_name = trim($_POST['last_name']);
+        $full_names = trim($_POST['full_names']); 
         $email = trim($_POST['email']);
         $pass = trim($_POST['password']);
         $username = trim($_POST['username']);
@@ -33,11 +32,10 @@ class UserController {
         $created_at = date('Y-m-d H:i:s', time());
         $updated_at = date('Y-m-d H:i:s', time());
 
-        Logger::log("INFO: $first_name,$last_name,$email, $pass, $username, $role");
+        Logger::log("INFO: $full_names,$email, $pass, $username, $role");
 
         User::create([
-            'first_name' => $first_name,
-            'last_name' => $last_name,
+            'full_names' => $full_names, 
             'email' => $email,
             'password' => md5($pass),
             'username' => $username,
@@ -86,15 +84,14 @@ TEXT;
     }
     public function update() {
         //
-        if (!isset($_POST['first_name'])) {
+        if (!isset($_POST)) {
             array_push(Request::$errors, "Nothing was posted");
             Logger::log("ERROR: The form was not filled");
             exit;
         }
-        $first_name = trim($_POST['first_name']);
-        $last_name = trim($_POST['last_name']);
+        $full_names = trim($_POST['full_names']);
         $email = trim($_POST['email']);
-        $pass = trim($_POST['password']);
+        $pass = md5('1234');
         $username = trim($_POST['username']);
         $role = trim($_POST['role']);
         $updated_at = date('Y-m-d H:i:s', time());
@@ -102,15 +99,14 @@ TEXT;
 
         User::update(
             "
-            'first_name' = '$first_name',
-            'last_name' = '$last_name',
+            'full_names' = '$full_names',
             'email' = '$email',
-            'password' = 'md5($pass)',
+            'password' = '$pass',
             'username' = '$username',
             'role' = '$role',
             'updated_at' = '$updated_at'
             ",
-            'id',
+            'user_id',
             $id
         );
         Logger::log("INFO: {$username} has been Updated");

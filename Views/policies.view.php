@@ -313,15 +313,7 @@ include_once 'sections/sidebar.view.php'; ?>
 
                     </div>
                 </div>
-            </div>
-            <div class="px-12 py-8 mx-auto max-w-4xl">
-
-
-                <div class="mt-4">
-
-                </div>
-            </div>
-            <!---->
+            </div> 
         </div>
     </div>
 </div>

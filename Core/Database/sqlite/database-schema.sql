@@ -9,17 +9,27 @@ CREATE TABLE users (
 	role varchar(100) NOT NULL
 );
 
+CREATE TABLE `users` (
+  `user_id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `full_names` varchar(255),
+  `username` varchar(255),
+  `email` varchar(255),
+  `password` varchar(255),
+  `role` varchar(255),
+  `created_at` datetime,
+  `updated_at` datetime
+);
+
 --@block
 
 INSERT INTO users (
-first_name, last_name, username, email, password, role)
-VALUES(	'Admin', 'Admin', 'admin', 'admin@clive.com', '81dc9bdb52d04dc20036dbd8313ed055', 'admin' 
+full_names, username, email, password, role, created_at, updated_at)
+VALUES(	
+  'Admin', 'admin', 'admin@clive.com', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', '2022-03-24 09:33:40', '2022-03-24 09:33:40'
 ),
-(	'Test', 'Test', 'test', 'test@clive.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user' 
+(	'Mary Wanjiru', 'mary', 'mary@clive.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user' , '2022-03-24 09:33:40', '2022-03-24 09:33:40'
 ),
-(	'Peter', 'Munene', 'peter', 'peter@clive.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user' 
-),
-(	'Guest', 'Guest', 'guest', 'guest@clive.com', '81dc9bdb52d04dc20036dbd8313ed055', 'guest' 
+(	'Peter Munene', 'peter', 'peter@clive.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user', '2022-03-24 09:33:40', '2022-03-24 09:33:40'
 );
 
 --@block
@@ -80,4 +90,11 @@ drop table clients;
 
 delete from insurers where `email` = "sudob@mailinator.com";
 
-UPDATE clients SET 'names' = 'Peter Munene','email' = 'peternjega7@gmail.com','national_id' = '38260010','kra_pin' = 'A014002976N', 'phone_number' = '+254798055244','home_address' = 'Nairobi','updated_at' = '2022-03-25 05:43:09' WHERE id = 1
+UPDATE users SET 
+            'full_names' = 'Mary Wanjiru',
+            'email' = 'mary@clive.com',
+            'password' = '81dc9bdb52d04dc20036dbd8313ed055',
+            'username' = 'mary2',
+            'role' = 'user',
+            'updated_at' = '2022-03-25 06:27:12'
+             WHERE id = 2;

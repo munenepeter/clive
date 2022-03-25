@@ -36,6 +36,8 @@ $router->post('policies/delete', 'PolicyController@delete');
 //User
 $router->get('users', 'UserController@index');
 $router->get('users/adduser', 'UserController@adduser');
+$router->post('users/update', 'UserController@update');
+$router->post('users/delete', 'UserController@delete');
 //Auth 
 $router->get('profile', 'AuthController@profile');
 $router->get('system_log', 'PagesController@log');
