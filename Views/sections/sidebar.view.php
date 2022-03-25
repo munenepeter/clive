@@ -38,33 +38,33 @@
                 </div>
                 <!---->
                 <div class="px-6 py-6 border-t border-gray-700">
-                    <h4 class="text-sm text-gray-600 uppercase font-bold tracking-widest">
+                    <!-- <h4 class="text-sm text-gray-600 uppercase font-bold tracking-widest">
                         More
-                    </h4>
+                    </h4> -->
                     <ul class="mt-3 text-white">
                         <!-- <li class="mt-3">
                             <a href="#" class="">
                                 Client Activity
                             </a>
                         </li> -->
-                        <li class="mt-3">
+                        <!-- <li class="mt-3">
                             <a href="clients/invoices" class="">
                                 Invoices
                             </a>
-                        </li>
+                        </li> -->
 
                         <?php if (isAdmin()) : ?>
 
-                            <li class="mt-3">
+                            <!-- <li class="mt-3">
                                 <a href="database" class="">
                                     Query Database
                                 </a>
-                            </li>
-                            <li class="mt-3">
+                            </li> -->
+                            <!-- <li class="mt-3">
                                 <a href="/system_log" class="">
                                     System Logs
                                 </a>
-                            </li>
+                            </li> -->
                         <?php endif; ?>
                     </ul>
                 </div>
