@@ -23,18 +23,14 @@
             </div>
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                 <div class="col-span-full sm:col-span-3">
-                    <label for="firstname" class="text-sm">First name</label>
-                    <input id="firstname" name="first_name" type="text" placeholder="First name" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                    <label for="full_names" class="text-sm">Full Names</label>
+                    <input id="full_names" name="first_names" type="text" placeholder="Full Names" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
                 </div>
-                <div class="col-span-full sm:col-span-3">
-                    <label for="lastname" class="text-sm">Last name</label>
-                    <input id="lastname" name="last_name" type="text" placeholder="Last name" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
-                </div>
+               
                 <div class="col-span-full sm:col-span-3">
                     <label for="username" class="text-sm">Username</label>
                     <input id="username" name="username" type="text" placeholder="Username" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
                 </div>
-                <!-- first_name, last_name, username, email, password, role -->
                 <div class="col-span-full sm:col-span-3">
                     <label for="email" class="text-sm">Email</label>
                     <input id="email" name="email" type="email" placeholder="Email" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
