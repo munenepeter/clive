@@ -3,7 +3,6 @@
 namespace Clive\Controllers;
 
 use Clive\Models\Insurer;
-use Clive\Models\User;
 use Clive\Core\Mantle\Logger;
 use Clive\Core\Mantle\Request;
 use Clive\Core\Mantle\Paginator;
@@ -42,7 +41,7 @@ class InsurerController {
             'updated_at' => $updated_at
         ]);
         Logger::log("INFO: Created an Insurer {$name}");
-        return redirect('/insurers');
+        return redirect('/insurers', ["msg" => "Insurer has been Created"]);
     }
 
     public function update() {
@@ -62,9 +61,18 @@ class InsurerController {
             'id',
             $id
         );
-        return redirect('/insurers');
+        return redirect('/insurers', ["msg" => "Insurer has been Updated"]);
     }
     public function delete() {
-        //
+        if (!isset($_POST)) {
+            array_push(Request::$errors, "Nothing was posted");
+            Logger::log("ERROR: The form was not filled");
+            exit;
+        }
+
+        $id = (int)trim($_POST['id']);
+
+        Insurer::delete('id', $id);
+        return redirect('/insurers', ["msg" => "Insurer has been Deleted"]);
     }
 }

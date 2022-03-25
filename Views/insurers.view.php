@@ -6,7 +6,13 @@ include_once 'base.view.php';
 include_once 'sections/dash-nav.view.php';
 include_once 'sections/sidebar.view.php'; ?>
 
-
+<?php if (!empty($msg)) : ?>
+    <div class="fixed bottom-4 right-4 xl:right-20">
+        <span class="transform duration-500 ease-in-out animate-bounce bg-blue-400 px-4 py-3 font-mono font-semibold rounded-lg shadow hover:shadow-xl flex justify-between items-center gap-4">
+            <?= $msg; ?>
+        </span>
+    </div>
+<?php endif; ?>
 <div class="flex-grow flex flex-col">
 
     <div class="flex-grow flex flex-col">
@@ -17,7 +23,7 @@ include_once 'sections/sidebar.view.php'; ?>
                         <div>
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 xl:p-0 gap-4 xl:gap-6 ">
                                 <div class="col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
-                                    <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
+                                    <h2 class="ml-2 text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
                                         Everything at a Glance</h2>
 
                                 </div>
@@ -114,7 +120,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                                                 <div class="py-2">
                                                                                                     <h3 class="font-bold text-2xl mb-4 text-gray-500 "><?= " $insurer->name;" ?></h3>
                                                                                                     <div class="space-y-2">
-                                                                                                     
+
                                                                                                         <div class="inline-flex text-grey-dark sm:flex items-center space-x-2">
                                                                                                             <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                                                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
@@ -158,7 +164,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                                 <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-gray-50  mx-2 md:mx-0" @click.away="open = false">
                                                                                     <h2 class="text-2xl text-green-500">Editing <?= " $insurer->name"; ?></h2>
                                                                                     <form action="insurers/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
-                                                                                    <div class="flex space-x-4">
+                                                                                        <div class="flex space-x-4">
                                                                                             <div class="mb-6">
                                                                                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Username</label>
                                                                                                 <input type="text" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $insurer->name"; ?>" required>
@@ -172,16 +178,16 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                                             <div class="mb-6">
                                                                                                 <label for="business_no" class="block mb-2 text-sm font-medium text-gray-900 ">Business Number</label>
                                                                                                 <input type="business_no" name="business_no" id="business_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="<?= " $insurer->business_no"; ?>" required>
-                                                                                            </div>                                                                                           
+                                                                                            </div>
                                                                                         </div>
                                                                                         <input type="hidden" name="id" value="<?= " $insurer->id"; ?>">
                                                                                         <div class="bg-gray-50 rounded-lg sm:px-6 sm:flex sm:flex-row-reverse">
-                                                                                        <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
-                                                                                        <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
-                                                                                    </div>  
+                                                                                            <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
+                                                                                            <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                                                        </div>
                                                                                     </form>
 
-                                                                                    
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -212,8 +218,8 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                                             </div>
                                                                                             <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                                                                                                 <form action="insurers/delete" method="post">
-                                                                                                <input type="hidden" name="id" value="<?= " $insurer->id"; ?>">
-                                                                                                <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">Delete</button>
+                                                                                                    <input type="hidden" name="id" value="<?= " $insurer->id"; ?>">
+                                                                                                    <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">Delete</button>
                                                                                                 </form>
                                                                                                 <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                                                                                             </div>
@@ -272,16 +278,12 @@ include_once 'sections/sidebar.view.php'; ?>
                     </div>
                 </div>
             </div>
-            <div class="px-12 py-8 mx-auto max-w-4xl">
-
-
-                <div class="mt-4">
-
-                </div>
-            </div>
-            <!---->
+          
         </div>
     </div>
 </div>
 </div>
 </div>
+</body>
+
+</html>

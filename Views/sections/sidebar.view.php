@@ -57,7 +57,7 @@
 
                             <li class="mt-3">
                                 <a href="database" class="">
-                                    Interact with the Database
+                                    Query Database
                                 </a>
                             </li>
                             <li class="mt-3">
