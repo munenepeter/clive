@@ -4,6 +4,7 @@ namespace Clive\Controllers;
 
 use Clive\Models\User;
 use Clive\Core\Mantle\Logger;
+use Clive\Core\Mantle\Request;
 use Clive\Core\Mantle\Mail\Mail;
 use Clive\Core\Mantle\Paginator;
 
@@ -23,12 +24,14 @@ class UserController {
 
         //first_name, last_name, username, email, password, role
 
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $email = $_POST['email'];
-        $pass = $_POST['password'];
-        $username = $_POST['username'];
-        $role = $_POST['role'];
+        $first_name = trim($_POST['first_name']);
+        $last_name = trim($_POST['last_name']);
+        $email = trim($_POST['email']);
+        $pass = trim($_POST['password']);
+        $username = trim($_POST['username']);
+        $role = trim($_POST['role']);
+        $created_at = date('Y-m-d H:i:s', time());
+        $updated_at = date('Y-m-d H:i:s', time());
 
         Logger::log("INFO: $first_name,$last_name,$email, $pass, $username, $role");
 
@@ -38,7 +41,9 @@ class UserController {
             'email' => $email,
             'password' => md5($pass),
             'username' => $username,
-            'role' => $role
+            'role' => $role,
+            'created_at' => $created_at,
+            'updated_at' => $updated_at
         ]);
 
         Mail::$subject = "Welcome to Clive {$username}";
@@ -78,5 +83,50 @@ TEXT;
             return view('index');
         }
         return view('adduser');
+    }
+    public function update() {
+        //
+        if (!isset($_POST['first_name'])) {
+            array_push(Request::$errors, "Nothing was posted");
+            Logger::log("ERROR: The form was not filled");
+            exit;
+        }
+        $first_name = trim($_POST['first_name']);
+        $last_name = trim($_POST['last_name']);
+        $email = trim($_POST['email']);
+        $pass = trim($_POST['password']);
+        $username = trim($_POST['username']);
+        $role = trim($_POST['role']);
+        $updated_at = date('Y-m-d H:i:s', time());
+        $id = (int)trim($_POST['id']);
+
+        User::update(
+            "
+            'first_name' = '$first_name',
+            'last_name' = '$last_name',
+            'email' = '$email',
+            'password' = 'md5($pass)',
+            'username' = '$username',
+            'role' = '$role',
+            'updated_at' = '$updated_at'
+            ",
+            'id',
+            $id
+        );
+        Logger::log("INFO: {$username} has been Updated");
+        return redirect('/users', ["msg" => "{$username} has been Updated"]);
+    }
+    public function delete() {
+        if (!isset($_POST['id'])) {
+            array_push(Request::$errors, "Nothing was posted");
+            Logger::log("ERROR: The form was not filled");
+            exit;
+        }
+
+        $id = (int)trim($_POST['id']);
+
+        User::delete('id', $id);
+        Logger::log("INFO: User has been Deleted");
+        return redirect('/users', ["msg" => "User has been Deleted"]);
     }
 }

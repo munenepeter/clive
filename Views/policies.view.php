@@ -17,7 +17,7 @@ include_once 'sections/sidebar.view.php'; ?>
                         <div>
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 xl:p-0 gap-4 xl:gap-6 ">
                                 <div class="col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
-                                    <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
+                                    <h2 class="ml-2 text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
                                         Everything at a Glance</h2>
 
                                 </div>
@@ -159,23 +159,23 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                             <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center " style="background-color: rgba(0,0,0,.5);" x-show="open">
                                                                                 <div class="text-left bg-white h-auto p-4 md:max-w-xl md:p-6 lg:p-8 shadow-xl rounded-lg bg-gray-50  mx-2 md:mx-0" @click.away="open = false">
                                                                                     <h2 class="text-2xl text-green-500">Editing <?= " $policy->policy_no"; ?></h2>
-                                                                                    <form class="border bg-white p-4 my-2 max-w-md rounded-lg">
+                                                                                    <form action="policies/update" method="post" class="border bg-white p-4 my-2 max-w-md rounded-lg">
                                                                                         <div class="flex space-x-4">
                                                                                             <div class="mb-6">
-                                                                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Number</label>
-                                                                                                <input type="text" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $policy->policy_no"; ?>" required>
+                                                                                                <label for="policy_no" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Number</label>
+                                                                                                <input type="text" id="policy_no" name="policy_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $policy->policy_no"; ?>" required>
                                                                                             </div>
                                                                                             <div class="mb-6">
-                                                                                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Price</label>
-                                                                                                <input type="text" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $policy->policy_price"; ?>" required>
+                                                                                                <label for="policy_price" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Price</label>
+                                                                                                <input type="text" name="policy_price" id="policy_price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $policy->policy_price"; ?>" required>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="flex space-x-4">
                                                                                             <div class="mb-6">
-                                                                                            <div class="mb-6">
-                                                                                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Status</label>
-                                                                                                <input type="text" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $policy->policy_status"; ?>" required>
-                                                                                            </div>
+                                                                                                <div class="mb-6">
+                                                                                                    <label for="policy_status" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Status</label>
+                                                                                                    <input type="text" name="policy_status" id="policy_status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5     " value="<?= " $policy->policy_status"; ?>" required>
+                                                                                                </div>
                                                                                                 <label for="policy_type" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Type</label>
                                                                                                 <div class="relative">
                                                                                                     <select name="policy_type" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
@@ -191,32 +191,34 @@ include_once 'sections/sidebar.view.php'; ?>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
-                                                                                          
-                                                                                            
+
+
                                                                                         </div>
                                                                                         <div class="mb-6">
-                                                                                                <label for="policy_type" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Insurer</label>
-                                                                                                <div class="relative">
-                                                                                                    <select name="policy_type" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                                                                                            <label for="policy_type" class="block mb-2 text-sm font-medium text-gray-900 ">Policy Insurer</label>
+                                                                                            <div class="relative">
+                                                                                                <select name="insurer" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
 
-                                                                                                        <option class="text-gray-900 text-sm rounded-lg"><?= " $policy->insurer"; ?></option>
-                                                                                                        <option class="text-gray-900 text-sm rounded-lg" value="Kenya Orient">Kenya Orient</option>
-                                                                                                        <option class="text-gray-900 text-sm rounded-lg" value="Monarch">Monarch</option>
-                                                                                                        <option class="text-gray-900 text-sm rounded-lg" value="Cannon">Cannon</option>
-                                                                                                    </select>
-                                                                                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                                                                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                                                                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                                                                                        </svg>
-                                                                                                    </div>
+                                                                                                    <option class="text-gray-900 text-sm rounded-lg"><?= " $policy->insurer"; ?></option>
+                                                                                                    <option class="text-gray-900 text-sm rounded-lg" value="Kenya Orient">Kenya Orient</option>
+                                                                                                    <option class="text-gray-900 text-sm rounded-lg" value="Monarch">Monarch</option>
+                                                                                                    <option class="text-gray-900 text-sm rounded-lg" value="Cannon">Cannon</option>
+                                                                                                </select>
+                                                                                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                                                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                                                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                                                                                    </svg>
                                                                                                 </div>
                                                                                             </div>
+                                                                                        </div>
+                                                                                        <input type="hidden" name="id" value="<?= " $policy->id"; ?>">
+                                                                                        <div class="bg-gray-50  sm:px-6 sm:flex sm:flex-row-reverse">
+                                                                                            <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
+                                                                                            <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                                                                                        </div>
                                                                                     </form>
 
-                                                                                    <div class="bg-gray-50  sm:px-6 sm:flex sm:flex-row-reverse">
-                                                                                        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">Update</button>
-                                                                                        <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
-                                                                                    </div>
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -246,7 +248,7 @@ include_once 'sections/sidebar.view.php'; ?>
 
                                                                                             </div>
                                                                                             <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                                                                                            <form action="insurers/delete" method="post">
+                                                                                                <form action="policies/delete" method="post">
                                                                                                     <input type="hidden" name="id" value="<?= " $policy->id"; ?>">
                                                                                                     <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">Delete</button>
                                                                                                 </form>

@@ -25,10 +25,14 @@ $router->post('insurers/delete', 'InsurerController@delete');
 $router->get('clients', 'ClientController@index');
 $router->get('clients/create', 'ClientController@addclient');
 $router->post('clients/create', 'ClientController@create');
+$router->post('clients/update', 'ClientController@update');
+$router->post('clients/delete', 'ClientController@delete');
 //policies
 $router->get('policies', 'PolicyController@index');
 $router->get('policies/create', 'PolicyController@addpolicy');
 $router->post('policies/create', 'PolicyController@create');
+$router->post('policies/update', 'PolicyController@update');
+$router->post('policies/delete', 'PolicyController@delete');
 //User
 $router->get('users', 'UserController@index');
 $router->get('users/adduser', 'UserController@adduser');
