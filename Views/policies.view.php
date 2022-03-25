@@ -53,7 +53,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                     <div class="flex justify-between items-start">
                                         <div class="flex flex-col">
                                             <p class="text-xs text-gray-600 tracking-wide">Expired Policies</p>
-                                            <h3 class="mt-1 text-lg text-yellow-500 font-bold"><?= (!empty($expired)) ? count($expired) : 0 ?></h3>
+                                            <h3 class="mt-1 text-lg text-yellow-500 font-bold"><?= (!empty($expired)) ? $expired : 0 ?></h3>
                                             <!-- <span class="mt-4 text-xs text-gray-600">Last Updated 4 Mins ago</span> -->
                                         </div>
                                         <div class="bg-yellow-500 p-2 md:p-1 xl:p-2 rounded-md">
