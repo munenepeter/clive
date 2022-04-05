@@ -20,16 +20,20 @@
                 </div>
                 <div class="px-6 py-6 text-white ">
                     <ul class="space-y-6">
-                        <li> <a href="/clients" class="p-2 ">
+                        <li> <a href="/clients" class="hover:underline p-2 ">
                                 Clients
                             </a>
                         </li>
-                        <li> <a href="/users" class="p-2 ">
+                        <li> <a href="/users" class="hover:underline p-2 ">
                                 Users
                             </a>
                         </li>
-                        <li> <a href="/policies" class="p-2 ">
+                        <li> <a href="/policies" class="hover:underline p-2 ">
                               Policies
+                            </a>
+                        </li>
+                        <li> <a href="/reports" class="hover:underline p-2 ">
+                              Reports
                             </a>
                         </li>
                     </ul>
@@ -38,33 +42,33 @@
                 </div>
                 <!---->
                 <div class="px-6 py-6 border-t border-gray-700">
-                    <!-- <h4 class="text-sm text-gray-600 uppercase font-bold tracking-widest">
+                    <h4 class="text-sm text-gray-600 uppercase font-bold tracking-widest">
                         More
-                    </h4> -->
+                    </h4>
                     <ul class="mt-3 text-white">
-                        <!-- <li class="mt-3">
-                            <a href="#" class="">
+                        <li class="mt-3">
+                            <a href="#" class="hover:underline">
                                 Client Activity
                             </a>
-                        </li> -->
-                        <!-- <li class="mt-3">
-                            <a href="clients/invoices" class="">
+                        </li>  
+                      <li class="mt-3">
+                            <a href="clients/invoices" class="hover:underline">
                                 Invoices
                             </a>
-                        </li> -->
+                        </li>
 
                         <?php if (isAdmin()) : ?>
 
-                            <!-- <li class="mt-3">
-                                <a href="database" class="">
+                            <li class="mt-3">
+                                <a href="database" class="hover:underline">
                                     Query Database
                                 </a>
-                            </li> -->
-                            <!-- <li class="mt-3">
-                                <a href="/system_log" class="">
+                            </li> 
+                            <li class="mt-3">
+                                <a href="/system_log" class="hover:underline">
                                     System Logs
                                 </a>
-                            </li> -->
+                            </li>
                         <?php endif; ?>
                     </ul>
                 </div>

@@ -1,9 +1,10 @@
 <?php
 include_once 'base.view.php';
 include_once 'sections/dash-nav.view.php';
-// if(isAdmin()){
-//     include_once 'sections/sidebar.view.php';
-// }
+if (isAdmin()) {
+    include_once 'sections/sidebar.view.php';
+}
+
 use Clive\Core\Mantle\Paginator;
 ?>
 
@@ -33,7 +34,7 @@ use Clive\Core\Mantle\Paginator;
                     <div class="flex justify-between items-start">
                         <div class="flex flex-col">
                             <p class="text-xs text-gray-600 tracking-wide">Clients</p>
-                            <h3 class="mt-1 text-lg text-blue-500 font-bold"><?= (!empty($allclients)) ? count($allclients) : 0 ?></h3>
+                            <h3 class="mt-1 text-lg text-blue-500 font-bold"><?= (!empty($clients)) ? count($clients) : 0 ?></h3>
                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                         </div>
                         <div class="bg-blue-500 p-2 md:p-1 xl:p-2 rounded-md">
@@ -47,7 +48,7 @@ use Clive\Core\Mantle\Paginator;
                     <div class="flex justify-between items-start">
                         <div class="flex flex-col">
                             <p class="text-xs text-gray-600 tracking-wide">Policies</p>
-                            <h3 class="mt-1 text-lg text-green-500 font-bold"><?= (!empty($allpolicies)) ? count($allpolicies) : 0 ?></h3>
+                            <h3 class="mt-1 text-lg text-green-500 font-bold"><?= (!empty($policies)) ? count($policies) : 0 ?></h3>
                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 3 Hours ago</span> -->
                         </div>
                         <div class="bg-green-500 p-2 md:p-1 xl:p-2 rounded-md">
@@ -75,7 +76,7 @@ use Clive\Core\Mantle\Paginator;
                     <div class="flex justify-between items-start">
                         <div class="flex flex-col">
                             <p class="text-xs text-gray-600 tracking-wide">Insurers</p>
-                            <h3 class="mt-1 text-lg text-indigo-500 font-bold"><?= (!empty($allinsurers)) ? count($allinsurers) : 0 ?></h3>
+                            <h3 class="mt-1 text-lg text-indigo-500 font-bold"><?= (!empty($insurers)) ? count($insurers) : 0 ?></h3>
                             <!-- <span class="mt-4 text-xs text-gray-500">Last Updated 1 Month ago</span> -->
                         </div>
                         <div class="bg-indigo-500 p-2 md:p-1 xl:p-2 rounded-md">
@@ -91,7 +92,7 @@ use Clive\Core\Mantle\Paginator;
             <div class="grid grid-cols-1 md:grid-cols-5 items-start px-4 xl:p-0 gap-y-2 md:gap-6">
                 <div class="col-span-2 bg-white pt-2 px-4 rounded-xl border border-gray-50 flex flex-col space-y-4">
                     <div class="flex justify-between items-center">
-                    <a href="/insurers" class=" font-semibold text-gray-600 font-bold tracking-wide">All Insurers</a>
+                        <a href="/insurers" class=" font-semibold text-gray-600 font-bold tracking-wide">All Insurers</a>
                         <a href="/insurers/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add Insurer</a>
                     </div>
                     <div class="overflow-x-auto">
@@ -102,16 +103,16 @@ use Clive\Core\Mantle\Paginator;
                                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Name</th>
 
                                         <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Email</th>
-                                        <!-- <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light">Date added</th> -->
+                                        <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light">Date added</th>
                                     </tr>
                                 </thead>
                                 <tbody class="align-baseline">
                                     <?php if (!empty($insurers)) : ?>
-                                        <?php foreach ($insurers as $insurer) : ?>
+                                        <?php foreach (Paginator::paginate($insurers, 5) as $insurer) : ?>
                                             <tr class="group cursor-pointer hover:bg-gray-50">
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $insurer->name; ?></td>
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $insurer->email; ?></td>
-                                                <!-- <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= date("jS F Y ", $insurer->updated_at ); ?></td> -->
+                                                <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= date("jS F Y ", strtotime($insurer->updated_at)); ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php else : ?>
@@ -125,7 +126,7 @@ use Clive\Core\Mantle\Paginator;
                                     <?php endif; ?>
                                 </tbody>
                             </table>
-                            <?php if (!empty($allinsurers)) : ?>
+                            <?php if (!empty($insurers)) : ?>
                                 <div class="border-t border-orange-200 bg-white px-4 py-3 flex items-center justify-between sm:px-6">
 
                                     <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
@@ -136,13 +137,13 @@ use Clive\Core\Mantle\Paginator;
                                                 to
                                                 <span class="font-medium"><?= Paginator::$end; ?></span>
                                                 of
-                                                <span class="font-medium"><?= count($allinsurers) ?></span>
+                                                <span class="font-medium"><?= count($insurers) ?></span>
                                                 results
                                             </p>
                                         </div>
                                         <div>
                                             <span class="relative z-0 inline-flex shadow-sm">
-                                                <?php Paginator::showLinks($allinsurers); ?>
+                                                <?php Paginator::showLinks($insurers); ?>
                                             </span>
                                         </div>
                                     </div>
@@ -170,13 +171,13 @@ use Clive\Core\Mantle\Paginator;
                                 </thead>
                                 <tbody class="align-baseline">
                                     <?php if (!empty($clients)) : ?>
-                                        <?php foreach ($clients as $client) : ?>
+                                        <?php foreach (Paginator::paginate($clients, 5) as $client) : ?>
                                             <tr class="group cursor-pointer hover:bg-gray-50">
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $client->full_names; ?></td>
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $client->email; ?></td>
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $client->national_id; ?></td>
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= $client->home_address; ?></td>
-                                               
+
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php else : ?>
@@ -190,7 +191,7 @@ use Clive\Core\Mantle\Paginator;
                                     <?php endif; ?>
                                 </tbody>
                             </table>
-                            <?php if (!empty($allclients)) : ?>
+                            <?php if (!empty($clients)) : ?>
                                 <div class="border-t border-orange-200 bg-white px-4 py-3 flex items-center justify-between sm:px-6">
 
                                     <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
@@ -201,13 +202,13 @@ use Clive\Core\Mantle\Paginator;
                                                 to
                                                 <span class="font-medium"><?= Paginator::$end; ?></span>
                                                 of
-                                                <span class="font-medium"><?= count($allclients) ?></span>
+                                                <span class="font-medium"><?= count($clients) ?></span>
                                                 results
                                             </p>
                                         </div>
                                         <div>
                                             <span class="relative z-0 inline-flex shadow-sm">
-                                                <?php Paginator::showLinks($allclients); ?>
+                                                <?php Paginator::showLinks($clients); ?>
                                             </span>
                                         </div>
                                     </div>
@@ -218,7 +219,7 @@ use Clive\Core\Mantle\Paginator;
                 </div>
             </div>
         </div>
-       
+
         <!-- End Third Row -->
 </div>
 </main>

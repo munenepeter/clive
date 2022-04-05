@@ -14,10 +14,9 @@ class PagesController {
             return view('dashboard', [
                 'on_going' => count(Policy::where(['policy_status'], ['policy_status', 'On-going'])),
                 'expired' => count(Policy::where(['policy_status'], ['policy_status', 'Expired'])),
-                'allinsurers' => Insurer::all(), 
-                'insurers' => Paginator::paginate(Insurer::all(),5),
-                'allclients' => Client::all(), 
-                'clients' => Paginator::paginate(Client::all(),5)
+                'clients' => Client::all(),
+                'insurers' => Insurer::all()
+               
             ]);
         }
         return view('index');
@@ -31,11 +30,9 @@ class PagesController {
             return redirect('login');
         }
         return view('dashboard', [
-            'allinsurers' => Insurer::all(), 
-            'allpolicies' => Policy::all(), 
-            'insurers' => Paginator::paginate(Insurer::all(),5),
-            'allclients' => Client::all(), 
-            'clients' => Paginator::paginate(Client::all(),5)
+            'policies' => Policy::all(), 
+            'clients' => Client::all(),
+            'insurers' => Insurer::all()
         ]);
     }
     public function login() {
