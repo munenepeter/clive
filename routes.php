@@ -13,6 +13,7 @@ $router->get('dashboard', 'PagesController@dashboard');
 $router->get('login', 'PagesController@login');
 $router->get('news', 'PagesController@news');
 
+
 $router->get('database', 'DatabaseController@index');
 //Insurers
 $router->get('insurers', 'InsurerController@index');
@@ -42,6 +43,9 @@ $router->post('users/delete', 'UserController@delete');
 $router->get('profile', 'AuthController@profile');
 $router->get('system_log', 'PagesController@log');
 $router->get('logout', 'AuthController@logout');
+
+//Reports
+$router->get('reports', 'ReportController@index');
 
 
 //Post requests

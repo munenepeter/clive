@@ -5,34 +5,11 @@ use Clive\Core\Database\Connection;
 use Clive\Core\Database\QueryBuilder;
 
 require 'helpers.php';
-require 'Core/Mantle/Logger.php';
-require 'Core/Mantle/Request.php';
-require 'Core/Mantle/Router.php';
-require 'Core/Mantle/Paginator.php';
-require 'Core/Mantle/App.php';
-require 'Core/Mantle/Session.php';
-require 'Models/Model.php';
-require 'Models/User.php';
-require 'Models/Client.php';
-require 'Models/Insurer.php';
-require 'Models/Policy.php';
-require 'Core/Mantle/Mail/Mail.php';
-require 'Core/Mantle/Mail/Template.php';
-require 'Core/Mantle/Auth.php';
-require 'Core/Database/Connection.php';
-require 'Core/Database/QueryBuilder.php';
-require 'Controllers/UserController.php';
-require 'Controllers/ClientController.php';
-require 'Controllers/PolicyController.php';
-require 'Controllers/PagesController.php';
-require 'Controllers/AuthController.php';
-require 'Controllers/InsurerController.php';
-require 'Controllers/DatabaseController.php';
+
+require_once __DIR__ . "/../vendor/autoload.php";
 
 
-
-
-//configur config to always point to config.php
+//configure config to always point to config.php
 App::bind('config', require 'config.php');
 
 /**

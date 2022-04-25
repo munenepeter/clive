@@ -47,6 +47,7 @@ class PagesController {
         }
         return view('logs');
     }
+   
     
     
 }
