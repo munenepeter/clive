@@ -6,6 +6,7 @@ namespace Clive\Controllers;
 use Clive\Models\Client;
 use Clive\Models\Policy;
 use Clive\Models\Insurer; 
+use Clive\Core\Mantle\Mail\Mail;
 use Clive\Core\Mantle\Mail\Template; 
 
 class PagesController {
@@ -50,8 +51,13 @@ class PagesController {
     }
    
     public function email() {
-        Template::use('client-invoice', ['uname' => 'peter', 'pass' => 'password', 'email' => "email@email.com"]);
+        // $personal = new Mail(Template::use('client-invoice', ['uname' => 'peter', 'email'=>'email@2.com', 'pass' => 1234]));
 
+        // $personal->subject = "A test";
+        // $personal->to = "new@new.com";
+        // $personal->send();
+
+        // echo Template::use('client-invoice', ['uname' => 'peter', 'email'=>'email@2.com', 'pass' => 1234]);
     }
     
     

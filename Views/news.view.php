@@ -75,7 +75,7 @@
     </div>
   </div>
   <div class="text-center text-white text-sm">
-    Created by <a href="https://stephenainsworth.com" target="_blank" title="Stephen Ainsworth - Web Developer">Stephen Ainsworth</a>
+   Updated 2hrs ago
   </div>
 </div>
 

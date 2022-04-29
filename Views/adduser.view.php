@@ -24,7 +24,7 @@
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                 <div class="col-span-2 sm:col-span-3">
                     <label for="full_names" class="block mb-2 text-sm font-medium text-gray-900">Full Names</label>
-                    <input id="full_names" name="first_names" type="text" placeholder="Full Names" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                    <input id="full_names" name="full_names" type="text" placeholder="Full Names" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
                 </div>
 
                 <div class="col-span-full sm:col-span-3">

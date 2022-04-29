@@ -87,17 +87,17 @@
 	<form novalidate="" class="space-y-6 ng-untouched ng-pristine ng-valid">
 		<div>
 			<label for="name" class="text-sm">Full name</label>
-			<input id="name" type="text" placeholder="" class="bg-blue-200 border-2 border-blue-200 w-full p-3 rounded bg-gray-300">
+			<input id="name" type="text" placeholder="" class="bg-blue-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
 		</div>
 		<div>
 			<label for="email" class="text-sm">Email</label>
-			<input id="email" type="email" class="bg-blue-200 border-2 border-blue-200 w-full p-3 rounded bg-gray-300">
+			<input id="email" type="email" class="bg-blue-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
 		</div>
 		<div>
 			<label for="message" class="text-sm">Message</label>
-			<textarea id="message" rows="3" class="bg-blue-200 border-2 border-blue-200 w-full p-3 rounded bg-gray-300"></textarea>
+			<textarea id="message" rows="3" class="bg-blue-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
 		</div>
-		<button type="submit" class="w-full p-3 text-sm font-bold tracking-wide uppercase rounded bg-blue-500 text-gray-900">Send Message</button>
+		<button type="submit" class="w-full p-3 text-sm font-bold tracking-wide uppercase rounded-full bg-blue-500 text-gray-900">Send Message</button>
 	</form>
 </div>
 <?php endif;?>

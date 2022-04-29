@@ -16,9 +16,9 @@ class Template {
         
     }
     private static function replaceTxt($template, $values) {
-//var_dump(self::getAvailableTemplates());
+ 
         if (!in_array($template, self::getAvailableTemplates())) {
-            throw new \Exception("The template provided does not exist", 505);
+            throw new \Exception("The template provided does not exist", 410);
         }
 
         ob_start();
@@ -38,9 +38,9 @@ class Template {
     public static function use($template, $values) {
 
         try {
-            echo self::replaceTxt($template, $values);
+         return self::replaceTxt($template, $values);
         } catch (\Exception $e) {
-            echo  $e->getMessage().PHP_EOL;
+           abort($e->getMessage(), $e->getCode());
         }
     }
 }
