@@ -2,10 +2,11 @@
 
 namespace Clive\Controllers;
 
-use Clive\Models\Policy;
+
 use Clive\Models\Client;
-use Clive\Models\Insurer;
-use Clive\Core\Mantle\Paginator;
+use Clive\Models\Policy;
+use Clive\Models\Insurer; 
+use Clive\Core\Mantle\Mail\Template; 
 
 class PagesController {
 
@@ -48,6 +49,10 @@ class PagesController {
         return view('logs');
     }
    
+    public function email() {
+        Template::use('client-invoice', ['uname' => 'peter', 'pass' => 'password', 'email' => "email@email.com"]);
+
+    }
     
     
 }

@@ -44,6 +44,8 @@ $router->get('profile', 'AuthController@profile');
 $router->get('system_log', 'PagesController@log');
 $router->get('logout', 'AuthController@logout');
 
+$router->get('email', 'PagesController@email');
+
 //Reports
 $router->get('reports', 'ReportController@index');
 
