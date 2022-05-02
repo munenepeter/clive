@@ -23,8 +23,21 @@ class ReportController {
         if (!auth()) {
             return view('login');
         }
-        return view('policy-reports', [
-            'policies' => Policy::all()
+        $insurers = [
+            "APA INSURANCE COMPANY",
+            "BRITAM GENERAL INSURANCE",
+            "GATEWAY INSURANCE COMPANY",
+            "GA INSURANCE COMPANY",
+            "FIRST ASSURANCE COMPANY",
+            "DIRECTLINE ASSURANCE COMPANY",
+            "MONARCH INSURANCE COMPANY",
+            "KENYA ORIENT INSURANCE",
+            "CANNON ASSURANCE COMPANY",
+            "CIC GENERAL INSURANCE COMPANY"
+        ];
+        return view('policy-report', [
+            'policies' => Policy::all(),
+            'insurers' => $insurers
         ]);
     }
     public function clients() {
