@@ -5,6 +5,7 @@ namespace Clive\Controllers;
 use Clive\Models\Policy;
 use Clive\Models\Client;
 use Clive\Models\Insurer;
+use Clive\Models\User;
 
 class ReportController {
     public function index() {
@@ -14,7 +15,8 @@ class ReportController {
         return view('reports', [
             'clients' => Client::all(),
             'insurers' => Insurer::all(),
-            'policies' => Policy::all()
+            'policies' => Policy::all(),
+            'users' => User::all()
         ]);
     }
 }

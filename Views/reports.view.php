@@ -15,7 +15,7 @@ use Clive\Core\Mantle\Paginator; ?>
         <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
             <div class="flex justify-between items-center -mb-2">
                 <h2 class=" font-semibold text-gray-600 font-bold tracking-wide">Policies</h2>
-                <a href="/policies/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add a Policy</a>
+                <a href="/reports/policies" class="text-sm text-blue-500 tracking-wide hover:underline">More</a>
             </div>
             <div class="overflow-x-auto">
                 <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
@@ -40,7 +40,7 @@ use Clive\Core\Mantle\Paginator; ?>
                                         <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $policy->policy_price; ?></td>
                                         <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= $policy->policy_status; ?></td>
                                         <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= $policy->insurer; ?></td>
-                                         
+
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else : ?>
@@ -86,7 +86,7 @@ use Clive\Core\Mantle\Paginator; ?>
         <div class="col-span-3 bg-white pt-2 px-4  rounded-xl border border-gray-50 flex flex-col space-y-6">
             <div class="flex justify-between items-center -mb-2">
                 <a href="/clients" class=" font-semibold text-gray-600 font-bold tracking-wide">All Clients</a>
-                <a href="/clients/create" class="text-sm text-blue-500 tracking-wide hover:underline">Print</a>
+                <a href="/reports/clients" class="text-sm text-blue-500 tracking-wide hover:underline">More</a>
             </div>
             <div class="overflow-x-auto">
                 <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
@@ -154,7 +154,7 @@ use Clive\Core\Mantle\Paginator; ?>
         <div class="col-span-3 bg-white pt-2 px-4 rounded-xl border border-gray-50 flex flex-col space-y-4">
             <div class="flex justify-between items-center">
                 <a href="/insurers" class=" font-semibold text-gray-600 font-bold tracking-wide">All Insurers</a>
-                <a href="/insurers/create" class="text-sm text-blue-500 tracking-wide hover:underline">Print</a>
+                <a href="/reports/insurers" class="text-sm text-blue-500 tracking-wide hover:underline">More</a>
             </div>
             <div class="overflow-x-auto">
                 <div class="inline-block min-w-full shadow-md rounded-lg overflow-auto">
@@ -214,43 +214,47 @@ use Clive\Core\Mantle\Paginator; ?>
             </div>
         </div>
 
-        <div class="col-span-3 bg-white pt-2 px-4 rounded-xl border border-gray-50 flex flex-col space-y-4">
-            <div class="flex justify-between items-center">
-                <a href="/insurers" class=" font-semibold text-gray-600 font-bold tracking-wide">All Insurers</a>
-                <a href="/insurers/create" class="text-sm text-blue-500 tracking-wide hover:underline">Print</a>
+        <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
+            <div class="flex justify-between items-center -mb-2">
+                <h2 class=" font-semibold text-gray-600 font-bold tracking-wide">Users</h2>
+                <a href="/reports/user" class="text-sm text-blue-500 tracking-wide hover:underline">More</a>
             </div>
             <div class="overflow-x-auto">
-                <div class="inline-block min-w-full shadow-md rounded-lg overflow-auto">
+                <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
                     <table class="w-full table-collapse">
                         <thead class="bg-gradient-to-r from-red-50 to-blue-50">
                             <tr>
-                                <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Name</th>
+                                <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Names</th>
 
                                 <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Email</th>
-                                <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light">Date added</th>
+                                <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light">Username</th>
+                                <th class="text-sm text-left uppercase font-semibold text-grey-darker p-3 bg-grey-light text-center">Role</th>
+                                <th class="text-sm uppercase font-semibold text-grey-darker p-3 bg-grey-light"></th>
                             </tr>
                         </thead>
                         <tbody class="align-baseline">
-                            <?php if (!empty($insurers)) : ?>
-                                <?php foreach (Paginator::paginate($insurers, 5) as $insurer) : ?>
-                                    <tr class="group cursor-pointer hover:bg-gray-50">
-                                        <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= strlen($insurer->name) > 7 ? substr($insurer->name, 0, 7) . '' : $insurer->name;  ?></td>
-                                        <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $insurer->email; ?></td>
-                                        <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= date("jS F Y ", strtotime($insurer->updated_at)); ?></td>
+                            <?php if (!empty($users)) : ?>
+                                <?php foreach (Paginator::paginate($users, 4) as $user) : ?>
+                                    <tr class="group cursor-pointer hover:bg-grey-lightest">
+                                        <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->full_names; ?></td>
+                                        <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->email; ?></td>
+                                        <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->username; ?></td>
+                                        <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= $user->role; ?></td>
+
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else : ?>
                                 <tr class="group cursor-pointer hover:bg-gray-50">
                                     <td colspan="5" class=" text-center text-sm p-3 border-t border-grey-light whitespace-no-wrap">
                                         <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
-                                            Looks like there are no insurers, <a href="/insurers/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>
+                                            Looks like there are no users, <a href="/users/create" class="text-sm text-blue-500 tracking-wide hover:underline">Add </a> or come back when they have been added</h2>
                                     </td>
                                 </tr>
 
                             <?php endif; ?>
                         </tbody>
                     </table>
-                    <?php if (!empty($insurers)) : ?>
+                    <?php if (!empty($users)) : ?>
                         <div class="border-t border-orange-200 bg-white px-4 py-3 flex items-center justify-between sm:px-6">
 
                             <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
@@ -261,13 +265,13 @@ use Clive\Core\Mantle\Paginator; ?>
                                         to
                                         <span class="font-medium"><?= Paginator::$end; ?></span>
                                         of
-                                        <span class="font-medium"><?= count($insurers) ?></span>
+                                        <span class="font-medium"><?= count($users) ?></span>
                                         results
                                     </p>
                                 </div>
                                 <div>
                                     <span class="relative z-0 inline-flex shadow-sm">
-                                        <?php Paginator::showLinks($insurers); ?>
+                                        <?php Paginator::showLinks($users); ?>
                                     </span>
                                 </div>
                             </div>
@@ -275,6 +279,8 @@ use Clive\Core\Mantle\Paginator; ?>
                     <?php endif; ?>
                 </div>
             </div>
+
+
         </div>
 
     </div>
