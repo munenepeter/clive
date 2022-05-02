@@ -46,7 +46,7 @@
                         More
                     </h4>
                     <ul class="mt-3 text-white">
-                        <li class="mt-3">
+                        <!-- <li class="mt-3">
                             <a href="#" class="hover:underline">
                                 Client Activity
                             </a>
@@ -55,7 +55,7 @@
                             <a href="clients/invoices" class="hover:underline">
                                 Invoices
                             </a>
-                        </li>
+                        </li> -->
 
                         <?php if (isAdmin()) : ?>
 
