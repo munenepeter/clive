@@ -70,7 +70,7 @@ include_once 'sections/sidebar.view.php'; ?>
                             <div class="px-4 py-2 bg-white shadow-full rounded-lg text-gray-700">
                                 <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
                                     <div class="flex justify-between items-center -mb-2">
-                                        <h2 class=" font-semibold text-gray-600 font-bold tracking-wide">users</h2>
+                                        <h2 class=" font-semibold text-gray-600 font-bold tracking-wide">Users</h2>
                                         <a href="/users/adduser" class="text-sm text-blue-500 tracking-wide hover:underline">Add a user</a>
                                     </div>
                                     <div class="overflow-x-auto">

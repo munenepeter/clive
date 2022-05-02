@@ -51,7 +51,7 @@ $router->get('reports', 'ReportController@index');
 $router->get('reports/clients', 'ReportController@clients');
 $router->get('reports/policies', 'ReportController@policies');
 $router->get('reports/insurers', 'ReportController@insurers');
-$router->get('reports/users', 'ReportController@users');
+$router->get('reports/user', 'ReportController@users');
 
 //Post requests
 $router->post('login', 'AuthController@login');

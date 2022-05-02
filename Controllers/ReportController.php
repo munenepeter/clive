@@ -48,6 +48,8 @@ class ReportController {
             return view('login');
         }
         return view('user-reports', [
+            'admins' => count(User::where(['role'], ['role', 'admin'])),
+            'regular_users' => count(User::where(['role'], ['role', 'user'])),
             'users' => User::all()
         ]);
     }
