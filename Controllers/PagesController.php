@@ -5,9 +5,7 @@ namespace Clive\Controllers;
 
 use Clive\Models\Client;
 use Clive\Models\Policy;
-use Clive\Models\Insurer; 
-use Clive\Core\Mantle\Mail\Mail;
-use Clive\Core\Mantle\Mail\Template; 
+use Clive\Models\Insurer;  
 
 class PagesController {
 
