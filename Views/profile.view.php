@@ -13,13 +13,13 @@
       <div class="w-full bg-white rounded-lg mx-auto mt-8 flex overflow-hidden rounded-b-none">
         <div class="w-1/3 bg-gray-100 p-8 hidden md:inline-block">
           <h2 class="font-medium text-md text-gray-700 mb-4 tracking-wide"><?=ucfirst(Session::get('user'));?>'s Info</h2>
-          <p class="text-xs text-gray-500">Update your basic profile information such as Email Address, Name, and Password.</p>
+          <p class="text-xs text-gray-500">Update your basic profile information such as Email, Name, and Password.</p>
         
         </div>
         <div class="md:w-2/3 w-full">
           <div class="py-8 px-16">
-            <label for="name" class="text-sm text-gray-600">First Name</label>
-            <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="text" placeholder="<?=$user[0]->first_name;?>" name="name">
+            <label for="fullnames" class="text-sm text-gray-600">Full names</label>
+            <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="text" placeholder="<?=$user[0]->full_names;?>" name="full_names">
           </div>
           <hr class="border-gray-200">
           <div class="py-8 px-16">
@@ -30,13 +30,13 @@
         </div>
         <div class="md:w-2/3 w-full">
           <div class="py-8 px-16">
-            <label for="name" class="text-sm text-gray-600">Second Name</label>
-            <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="text" placeholder="<?=$user[0]->last_name;?>" name="name">
+            <label for="username" class="text-sm text-gray-600">Username</label>
+            <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="text" placeholder="<?=$user[0]->username;?>" name="username">
           </div>
           <hr class="border-gray-200">
           <div class="py-8 px-16">
             <label for="email" class="text-sm text-gray-600">Password</label>
-            <input t class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" type="password" name="email" placeholder="<?=$user[0]->password;?>">
+            <input t class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500" name="password" type="password"  placeholder="">
           </div>
           <hr class="border-gray-200">
         </div>

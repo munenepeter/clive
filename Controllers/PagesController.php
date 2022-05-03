@@ -31,6 +31,7 @@ class PagesController {
         }
         return view('dashboard', [
             'policies' => Policy::all(), 
+            'expired' => count(Policy::where(['policy_status'], ['policy_status', 'Expired'])),
             'clients' => Client::all(),
             'insurers' => Insurer::all()
         ]);

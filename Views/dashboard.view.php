@@ -112,7 +112,7 @@ use Clive\Core\Mantle\Paginator;
                                             <tr class="group cursor-pointer hover:bg-gray-50">
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= strlen($insurer->name) > 7 ? substr($insurer->name, 0, 7) . '' : $insurer->name;  ?></td>
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $insurer->email; ?></td>
-                                                <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= date("jS F Y ", strtotime($insurer->updated_at)); ?></td>
+                                                <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= date("jS M Y ", strtotime($insurer->updated_at)); ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php else : ?>
