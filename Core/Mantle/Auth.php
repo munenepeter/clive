@@ -18,7 +18,7 @@ class Auth {
 
             array_push(Request::$errors, "There is no account with {$email} email");
 
-            Logger::log("ERROR: There is no account with {$email} email");
+            Logger::log("ERROR: Tried to login with {$email} email");
 
             view('login', ['e' => Request::$errors]);
             return;
@@ -30,7 +30,7 @@ class Auth {
             Session::make('user', $user[0]->username);
             //Todo Implement Session tokens  
             redirect('/');
-
+            Logger::log("INFO: Successfull logged in " . $user[0]->username . " at " . date("D, d M Y H:i:s"));
         } else {
 
             array_push(Request::$errors, "Wrong credentials, Please try again!");
@@ -47,5 +47,6 @@ class Auth {
         Session::unset($user);
         Session::make('loggedIn', false);
         Session::destroy();
+        Logger::log("INFO: Successfull logged out " . $user . " at " . date("D, d M Y H:i:s"));
     }
 }
