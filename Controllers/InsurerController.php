@@ -17,21 +17,8 @@ class InsurerController {
         ]);
     }
     public function addinsurer() {
-        $insurers = [   
-            "APA INSURANCE COMPANY",    
-            "BRITAM GENERAL INSURANCE",     
-            "GATEWAY INSURANCE COMPANY",     
-            "GA INSURANCE COMPANY",     
-            "FIRST ASSURANCE COMPANY",     
-            "DIRECTLINE ASSURANCE COMPANY",    
-            "MONARCH INSURANCE COMPANY",   
-            "KENYA ORIENT INSURANCE",
-            "CANNON ASSURANCE COMPANY",        
-            "CIC GENERAL INSURANCE COMPANY"      
-        ];
-        return view('addinsurer', [
-            'insurers' => $insurers
-        ]);
+      
+        return view('addinsurer');
     }
     public function create() {
         if (!isset($_POST)) {

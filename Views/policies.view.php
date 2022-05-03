@@ -93,7 +93,7 @@ include_once 'sections/sidebar.view.php'; ?>
                                                             <tr class="group cursor-pointer hover:bg-gray-50">
                                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $policy->policy_no; ?></td>
                                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $policy->policy_type; ?></td>
-                                                                <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $policy->policy_price; ?></td>
+                                                                <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= "Ksh " . number_format($policy->policy_price, 2, ".", ","); ?></td>
                                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= $policy->policy_status; ?></td>
                                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-center"><?= $policy->insurer; ?></td>
                                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap text-sm group-hover:visible">

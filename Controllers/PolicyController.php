@@ -6,7 +6,8 @@ use Clive\Models\Policy;
 use Clive\Core\Mantle\Logger;
 use Clive\Core\Mantle\Request;
 use Clive\Core\Mantle\Paginator;
-
+use Clive\Models\Client;
+use Clive\Models\Insurer;
 
 class PolicyController {
 
@@ -51,20 +52,13 @@ class PolicyController {
         return redirect('/policies');
     }
     public function addpolicy() {
-        $insurers = [   
-            "APA INSURANCE COMPANY",    
-            "BRITAM GENERAL INSURANCE",     
-            "GATEWAY INSURANCE COMPANY",     
-            "GA INSURANCE COMPANY",     
-            "FIRST ASSURANCE COMPANY",     
-            "DIRECTLINE ASSURANCE COMPANY",    
-            "MONARCH INSURANCE COMPANY",   
-            "KENYA ORIENT INSURANCE",
-            "CANNON ASSURANCE COMPANY",        
-            "CIC GENERAL INSURANCE COMPANY"      
-        ];
+
+        $insurers = Insurer::all();
+        $clients = Client::all();
+
         return view('addpolicy', [
-            'insurers' => $insurers
+            'insurers' => $insurers,
+            'clients' => $clients
         ]);
       
     }
