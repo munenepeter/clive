@@ -43,17 +43,17 @@ include_once 'sections/sidebar.view.php'; ?>
                                         <option>All</option>
                                         <?php if (!empty($insurers)) : ?>
                                             <?php foreach ($insurers as $insurer) : ?>
-                                                <option class="text-gray-900 text-sm rounded-lg" value="<?= ucwords(strtolower($insurer)) ?>"><?= ucwords(strtolower($insurer)) ?></option>
+                                                <option class="text-gray-900 text-sm rounded-lg" value="<?=$insurer->id ?>"><?= ucwords(strtolower($insurer->name)) ?></option>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </select>
                                 </div>
+                                <div class="">
+                                <button type="button" class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Filter</button>
+                                </div>
                             </div>
-                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Filter</button>
 
-                            <div class="mt-4 border-b border-orange-200"></div>
-
-
+                            <div class="my-4 border-b border-orange-200"></div>
                             <div class="px-4 py-2 bg-white shadow-full rounded-lg text-gray-700">
                                 <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
                                     <div class="flex justify-between items-center -mb-2">
