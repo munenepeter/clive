@@ -4,7 +4,9 @@ use Clive\Core\Mantle\Paginator;
 
 include_once 'base.view.php';
 include_once 'sections/dash-nav.view.php';
-include_once 'sections/sidebar.view.php'; ?>
+if (isAdmin()) {
+    include_once 'sections/sidebar.view.php';
+} ?>
 
 
 <div class="flex-grow flex flex-col">
@@ -43,13 +45,13 @@ include_once 'sections/sidebar.view.php'; ?>
                                         <option>All</option>
                                         <?php if (!empty($insurers)) : ?>
                                             <?php foreach ($insurers as $insurer) : ?>
-                                                <option class="text-gray-900 text-sm rounded-lg" value="<?=$insurer->id ?>"><?= ucwords(strtolower($insurer->name)) ?></option>
+                                                <option class="text-gray-900 text-sm rounded-lg" value="<?= $insurer->id ?>"><?= ucwords(strtolower($insurer->name)) ?></option>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </select>
                                 </div>
                                 <div class="">
-                                <button type="button" class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Filter</button>
+                                    <button type="button" class="mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Filter</button>
                                 </div>
                             </div>
 

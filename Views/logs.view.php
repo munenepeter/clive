@@ -2,7 +2,9 @@
 
 include_once 'base.view.php';
 include_once 'sections/dash-nav.view.php';
-include_once 'sections/sidebar.view.php'; ?>
+if (isAdmin()) {
+    include_once 'sections/sidebar.view.php';
+} ?>
 
 
 <div class="m-2 p-2 bg-white overflow-auto border">

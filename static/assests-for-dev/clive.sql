@@ -1,6 +1,6 @@
 
  
- */
+
 CREATE TABLE `users` (
    `user_id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `full_names` varchar(255),
