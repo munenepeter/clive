@@ -3,12 +3,9 @@
 
 //get routes
 
-// $router->get('database', function(){
-//     if (!auth()) {
-//         return redirect('login');
-//     }
-//     return view('database');
-// });
+$router->get('test', function(){
+    return view('test');
+});
 
 $router->get('', 'PagesController@index');
 $router->get('index', 'PagesController@index');

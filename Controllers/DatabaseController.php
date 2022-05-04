@@ -21,7 +21,7 @@ class DatabaseController {
     public function query() {
 
         $sql =  trim($_POST['query']);
-
+        $error = '';
         if (startsWith('Delete', $sql)) {
 
             $error = "Cannot run Delete statements for now!";
