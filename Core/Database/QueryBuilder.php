@@ -171,6 +171,8 @@ class QueryBuilder {
 
       $statement = $this->pdo->prepare($sql);
       $statement->execute();
+
+      return $statement->fetchAll(\PDO::FETCH_ASSOC);
     } catch (\Exception $e) {
 
       Logger::log("ERROR: Something is up with your Query -> $sql, " .$e->getMessage());

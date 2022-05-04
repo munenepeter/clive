@@ -1,5 +1,5 @@
 <div class="font-sans text-gray-900 antialiased">
-    <div class="h-screen flex bg-gray-200">
+    <div class="h-auto flex bg-gray-200">
 
         <div class="flex-shrink-0 w-64 bg-gray-900">
             <a href="#">

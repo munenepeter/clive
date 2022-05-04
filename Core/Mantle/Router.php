@@ -35,8 +35,8 @@ class Router {
         // if (!array_key_exists($uri, $this->routes[$requestType]))
         //     throw new \Exception("Oops, Seems you're lost, There is no such page! <b>/{$uri}</b>", 404);
         // exit;
-        if(!isset($this->routes[$requestType][$uri]))
-        throw new \Exception("Oops, Seems you're lost, There is no such page! <b>/{$uri}</b>", 404);
+        if (!isset($this->routes[$requestType][$uri]))
+            throw new \Exception("Oops, Seems you're lost, There is no such page! <b>/{$uri}</b>", 404);
 
         if (!is_callable($this->routes[$requestType][$uri])) {
 
