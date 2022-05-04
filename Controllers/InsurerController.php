@@ -11,13 +11,22 @@ use Clive\Core\Mantle\Paginator;
 class InsurerController {
 
     public function index() {
+        if (!auth()) {
+            return redirect('/login');
+        }
+       
         return view('insurers', [
             'allinsurers' => Insurer::all(),
             'insurers' => Paginator::paginate(Insurer::all(), 5)
         ]);
     }
     public function addinsurer() {
-      
+        if (!auth()) {
+            return redirect('/login');
+        }
+        if (!isAdmin()) {
+            return redirect('/dashboard');
+        }
         return view('addinsurer');
     }
     public function create() {

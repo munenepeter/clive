@@ -19,5 +19,13 @@
 
 <body class=" bg-gray-50">
 
+<?php if (!empty($msg)) : ?>
+    <div class="fixed bottom-4 right-4 xl:right-20">
+        <span class="transform duration-500 ease-in-out animate-bounce bg-blue-400 px-4 py-3 font-mono font-semibold rounded-lg shadow hover:shadow-xl flex justify-between items-center gap-4">
+            <?= $msg; ?>
+        </span>
+    </div>
+<?php endif; ?>
+
 
 
