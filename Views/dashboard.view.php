@@ -141,11 +141,7 @@ use Clive\Core\Mantle\Paginator;
                                                 results
                                             </p>
                                         </div>
-                                        <div>
-                                            <span class="relative z-0 inline-flex shadow-sm">
-                                                <?php Paginator::showLinks($insurers); ?>
-                                            </span>
-                                        </div>
+                                         
                                     </div>
                                 </div>
                             <?php endif; ?>
@@ -206,11 +202,7 @@ use Clive\Core\Mantle\Paginator;
                                                 results
                                             </p>
                                         </div>
-                                        <div>
-                                            <span class="relative z-0 inline-flex shadow-sm">
-                                                <?php Paginator::showLinks($clients); ?>
-                                            </span>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                             <?php endif; ?>

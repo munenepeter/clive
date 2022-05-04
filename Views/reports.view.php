@@ -33,7 +33,7 @@ use Clive\Core\Mantle\Paginator; ?>
                         </thead>
                         <tbody class="align-baseline">
                             <?php if (!empty($policies)) : ?>
-                                <?php foreach (Paginator::paginate($policies, 4) as $policy) : ?>
+                                <?php foreach (Paginator::paginate($policies, 5) as $policy) : ?>
                                     <tr class="group cursor-pointer hover:bg-gray-50">
                                         <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $policy->policy_no; ?></td>
                                         <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $policy->policy_type; ?></td>
@@ -69,11 +69,7 @@ use Clive\Core\Mantle\Paginator; ?>
                                         results
                                     </p>
                                 </div>
-                                <div>
-                                    <span class="relative z-0 inline-flex shadow-sm">
-                                        <?php Paginator::showLinks($policies); ?>
-                                    </span>
-                                </div>
+                               
                             </div>
                         </div>
                     <?php endif; ?>
@@ -137,11 +133,7 @@ use Clive\Core\Mantle\Paginator; ?>
                                         results
                                     </p>
                                 </div>
-                                <div>
-                                    <span class="relative z-0 inline-flex shadow-sm">
-                                        <?php Paginator::showLinks($clients); ?>
-                                    </span>
-                                </div>
+                              
                             </div>
                         </div>
                     <?php endif; ?>
@@ -202,11 +194,7 @@ use Clive\Core\Mantle\Paginator; ?>
                                         results
                                     </p>
                                 </div>
-                                <div>
-                                    <span class="relative z-0 inline-flex shadow-sm">
-                                        <?php Paginator::showLinks($insurers); ?>
-                                    </span>
-                                </div>
+                                
                             </div>
                         </div>
                     <?php endif; ?>
@@ -234,7 +222,7 @@ use Clive\Core\Mantle\Paginator; ?>
                         </thead>
                         <tbody class="align-baseline">
                             <?php if (!empty($users)) : ?>
-                                <?php foreach (Paginator::paginate($users, 4) as $user) : ?>
+                                <?php foreach (Paginator::paginate($users, 5) as $user) : ?>
                                     <tr class="group cursor-pointer hover:bg-grey-lightest">
                                         <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->full_names; ?></td>
                                         <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $user->email; ?></td>
@@ -269,11 +257,7 @@ use Clive\Core\Mantle\Paginator; ?>
                                         results
                                     </p>
                                 </div>
-                                <div>
-                                    <span class="relative z-0 inline-flex shadow-sm">
-                                        <?php Paginator::showLinks($users); ?>
-                                    </span>
-                                </div>
+                                
                             </div>
                         </div>
                     <?php endif; ?>

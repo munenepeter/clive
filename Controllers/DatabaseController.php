@@ -10,7 +10,10 @@ class DatabaseController {
 
     public function index() {
         if (!auth()) {
-            return redirect('login');
+            return redirect('/login');
+        }
+        if (!isAdmin()) {
+            return redirect('/dashboard');
         }
         return view('database');
     }

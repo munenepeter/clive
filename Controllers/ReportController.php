@@ -12,6 +12,7 @@ class ReportController {
         if (!auth()) {
             return view('login');
         }
+        
         return view('reports', [
             'clients' => Client::all(),
             'insurers' => Insurer::all(),

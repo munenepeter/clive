@@ -27,7 +27,7 @@ class PagesController {
    
     public function dashboard() {
         if (!auth()) {
-            return redirect('login');
+            return redirect('/login');
         }
         return view('dashboard', [
             'policies' => Policy::all(), 
@@ -46,10 +46,13 @@ class PagesController {
         if (!auth()) {
             return view('login');
         }
+        if (!isAdmin()) {
+            return redirect('/dashboard');
+        }
         return view('logs');
     }
    
-    public function email() {
+    public function test() {
         // $personal = new Mail(Template::use('client-invoice', ['uname' => 'peter', 'email'=>'email@2.com', 'pass' => 1234]));
 
         // $personal->subject = "A test";
