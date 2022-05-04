@@ -141,7 +141,7 @@ use Clive\Core\Mantle\Paginator;
                                                 results
                                             </p>
                                         </div>
-                                         
+
                                     </div>
                                 </div>
                             <?php endif; ?>
@@ -202,7 +202,7 @@ use Clive\Core\Mantle\Paginator;
                                                 results
                                             </p>
                                         </div>
-                                       
+
                                     </div>
                                 </div>
                             <?php endif; ?>
@@ -211,9 +211,8 @@ use Clive\Core\Mantle\Paginator;
                 </div>
             </div>
         </div>
-
-        <!-- End Third Row -->
-</div>
-</main>
+    </main>
 </div>
 <!-- End Main -->
+
+</div>
