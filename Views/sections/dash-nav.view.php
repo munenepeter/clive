@@ -30,7 +30,7 @@ use Clive\Core\Mantle\Session; ?>
                             <path d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" class="heroicon-ui"></path>
                         </svg>
                     </a>
-                    <ul x-show="isOpen" @click.away="isOpen = false" class="absolute font-normal bg-white shadow overflow-hidden bg-gradient-to-r from-red-50 to-blue-50 rounded w-28 border mt-2 py-1 right-0 z-20 divide-y">
+                    <ul x-show="isOpen" @click.away="isOpen = false" class="absolute font-normal bg-white shadow overflow-hidden bg-gradient-to-r from-red-50 to-blue-50 rounded w-32 border mt-2 py-1 right-0 z-20 divide-y">
                         <?php if (auth()) : ?>
                             <li>
                                 <a href="/profile" class="flex items-center px-3 py-3 hover:bg-blue-200">
@@ -41,12 +41,28 @@ use Clive\Core\Mantle\Session; ?>
                                 </a>
                             </li>
                             <?php if(isAdmin()):?>
+                                <li>
+                                <a href="/users/adduser" class="flex items-center px-3 py-3 hover:bg-blue-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    <span class="ml-2"><?= ucfirst('manage users'); ?></span>
+                                </a>
+                            </li>
                              <li>
                                 <a href="/users/adduser" class="flex items-center px-3 py-3 hover:bg-blue-200">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                     </svg>
-                                    <span class="ml-2"><?= ucfirst('add user'); ?></span>
+                                    <span class="ml-2"><?= ucfirst('query database'); ?></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/users/adduser" class="flex items-center px-3 py-3 hover:bg-blue-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    <span class="ml-2"><?= ucfirst('system logs'); ?></span>
                                 </a>
                             </li>
                              <?php endif; ?>
