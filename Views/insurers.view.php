@@ -6,7 +6,7 @@ use Clive\Core\Mantle\Paginator;
 
 include_once 'base.view.php';
 include_once 'sections/dash-nav.view.php';
-include_once 'sections/sidebar.view.php'; ?>
+ ?>
 
 <?php if (!empty($msg)) : ?>
     <div class="fixed bottom-4 right-4 xl:right-20">

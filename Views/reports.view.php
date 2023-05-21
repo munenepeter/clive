@@ -3,7 +3,7 @@
 include_once 'base.view.php';
 include_once 'sections/dash-nav.view.php';
 if (isAdmin()) {
-    include_once 'sections/sidebar.view.php';
+    
 }
 
 use Clive\Core\Mantle\Paginator; ?>

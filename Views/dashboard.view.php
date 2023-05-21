@@ -106,7 +106,7 @@ use Clive\Core\Mantle\Paginator;
                                 </thead>
                                 <tbody class="align-baseline">
                                     <?php if (!empty($insurers)) : ?>
-                                        <?php foreach (Paginator::paginate($insurers, 5) as $insurer) : ?>
+                                        <?php foreach (Paginator::paginate($insurers, 4) as $insurer) : ?>
                                             <tr class="group cursor-pointer hover:bg-gray-50">
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= strlen($insurer->name) > 7 ? substr($insurer->name, 0, 7) . '' : $insurer->name;  ?></td>
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $insurer->email; ?></td>
@@ -141,7 +141,7 @@ use Clive\Core\Mantle\Paginator;
                                         </div>
                                         <div>
                                             <span class="relative z-0 inline-flex shadow-sm">
-                                                <?php Paginator::showLinks($insurers); ?>
+                                                <!-- <?php Paginator::showLinks($insurers); ?> -->
                                             </span>
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@ use Clive\Core\Mantle\Paginator;
                                 </thead>
                                 <tbody class="align-baseline">
                                     <?php if (!empty($clients)) : ?>
-                                        <?php foreach (Paginator::paginate($clients, 5) as $client) : ?>
+                                        <?php foreach (Paginator::paginate($clients, 4) as $client) : ?>
                                             <tr class="group cursor-pointer hover:bg-gray-50">
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $client->full_names; ?></td>
                                                 <td class="text-sm p-3 border-t border-grey-light whitespace-no-wrap"><?= $client->email; ?></td>
@@ -206,7 +206,7 @@ use Clive\Core\Mantle\Paginator;
                                         </div>
                                         <div>
                                             <span class="relative z-0 inline-flex shadow-sm">
-                                                <?php Paginator::showLinks($clients); ?>
+                                                <!-- <?php Paginator::showLinks($clients); ?> -->
                                             </span>
                                         </div>
                                     </div>
