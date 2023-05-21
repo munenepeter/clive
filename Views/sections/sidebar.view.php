@@ -1,14 +1,11 @@
 <div class="font-sans text-gray-900 antialiased">
     <div class="h-screen flex bg-gray-200">
-
         <div class="flex-shrink-0 w-64 bg-gray-900">
             <a href="#">
                 <div class="flex items-center h-16 px-4 bg-gray-900 text-xl text-white font-medium">
-
                     <svg xmlns="http://www.w3.org/2000/svg" class="relative w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
-
                     <div class="ml-2" style="padding-top: 2px;">Admin</div>
                 </div>
             </a>
@@ -24,17 +21,45 @@
                                 Clients
                             </a>
                         </li>
-                        <li> <a href="/users" class="hover:underline p-2 ">
-                                Users
-                            </a>
-                        </li>
+                        <?php if (isAdmin()) : ?>
+
+                            <li> <a href="/users" class="hover:underline p-2 ">
+                                    Users
+                                </a>
+                            </li>
+                        <?php endif; ?>
                         <li> <a href="/policies" class="hover:underline p-2 ">
-                              Policies
+                                Policies
                             </a>
                         </li>
                         <li> <a href="/reports" class="hover:underline p-2 ">
-                              Reports
+                                Reports
                             </a>
+                            <ul class="ml-4 space-y-4 mt-2">
+                                <li>
+                                    <a href="/reports/clients" class="hover:underline p-2 ">
+                                        Clients
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/reports/policies" class="hover:underline p-2 ">
+                                       Policies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/reports/insurers" class="hover:underline p-2 ">
+                                       Insurers
+                                    </a>
+                                </li>
+                                <?php if (isAdmin()) : ?>
+
+                                <li>
+                                    <a href="/reports/user" class="hover:underline p-2 ">
+                                       Users
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                            </ul>
                         </li>
                     </ul>
 
@@ -63,7 +88,7 @@
                                 <a href="database" class="hover:underline">
                                     Query Database
                                 </a>
-                            </li> 
+                            </li>
                             <li class="mt-3">
                                 <a href="/system_log" class="hover:underline">
                                     System Logs

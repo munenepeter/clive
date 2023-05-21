@@ -14,7 +14,10 @@ use Clive\Core\Mantle\Mail\Template;
 class UserController {
     public function index() {  
         if (!auth()) {
-            return redirect('login');
+            return redirect('/login');
+        }
+        if (!isAdmin()) {
+            return redirect('/dashboard');
         }
         return view('users',[
             'admins' => count(User::where(['role'], ['role', 'admin'])),
@@ -26,7 +29,9 @@ class UserController {
     public function create() {
 
         //full_names, last_name, username, email, password, role
-
+        if (!isAdmin()) {
+            return redirect('/dashboard');
+        }
         $full_names = trim($_POST['full_names']); 
         $email = trim($_POST['email']);
         $pass = trim($_POST['password']);
@@ -65,6 +70,9 @@ class UserController {
     public function adduser() {
         if (!auth()) {
             return view('index');
+        }
+        if (!isAdmin()) {
+            return redirect('/dashboard');
         }
         return view('adduser');
     }

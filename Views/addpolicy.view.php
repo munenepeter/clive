@@ -66,7 +66,7 @@ include_once 'sections/dash-nav.view.php'; ?>
                         <option class="text-gray-900 text-sm rounded-lg">--Select Insurer --</option>
                         <?php if (!empty($insurers)) : ?>
                             <?php foreach ($insurers as $insurer) : ?>
-                                <option class="text-gray-900 text-sm rounded-lg" value="<?= ucwords(strtolower($insurer)) ?>"><?= ucwords(strtolower($insurer)) ?></option>
+                                <option class="text-gray-900 text-sm rounded-lg" value="<?= ucwords(strtolower($insurer->id)) ?>"><?= ucwords(strtolower($insurer->name)) ?></option>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </select>
@@ -78,8 +78,25 @@ include_once 'sections/dash-nav.view.php'; ?>
                 </div>
             </div>
             <div class="mt-2">
-                <label for="client_nat_id" class="text-sm">Client's National ID</label>
-                <input id="client_nat_id" name="client_nat_id" type="text" placeholder="Client's National ID" class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                <label for="client_nat_id" class="text-sm">Client's Name</label>
+
+                <div class="relative">
+                    <select name="client_nat_id" class="block appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+
+                        <option class="text-gray-900 text-sm rounded-lg">--Select Client--</option>
+                        <?php if (!empty($clients)) : ?>
+                            <?php foreach ($clients as $client) : ?>
+                                <option class="text-gray-900 text-sm rounded-lg" value="<?= ucwords($client->national_id) ?>"><?= ucwords(strtolower($client->full_names)) ?></option>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                    </div>
+                </div>
+
             </div>
             <div class="col-span-full sm:col-span-3 mt-2">
                 <input type="submit" class="bg-blue-500 text-white text-sm font-medium px-6 py-2 rounded uppercase cursor-pointer" value="Create Policy">

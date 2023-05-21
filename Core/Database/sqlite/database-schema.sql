@@ -54,10 +54,12 @@ CREATE TABLE `policies` (
   `policy_type` varchar(255),
   `policy_price` varchar(255),
   `policy_status` varchar(255),
-  `insurer` varchar(255),
+  `insurer` int,
   `client_nat_id` int,
   `created_at` datetime,
-  `updated_at` datetime
+  `updated_at` datetime,
+     FOREIGN KEY (insurer) REFERENCES insurers(id),
+     FOREIGN KEY (client_nat_id) REFERENCES clients(national_id)
 );
 
 drop table policies;
@@ -90,3 +92,26 @@ UPDATE users SET
             'role' = 'user',
             'updated_at' = '2022-03-25 06:27:12'
              WHERE id = 2;
+
+
+
+
+   
+
+INSERT INTO insurers (name,email,business_no,created_at,updated_at)
+VALUES
+    ('APA Insurance', 'info@apainsurance.org', 'A730552770', datetime('now','localtime'), datetime('now','localtime')),
+    ('Britam General Insurance', 'info@britam.com', 'B811688975', datetime('now','localtime'), datetime('now','localtime')),
+    ('Gateway Insurance', 'info@gateway-insurance.', 'G535438769', datetime('now','localtime'), datetime('now','localtime')),
+    ('GA Insurance', 'atyourservice@gakenya.com', 'G609553727', datetime('now','localtime'), datetime('now','localtime')),
+    ('First Assurance', 'hoinfo@firstassurance.co.ke', 'F560597724', datetime('now','localtime'), datetime('now','localtime')),
+    ('Directline Assurance', 'bimatap@directline.co.ke', 'D828906959', datetime('now','localtime'), datetime('now','localtime')),
+    ('Monarch Insurance', 'info@monarchinsurance.co.ke', 'M703915272', datetime('now','localtime'), datetime('now','localtime')),
+    ('Kenya Orient Insurance', 'contactme@korient.co.ke', 'K926482909', datetime('now','localtime'), datetime('now','localtime')),
+    ('Cannon Assurance', 'info@metcannon.co.ke ', 'C885349080', datetime('now','localtime'), datetime('now','localtime')),
+    ('CIC Group Kenya', 'info@cic.co.ke', 'C483462709', datetime('now','localtime'), datetime('now','localtime')),
+    ('Fidelity Shield Insurance', 'info@fidelityshield.com', 'F345564836', datetime('now','localtime'), datetime('now','localtime')),
+    ('AIG Kenya Insurance ', 'kenyaclaims@aig.com', 'A381816261', datetime('now','localtime'), datetime('now','localtime')),
+    ('AAR Insurance', 'info@aar.co.ke', 'A509028925', datetime('now','localtime'), datetime('now','localtime')),
+    ('Geminia Insurance ', 'info@geminia.co.ke', 'G569583851', datetime('now','localtime'), datetime('now','localtime')),
+    ('ICEA Lion', 'contactcentre@icealion.com', 'I639375911', datetime('now','localtime'), datetime('now','localtime'));

@@ -25,12 +25,13 @@ class AuthController {
         if (!auth()) {
             return view('login');
         }
-        
-        $user =  User::where(
-          ['first_name', 'last_name', 'email', 'username', 'password', 'email'],
-          ['username', Session::get('user')]);
 
-      
+        $user =  User::where(
+            ['full_names', 'email', 'username', 'password', 'email'],
+            ['username', Session::get('user')]
+        );
+
+
 
         return view('profile', ['user' => $user]);
     }

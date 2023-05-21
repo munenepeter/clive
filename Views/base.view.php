@@ -14,10 +14,18 @@
     <script defer  src="../static/js/alpine.js"></script>
     <script defer  src="../static/js/index.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <title>Clive  <?= (Request::uri() == "") ? "" : "| ". ucwords(Request::uri()); ?></title>
+    <title>Clive  <?= (Request::uri() == "") ? "" : "| ". ucwords(str_replace("/"," ",Request::uri())); ?></title>
 </head>
 
 <body class=" bg-gray-50">
+
+<?php if (!empty($msg)) : ?>
+    <div class="fixed bottom-4 right-4 xl:right-20">
+        <span class="transform duration-500 ease-in-out animate-bounce bg-blue-400 px-4 py-3 font-mono font-semibold rounded-lg shadow hover:shadow-xl flex justify-between items-center gap-4">
+            <?= $msg; ?>
+        </span>
+    </div>
+<?php endif; ?>
 
 
 

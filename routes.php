@@ -3,9 +3,9 @@
 
 //get routes
 
-// $router->get('', function(){
-//    echo "Call backs didn't work!!";
-// });
+$router->get('test', function(){
+    return view('test');
+});
 
 $router->get('', 'PagesController@index');
 $router->get('index', 'PagesController@index');
@@ -15,6 +15,8 @@ $router->get('news', 'PagesController@news');
 
 
 $router->get('database', 'DatabaseController@index');
+$router->post('database', 'DatabaseController@query');
+
 //Insurers
 $router->get('insurers', 'InsurerController@index');
 $router->get('insurers/create', 'InsurerController@addinsurer');

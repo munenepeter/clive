@@ -48,10 +48,29 @@ include_once 'sections/dash-nav.view.php';
     }
 </style>
 
-<div class="w-full m-2 p-2 bg-white overflow-auto border">
-    <textarea id='lineCounter' wrap='off' readonly>1.</textarea>
-    <textarea class="w-full" id='codeEditor' wrap='off'></textarea>
+<div class="w-full p-2 bg-gradient-to-r from-red-50 to-blue-50 overflow-auto border">
+    <form action="" method="post" class="mb-4">
+        <textarea class="rounded-lg" id='lineCounter' wrap='off' readonly>1.</textarea>
+
+        <textarea name="query" class="w-full" id='codeEditor' wrap='off'><?= (isset($sql)) ? trim($sql) : ''; ?>
+        </textarea>
+
+        <button style="float: right;" type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Run</button>
+    </form>
+
+    <div class="mt-4">
+        <div class="my-2 w-full h-72 overflow-y-auto bg-white shadow-md sm:rounded-lg">
+            <?php
+            if (!isset($results) && isset($error)) {
+                echo $error;
+            } elseif (isset($results)) {
+                echo build_table($results);
+            }
+            ?>
+        </div>
+    </div>
 </div>
+
 </div>
 </div>
 <script>
